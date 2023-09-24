@@ -1,0 +1,30 @@
+{
+    "UxmlGuid": "69d47b5878aa1554a849273c6c17ea97",
+    "UxmlPath": "Assets/Scripts/BehaviourTree/Editor/BTEditorWindow.uxml",
+    "CanvasX": 0,
+    "CanvasY": 0,
+    "CanvasWidth": 823,
+    "CanvasHeight": 529,
+    "MatchGameView": false,
+    "ZoomScale": 1.0,
+    "PanOffset": {
+        "x": 17.160003662109376,
+        "y": 80.98703002929688
+    },
+    "ColorModeBackgroundOpacity": 1.0,
+    "ImageModeCanvasBackgroundOpacity": 1.0,
+    "CameraModeCanvasBackgroundOpacity": 1.0,
+    "EnableCanvasBackground": true,
+    "CanvasBackgroundMode": 0,
+    "CanvasBackgroundColor": {
+        "r": 0.14509804546833039,
+        "g": 0.14509804546833039,
+        "b": 0.14509804546833039,
+        "a": 255.0
+    },
+    "CanvasBackgroundImage": {
+        "instanceID": 0
+    },
+    "CanvasBackgroundImageScaleMode": 1,
+    "CanvasBackgroundCameraName": ""
+}

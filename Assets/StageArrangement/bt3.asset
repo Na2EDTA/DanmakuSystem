@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8611520467050699445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b742235029ec73048b1a5a2c4273db34, type: 3}
+  m_Name: BTIteratorNode
+  m_EditorClassIdentifier: 
+  guid: 73889d1daab14a34e9c7cebfb44032a3
+  comment: 
+  started: 0
+  state: 0
+  position: {x: 213, y: 0}
+  child: {fileID: 0}
+  count: 0
+--- !u!114 &-4671298785388573584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58eac34e58fd70148ab69bf437e07f8e, type: 3}
+  m_Name: BTRootNode
+  m_EditorClassIdentifier: 
+  guid: f761a98ac9df1974dba1fd30f8d6f6ce
+  comment: 
+  started: 0
+  state: 0
+  position: {x: 0, y: 0}
+  child: {fileID: -8611520467050699445}
+--- !u!114 &-4167045743158824573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b083ead8d2b444499a0c2c9aa248fa7, type: 3}
+  m_Name: Blackboard
+  m_EditorClassIdentifier: 
+  intParams:
+  - name: 
+    value: 0
+  floatParams: []
+  booleanParams: []
+  triggerParams: []
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c14c133803697648ac03ed033f4f2b9, type: 3}
+  m_Name: bt3
+  m_EditorClassIdentifier: 
+  rootNode: {fileID: -4671298785388573584}
+  state: 0
+  nodes:
+  - {fileID: -4671298785388573584}
+  - {fileID: -8611520467050699445}
+  blackboard: {fileID: -4167045743158824573}

@@ -1,0 +1,24 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <Style src="project://database/Assets/Scripts/Editor/BehaviourTree/BTEditorWindow.uss?fileID=7433441132597879392&amp;guid=2d381c81300b8774890269dc447bf95c&amp;type=3#BTEditorWindow" />
+    <uie:Toolbar>
+        <uie:ToolbarMenu display-tooltip-when-elided="true" name="Options" text="Options" />
+    </uie:Toolbar>
+    <SplitView fixed-pane-initial-dimension="180">
+        <ui:VisualElement name="LeftPanel">
+            <SplitView orientation="Vertical" fixed-pane-initial-dimension="235" style="align-items: auto; opacity: 1;">
+                <ui:VisualElement name="left">
+                    <ui:Label text="Inspector" display-tooltip-when-elided="true" style="background-color: rgb(32, 32, 32);" />
+                    <BTInspectorView />
+                </ui:VisualElement>
+                <ui:VisualElement name="right">
+                    <ui:Label text="Public Properties" display-tooltip-when-elided="true" style="background-color: rgb(32, 32, 32);" />
+                    <BTBlackboardView />
+                </ui:VisualElement>
+            </SplitView>
+        </ui:VisualElement>
+        <ui:VisualElement name="RightPanel">
+            <ui:Label text="BehaviourTree View" display-tooltip-when-elided="false" style="background-color: rgb(32, 32, 32);" />
+            <BTTreeView focusable="true" style="flex-grow: 1;" />
+        </ui:VisualElement>
+    </SplitView>
+</ui:UXML>

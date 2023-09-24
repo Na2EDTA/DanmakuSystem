@@ -1,0 +1,22 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class #SCRIPTNAME#: BTCompositeNode
+{
+    protected override void OnStart()
+    {
+        //do something...
+    }
+
+    protected override void OnStop()
+    {
+        //do something...
+    }
+
+    protected override State OnUpdate()
+    {
+        return State.Succeeded;
+        //do something...
+    }
+}
