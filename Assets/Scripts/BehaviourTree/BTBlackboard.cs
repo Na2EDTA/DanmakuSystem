@@ -1,10 +1,9 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-using Danmaku.OdinSerializer;
 
 [Serializable]
-public class BTBlackboard: SerializedScriptableObject
+public class BTBlackboard: ScriptableObject
 {
     public Danmaku.SerializeExtension.Dictionary<string, int> intVariables = new();
     public Danmaku.SerializeExtension.Dictionary<string, float> floatVariables = new();
@@ -36,5 +35,10 @@ public class BTBlackboard: SerializedScriptableObject
             return floatVariables[name];
         }
         else throw new Exception("Can't find the float variable.");
+    }
+
+    public BTBlackboard Clone()
+    {
+        return Instantiate(this);
     }
 }

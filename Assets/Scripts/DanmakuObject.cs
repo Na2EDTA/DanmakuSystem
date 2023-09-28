@@ -2,7 +2,6 @@ using System.Collections;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-using Danmaku.OdinSerializer;
 
 [RequireComponent(typeof(SpriteRenderer))]
 [RequireComponent(typeof(Velocity))]

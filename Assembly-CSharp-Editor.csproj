@@ -59,15 +59,15 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Editor\BehaviourTree\BTNodeView.cs" />
     <Compile Include="Assets\Scripts\Editor\BehaviourTree\SplitView.cs" />
-    <Compile Include="Assets\Scripts\Editor\BrokenlinePathEditor.cs" />
-    <Compile Include="Assets\Scripts\Editor\BezierPathEditor.cs" />
+    <Compile Include="Assets\Scripts\Editor\Curves\BrokenlinePathEditor.cs" />
+    <Compile Include="Assets\Scripts\Editor\Curves\BezierPathEditor.cs" />
     <Compile Include="Assets\Scripts\Editor\BehaviourTree\BTTreeView.cs" />
     <Compile Include="Assets\Scripts\Editor\BehaviourTree\BTBlackboardView.cs" />
     <Compile Include="Assets\Scripts\Editor\BehaviourTree\BTBlackboardEditor.cs" />
     <Compile Include="Assets\Scripts\Editor\BehaviourTree\BTInspectorView.cs" />
     <Compile Include="Assets\LeanTween\Editor\LeanTweenDocumentationEditor.cs" />
     <Compile Include="Assets\Scripts\Editor\VelocityEditor.cs" />
-    <Compile Include="Assets\Scripts\Editor\CircularPathEditor.cs" />
+    <Compile Include="Assets\Scripts\Editor\Curves\CircularPathEditor.cs" />
     <Compile Include="Assets\Scripts\Editor\DictionaryDrawer.cs" />
     <Compile Include="Assets\Scripts\Editor\BehaviourTree\BTEditorWindow.cs" />
   </ItemGroup>
@@ -914,10 +914,6 @@
     <ProjectReference Include="Assembly-CSharp.csproj">
       <Project>{658A5697-54BA-8139-3769-B057543A3B9D}</Project>
       <Name>Assembly-CSharp</Name>
-    </ProjectReference>
-    <ProjectReference Include="Danmaku.OdinSerializer.csproj">
-      <Project>{F39D0A34-7746-0EAD-2801-D1E6DD752789}</Project>
-      <Name>Danmaku.OdinSerializer</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

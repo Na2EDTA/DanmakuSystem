@@ -174,6 +174,7 @@ public class BTTree : ScriptableObject
         BTTree tree = Instantiate(this);
         tree.rootNode = tree.rootNode.Clone() as BTRootNode;
         tree.nodes = new List<BTNode>();
+        tree.blackboard = blackboard.Clone();
         Traverse(tree.rootNode, (n) => { tree.nodes.Add(n); });    
         return tree;
     }

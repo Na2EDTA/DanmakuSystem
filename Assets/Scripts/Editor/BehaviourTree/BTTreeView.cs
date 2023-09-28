@@ -71,6 +71,7 @@ public class BTTreeView : GraphView
     public void PopulateView(BTTree tree)
     {
         this.tree = tree;
+        if (!tree) return;
 
         graphViewChanged -= OnGraphViewChanged;
         DeleteElements(graphElements);

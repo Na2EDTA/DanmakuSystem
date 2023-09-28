@@ -3,9 +3,9 @@
     <uie:Toolbar>
         <uie:ToolbarMenu display-tooltip-when-elided="true" name="Options" text="Options" />
     </uie:Toolbar>
-    <SplitView fixed-pane-initial-dimension="180">
+    <SplitView fixed-pane-initial-dimension="207">
         <ui:VisualElement name="LeftPanel">
-            <SplitView orientation="Vertical" fixed-pane-initial-dimension="235" style="align-items: auto; opacity: 1;">
+            <SplitView orientation="Vertical" fixed-pane-initial-dimension="223" style="align-items: auto; opacity: 1;">
                 <ui:VisualElement name="left">
                     <ui:Label text="Inspector" display-tooltip-when-elided="true" style="background-color: rgb(32, 32, 32);" />
                     <BTInspectorView />

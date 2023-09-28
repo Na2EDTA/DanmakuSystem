@@ -16,7 +16,29 @@ MonoBehaviour:
   state: 0
   nodes:
   - {fileID: 7639848200345240110}
+  - {fileID: 5071312445480065450}
   blackboard: {fileID: 7650330062662930039}
+--- !u!114 &5071312445480065450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1651ed64ef268b4080ddf47844f902f, type: 3}
+  m_Name: BTLogNode
+  m_EditorClassIdentifier: 
+  guid: 86ccbdfe545a9cb468fcea4e48e23561
+  comment: 
+  started: 0
+  state: 0
+  tree: {fileID: 11400000}
+  position: {x: 214.04547, y: 8.000005}
+  startLog: csndm
+  stopLog: 
+  updateLog: 
 --- !u!114 &7639848200345240110
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33,8 +55,9 @@ MonoBehaviour:
   comment: 
   started: 0
   state: 0
+  tree: {fileID: 0}
   position: {x: 0, y: 0}
-  child: {fileID: 0}
+  child: {fileID: 5071312445480065450}
 --- !u!114 &7650330062662930039
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47,7 +70,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b083ead8d2b444499a0c2c9aa248fa7, type: 3}
   m_Name: Blackboard
   m_EditorClassIdentifier: 
-  intParams: []
-  floatParams: []
-  booleanParams: []
-  triggerParams: []
+  intVariables:
+    list: []
+  floatVariables:
+    list: []
+  booleanVariables:
+    list: []
+  triggerVariables:
+    list: []
