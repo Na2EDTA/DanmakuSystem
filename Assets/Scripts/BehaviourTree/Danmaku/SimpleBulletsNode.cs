@@ -1,29 +1,31 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
 
-public class SimpleBulletNode: BTActionNode
+public class SimpleBulletsNode: BTActionNode
 {
     public BulletStyle style;
     public RelativeTo relativeTo;
     public Vector2 bulletPosition;
-    public float angle, speed, aim, maxSpeed, acceleration, rotation;
-    
+    public int num, interval;
+    public float angle, angleSpread, 
+        speedStart, speedEnd, aim, maxSpeed, acceleration, rotation;
+
     protected override void OnStart()
     {
-        DanmakuEmission.CreateSimpleBullet(style, bulletPosition, 
-            angle, speed, aim, maxSpeed, acceleration, rotation);
+        DanmakuEmission.CreateSimpleBulletsAsync(num, interval, angle, angleSpread, speedStart, speedEnd, style, bulletPosition, aim, maxSpeed, acceleration, rotation);
     }
 
     protected override void OnStop()
     {
-
+        //do something...
     }
 
     protected override State OnUpdate()
     {
         return State.Succeeded;
+        //do something...
     }
 
     [Serializable]

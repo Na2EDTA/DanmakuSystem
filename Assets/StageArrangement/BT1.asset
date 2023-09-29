@@ -95,6 +95,7 @@ MonoBehaviour:
   tree: {fileID: 11400000}
   position: {x: 108.57144, y: 342.85715}
   bulletName: 
+  relativeTo: 0
   bulletPosition: {x: 0, y: 0}
   arguments: []
 --- !u!114 &-4020979300221006994
@@ -223,6 +224,35 @@ MonoBehaviour:
   position: {x: 69.97428, y: 70.857155}
   child: {fileID: -1497547917152364421}
   count: 3
+--- !u!114 &-498135466556985543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f14778df866a8984dafeeb80befd1e80, type: 3}
+  m_Name: SimpleBulletNode
+  m_EditorClassIdentifier: 
+  guid: df4d6b5e2e1b9b4419bd31aeb36d718d
+  comment: 
+  started: 0
+  state: 0
+  tree: {fileID: 11400000}
+  position: {x: 82.85716, y: 289.18857}
+  style:
+    color: 0
+    shape: 0
+  relativeTo: 0
+  bulletPosition: {x: 0, y: 0}
+  angle: 0
+  speed: 0
+  aim: 0
+  maxSpeed: 0
+  acceleration: 0
+  rotation: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -257,6 +287,7 @@ MonoBehaviour:
   - {fileID: -1497547917152364421}
   - {fileID: -7701956564937930759}
   - {fileID: -5518346849228301782}
+  - {fileID: -498135466556985543}
   blackboard: {fileID: -3291095199373937889}
 --- !u!114 &1042319157723746887
 MonoBehaviour:

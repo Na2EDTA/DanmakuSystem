@@ -79,6 +79,7 @@
     <Compile Include="Assets\LeanTween\Examples\Scripts\PathBezier.cs" />
     <Compile Include="Assets\Scripts\BehaviourTree\BTTree.cs" />
     <Compile Include="Assets\Scripts\BehaviourTree\CoreNodes\BTNode.cs" />
+    <Compile Include="Assets\Scripts\BehaviourTree\BasicNodes\BTInvokeNode.cs" />
     <Compile Include="Assets\Scripts\DanmakuCollider.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\PathSplines.cs" />
     <Compile Include="Assets\Scripts\BehaviourTree\BasicNodes\BTSequencerNode.cs" />
@@ -111,6 +112,7 @@
     <Compile Include="Assets\LeanTween\Examples\Scripts\GeneralCameraShake.cs" />
     <Compile Include="Assets\LeanTween\Examples\Archived\TestingPunch.cs" />
     <Compile Include="Assets\Scripts\BehaviourTree\Runtime\BTGraph.cs" />
+    <Compile Include="Assets\Scripts\BehaviourTree\Danmaku\SimpleBulletNode.cs" />
     <Compile Include="Assets\Scripts\BulletStyleManager.cs" />
     <Compile Include="Assets\Scripts\GameEnum.cs" />
     <Compile Include="Assets\LeanTween\Framework\LeanAudio.cs" />
@@ -133,15 +135,14 @@
     <Compile Include="Assets\LeanTween\Examples\Scripts\PathSpline2d.cs" />
     <Compile Include="Assets\Scripts\BehaviourTree\BTGraphView.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\PathSplinePerformance.cs" />
+    <Compile Include="Assets\Scripts\BehaviourTree\Danmaku\BulletNode.cs" />
     <Compile Include="Assets\Scripts\BehaviourTree\Runtime\BTNodeLinkData.cs" />
     <Compile Include="Assets\Scripts\MainCharacter.cs" />
     <Compile Include="Assets\Scripts\BehaviourTree\BasicNodes\BTIteratorNode.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\GeneralBasic.cs" />
     <Compile Include="Assets\LeanTween\Examples\Archived\TestingRigidbodyCS.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\Following.cs" />
-    <Compile Include="Assets\Scripts\BehaviourTree\BasicNodes\BTInvokeNode.cs" />
-    <Compile Include="Assets\Scripts\BehaviourTree\Danmaku\BulletNode.cs" />
-    <Compile Include="Assets\Scripts\BehaviourTree\Danmaku\SimpleBulletNode.cs" />
+    <Compile Include="Assets\Scripts\BehaviourTree\Danmaku\SimpleBulletsNode.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\LeanTween\ReadMe.txt" />
