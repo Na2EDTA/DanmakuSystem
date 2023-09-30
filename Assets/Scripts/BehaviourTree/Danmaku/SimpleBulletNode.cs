@@ -12,8 +12,7 @@ public class SimpleBulletNode: BTActionNode
     
     protected override void OnStart()
     {
-        DanmakuEmission.CreateSimpleBullet(style, bulletPosition, 
-            angle, speed, aim, maxSpeed, acceleration, rotation);
+        
     }
 
     protected override void OnStop()
@@ -23,6 +22,8 @@ public class SimpleBulletNode: BTActionNode
 
     protected override State OnUpdate()
     {
+        DanmakuEmission.CreateSimpleBullet(style, bulletPosition,
+               angle, speed, aim, maxSpeed, acceleration, rotation);
         return State.Succeeded;
     }
 

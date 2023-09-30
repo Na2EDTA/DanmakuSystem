@@ -33,7 +33,7 @@ public static class DanmakuEmission
     /// <param name="pos"></param>
     /// <param name="args">angle, speed, aim(bool), maxSpeed, acceleration, rotation</param>
     /// <returns></returns>
-    public static async Task CreateSimpleBulletsAsync(int num, int interval,float angle, float angleSpread, float speedStart, float speedEnd, BulletStyle style, Vector2 pos, params float[] args)
+    public static async UniTask CreateSimpleBulletsAsync(int num, int interval,float angle, float angleSpread, float speedStart, float speedEnd, BulletStyle style, Vector2 pos, params float[] args)
     {
         
         float speedSpread = speedEnd - speedStart;
@@ -47,7 +47,7 @@ public static class DanmakuEmission
         return;
     }
 
-    async static Task AsyncCreateSimpleBullet(int interval, BulletStyle style, Vector2 pos, params float[] args)
+    async static UniTask AsyncCreateSimpleBullet(int interval, BulletStyle style, Vector2 pos, params float[] args)
     {
         await UniTask.DelayFrame(interval);
         CreateSimpleBullet(style, pos, args);

@@ -69,6 +69,7 @@
     <Compile Include="Assets\LeanTween\Examples\Scripts\TestingUnitTests.cs" />
     <Compile Include="Assets\LeanTween\Framework\LTSeq.cs" />
     <Compile Include="Assets\BulletDef\Script\SOOBA.cs" />
+    <Compile Include="Assets\Scripts\BehaviourTree\Danmaku\SimpleBulletsNode.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\GeneralUISpace.cs" />
     <Compile Include="Assets\Scripts\BehaviourTree\BasicNodes\BTParallelNode.cs" />
     <Compile Include="Assets\Scripts\BulletStyle.cs" />
@@ -131,7 +132,7 @@
     <Compile Include="Assets\Scripts\Curves\BezierPath.cs" />
     <Compile Include="Assets\Scripts\BehaviourTree\BasicNodes\BTLogNode.cs" />
     <Compile Include="Assets\LeanTween\Framework\LeanTest.cs" />
-    <Compile Include="Assets\Scripts\BehaviourTree\BasicNodes\BTWaitNode.cs" />
+    <Compile Include="Assets\Scripts\BehaviourTree\BasicNodes\BTWaitSecondNode.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\PathSpline2d.cs" />
     <Compile Include="Assets\Scripts\BehaviourTree\BTGraphView.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\PathSplinePerformance.cs" />
@@ -142,7 +143,7 @@
     <Compile Include="Assets\LeanTween\Examples\Scripts\GeneralBasic.cs" />
     <Compile Include="Assets\LeanTween\Examples\Archived\TestingRigidbodyCS.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\Following.cs" />
-    <Compile Include="Assets\Scripts\BehaviourTree\Danmaku\SimpleBulletsNode.cs" />
+    <Compile Include="Assets\Scripts\BehaviourTree\BasicNodes\BTWaitFrameNode.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\LeanTween\ReadMe.txt" />

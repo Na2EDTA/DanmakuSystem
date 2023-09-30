@@ -1,5 +1,54 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8962320355822052788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 566deb95dad968248911a6a7f623961e, type: 3}
+  m_Name: BTWaitSecondNode
+  m_EditorClassIdentifier: 
+  guid: 567daa3d4f0b5b74aacc24b713c0bcc9
+  comment: 
+  started: 0
+  state: 0
+  tree: {fileID: 11400000}
+  position: {x: 809.1429, y: -12.149421}
+  duriation: 1
+  ignoreTimeScale: 0
+--- !u!114 &-8830200562921213625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f14778df866a8984dafeeb80befd1e80, type: 3}
+  m_Name: SimpleBulletNode
+  m_EditorClassIdentifier: 
+  guid: 786eee33df8b9024c849e0373d56fc75
+  comment: 
+  started: 0
+  state: 0
+  tree: {fileID: 11400000}
+  position: {x: 787.42865, y: -252.7143}
+  style:
+    color: 5
+    shape: 1
+  relativeTo: 0
+  bulletPosition: {x: 0, y: 0}
+  angle: 90
+  speed: 0.5
+  aim: 0
+  maxSpeed: 0
+  acceleration: 0
+  rotation: 0
 --- !u!114 &-8280871065426057134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19,8 +68,8 @@ MonoBehaviour:
   tree: {fileID: 11400000}
   position: {x: 567.4286, y: 280.00006}
   children:
-  - {fileID: -6660696975871543982}
-  - {fileID: 3390949756052520971}
+  - {fileID: -570456015561251401}
+  - {fileID: 7226454822210463300}
   - {fileID: 2038816846634116149}
 --- !u!114 &-7701956564937930759
 MonoBehaviour:
@@ -39,7 +88,7 @@ MonoBehaviour:
   started: 0
   state: 0
   tree: {fileID: 11400000}
-  position: {x: 100.57147, y: 405.28}
+  position: {x: 74.28575, y: 308.00003}
   unityEvent:
     m_PersistentCalls:
       m_Calls:
@@ -55,7 +104,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &-6660696975871543982
+--- !u!114 &-7163696795786351132
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -64,18 +113,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1651ed64ef268b4080ddf47844f902f, type: 3}
-  m_Name: BTLogNode
+  m_Script: {fileID: 11500000, guid: ad13dbe439ad701439d6228b43eb9763, type: 3}
+  m_Name: BTWaitFrameNode
   m_EditorClassIdentifier: 
-  guid: 27a75e3592b43b74793175a6c6d9127b
+  guid: 089b366c6ceef124bb147ccbb7350052
   comment: 
   started: 0
   state: 0
   tree: {fileID: 11400000}
-  position: {x: 793.7143, y: 202.28564}
-  startLog: start
-  stopLog: 
-  updateLog: 
+  position: {x: 825.7143, y: 50.28571}
+  duriation: 300
 --- !u!114 &-5518346849228301782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93,7 +140,7 @@ MonoBehaviour:
   started: 0
   state: 0
   tree: {fileID: 11400000}
-  position: {x: 108.57144, y: 342.85715}
+  position: {x: 82.28575, y: 245.7143}
   bulletName: 
   relativeTo: 0
   bulletPosition: {x: 0, y: 0}
@@ -132,7 +179,7 @@ MonoBehaviour:
   intVariables:
     list:
     - Key: branch
-      Value: 2
+      Value: 0
   floatVariables:
     list:
     - Key: a
@@ -141,7 +188,7 @@ MonoBehaviour:
     list: []
   triggerVariables:
     list: []
---- !u!114 &-3252096293755731929
+--- !u!114 &-2257653465888014877
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -151,15 +198,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 566deb95dad968248911a6a7f623961e, type: 3}
-  m_Name: BTWaitNode
+  m_Name: BTWaitSecondNode
   m_EditorClassIdentifier: 
-  guid: 2086df5744391764dadda251d91c415a
+  guid: 1747b930a3c6b4a4e8f6885fbe72e9ea
   comment: 
   started: 0
   state: 0
   tree: {fileID: 11400000}
-  position: {x: 777.71436, y: -190.85713}
-  duriation: 120
+  position: {x: 807.99994, y: -190.85718}
+  duriation: 2
+  ignoreTimeScale: 0
 --- !u!114 &-1681053106921165277
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,7 +225,7 @@ MonoBehaviour:
   started: 0
   state: 0
   tree: {fileID: 11400000}
-  position: {x: 777.7142, y: -108.571434}
+  position: {x: 795.4286, y: -117.714294}
   startLog: 
   stopLog: 
   updateLog: 3
@@ -198,11 +246,8 @@ MonoBehaviour:
   started: 0
   state: 0
   tree: {fileID: 11400000}
-  position: {x: 260.57144, y: 186.2857}
-  children:
-  - {fileID: 1042319157723746887}
-  - {fileID: 6907180866080670687}
-  - {fileID: -8280871065426057134}
+  position: {x: 260.57144, y: 159.99997}
+  children: []
   intVariableName: branch
 --- !u!114 &-966514463440424344
 MonoBehaviour:
@@ -222,8 +267,41 @@ MonoBehaviour:
   state: 0
   tree: {fileID: 11400000}
   position: {x: 69.97428, y: 70.857155}
-  child: {fileID: -1497547917152364421}
+  child: {fileID: 7978671210570893167}
   count: 3
+--- !u!114 &-570456015561251401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 614a961368dada7459d2a6193c4f7452, type: 3}
+  m_Name: SimpleBulletsNode
+  m_EditorClassIdentifier: 
+  guid: 9d9d2e389cd05f245b984e62746f6091
+  comment: 
+  started: 0
+  state: 0
+  tree: {fileID: 11400000}
+  position: {x: 792, y: 201.76433}
+  style:
+    color: 1
+    shape: 10
+  bulletPosition: {x: 0, y: 0}
+  num: 3
+  interval: 30
+  angle: 0
+  angleSpread: 60
+  speedStart: 0.3
+  speedEnd: 0.4
+  aim: 0
+  maxSpeed: 0
+  acceleration: 0
+  rotation: 0
+  relativeTo: 0
 --- !u!114 &-498135466556985543
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -241,7 +319,7 @@ MonoBehaviour:
   started: 0
   state: 0
   tree: {fileID: 11400000}
-  position: {x: 82.85716, y: 289.18857}
+  position: {x: 56.571465, y: 192.00003}
   style:
     color: 0
     shape: 0
@@ -270,24 +348,24 @@ MonoBehaviour:
   nodes:
   - {fileID: -4020979300221006994}
   - {fileID: 6907180866080670687}
-  - {fileID: 6160231989186855350}
   - {fileID: -966514463440424344}
-  - {fileID: 6027446401297884054}
   - {fileID: 5369774965888169864}
   - {fileID: -8280871065426057134}
   - {fileID: 1042319157723746887}
-  - {fileID: 2089177297390068282}
   - {fileID: -1681053106921165277}
   - {fileID: 2038816846634116149}
-  - {fileID: -3252096293755731929}
-  - {fileID: 3390949756052520971}
   - {fileID: 4122516426631675276}
   - {fileID: 7978671210570893167}
-  - {fileID: -6660696975871543982}
   - {fileID: -1497547917152364421}
   - {fileID: -7701956564937930759}
   - {fileID: -5518346849228301782}
   - {fileID: -498135466556985543}
+  - {fileID: -570456015561251401}
+  - {fileID: -8830200562921213625}
+  - {fileID: -2257653465888014877}
+  - {fileID: -8962320355822052788}
+  - {fileID: 7226454822210463300}
+  - {fileID: -7163696795786351132}
   blackboard: {fileID: -3291095199373937889}
 --- !u!114 &1042319157723746887
 MonoBehaviour:
@@ -308,8 +386,8 @@ MonoBehaviour:
   tree: {fileID: 11400000}
   position: {x: 562.28577, y: -198.85716}
   children:
-  - {fileID: 2089177297390068282}
-  - {fileID: -3252096293755731929}
+  - {fileID: -8830200562921213625}
+  - {fileID: -2257653465888014877}
   - {fileID: -1681053106921165277}
 --- !u!114 &2038816846634116149
 MonoBehaviour:
@@ -332,46 +410,6 @@ MonoBehaviour:
   startLog: 
   stopLog: 
   updateLog: 9
---- !u!114 &2089177297390068282
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1651ed64ef268b4080ddf47844f902f, type: 3}
-  m_Name: BTLogNode
-  m_EditorClassIdentifier: 
-  guid: 878a7e78cdfb7064186665249681feb4
-  comment: 
-  started: 0
-  state: 0
-  tree: {fileID: 11400000}
-  position: {x: 777.1428, y: -261.99152}
-  startLog: 
-  stopLog: 4
-  updateLog: 
---- !u!114 &3390949756052520971
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 566deb95dad968248911a6a7f623961e, type: 3}
-  m_Name: BTWaitNode
-  m_EditorClassIdentifier: 
-  guid: 6dbceb815c5d4f24baa6f2a12b869c90
-  comment: 
-  started: 0
-  state: 0
-  tree: {fileID: 11400000}
-  position: {x: 801.71423, y: 267.4286}
-  duriation: 90
 --- !u!114 &4122516426631675276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -389,7 +427,7 @@ MonoBehaviour:
   started: 0
   state: 0
   tree: {fileID: 11400000}
-  position: {x: 252.37465, y: 62.857155}
+  position: {x: 260.57144, y: -10.294555}
   children: []
 --- !u!114 &5369774965888169864
 MonoBehaviour:
@@ -411,45 +449,7 @@ MonoBehaviour:
   position: {x: 817.14294, y: 127.99998}
   startLog: 
   stopLog: end
-  updateLog: 6
---- !u!114 &6027446401297884054
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 566deb95dad968248911a6a7f623961e, type: 3}
-  m_Name: BTWaitNode
-  m_EditorClassIdentifier: 
-  guid: eafbbeacba2da884aa13170d50696f0f
-  comment: 
-  started: 0
-  state: 0
-  tree: {fileID: 11400000}
-  position: {x: 809.1429, y: -16.386824}
-  duriation: 60
---- !u!114 &6160231989186855350
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 566deb95dad968248911a6a7f623961e, type: 3}
-  m_Name: BTWaitNode
-  m_EditorClassIdentifier: 
-  guid: 25087274f42eb8c49a5f439279d7256b
-  comment: 
-  started: 0
-  state: 0
-  tree: {fileID: 0}
-  position: {x: 801.1429, y: 60.571434}
-  duriation: 120
+  updateLog: 
 --- !u!114 &6907180866080670687
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -469,9 +469,29 @@ MonoBehaviour:
   tree: {fileID: 0}
   position: {x: 550.52924, y: 42.28571}
   children:
-  - {fileID: 6027446401297884054}
-  - {fileID: 6160231989186855350}
+  - {fileID: -8962320355822052788}
+  - {fileID: -7163696795786351132}
   - {fileID: 5369774965888169864}
+--- !u!114 &7226454822210463300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 566deb95dad968248911a6a7f623961e, type: 3}
+  m_Name: BTWaitSecondNode
+  m_EditorClassIdentifier: 
+  guid: c7f66010f80696345ac385115797b2fb
+  comment: 
+  started: 0
+  state: 0
+  tree: {fileID: 11400000}
+  position: {x: 800, y: 263.42853}
+  duriation: 1.5
+  ignoreTimeScale: 0
 --- !u!114 &7978671210570893167
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -489,5 +509,8 @@ MonoBehaviour:
   started: 0
   state: 0
   tree: {fileID: 11400000}
-  position: {x: 262.85718, y: 384}
-  children: []
+  position: {x: 252.57146, y: 78.85715}
+  children:
+  - {fileID: 1042319157723746887}
+  - {fileID: 6907180866080670687}
+  - {fileID: -8280871065426057134}

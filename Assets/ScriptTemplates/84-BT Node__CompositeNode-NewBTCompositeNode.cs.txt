@@ -16,7 +16,7 @@ public class #SCRIPTNAME#: BTCompositeNode
 
     protected override State OnUpdate()
     {
-        return State.Succeeded;
         //do something...
+        return State.Succeeded;
     }
 }

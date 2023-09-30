@@ -11,7 +11,7 @@ public class BulletNode: BTActionNode
     public List<float> arguments;
     protected override void OnStart()
     {
-        Pool.instance.Create(bulletName, bulletPosition, arguments.ToArray());
+
     }
 
     protected override void OnStop()
@@ -21,6 +21,7 @@ public class BulletNode: BTActionNode
 
     protected override State OnUpdate()
     {
+        Pool.instance.Create(bulletName, bulletPosition, arguments.ToArray());
         return State.Succeeded;
     }
 
