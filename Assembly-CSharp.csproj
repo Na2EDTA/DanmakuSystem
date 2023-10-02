@@ -78,6 +78,7 @@
     <Compile Include="Assets\Scripts\Curves\CircularPath.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\PathSplineEndless.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\PathBezier.cs" />
+    <Compile Include="Assets\Scripts\BehaviourTree\BasicNodes\BTWaitFrameNode.cs" />
     <Compile Include="Assets\Scripts\BehaviourTree\BTTree.cs" />
     <Compile Include="Assets\Scripts\BehaviourTree\CoreNodes\BTNode.cs" />
     <Compile Include="Assets\Scripts\BehaviourTree\BasicNodes\BTInvokeNode.cs" />
@@ -143,7 +144,6 @@
     <Compile Include="Assets\LeanTween\Examples\Scripts\GeneralBasic.cs" />
     <Compile Include="Assets\LeanTween\Examples\Archived\TestingRigidbodyCS.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\Following.cs" />
-    <Compile Include="Assets\Scripts\BehaviourTree\BasicNodes\BTWaitFrameNode.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\LeanTween\ReadMe.txt" />

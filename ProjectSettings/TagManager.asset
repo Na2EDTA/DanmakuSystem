@@ -44,3 +44,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Upper Default
+    uniqueID: 1157859669
+    locked: 0
+  - name: Lower Additive
+    uniqueID: 1167198381
+    locked: 0
+  - name: Lower Subtractive
+    uniqueID: 1164024111
+    locked: 0
+  - name: Upper Additive
+    uniqueID: 2048797249
+    locked: 0
+  - name: Upper Subtractive
+    uniqueID: 1641221407
+    locked: 0

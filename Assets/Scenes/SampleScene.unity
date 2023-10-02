@@ -1206,7 +1206,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0.041015625, y: -0.028015137}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &66861473
@@ -1306,7 +1306,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -6390,7 +6390,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4670447830666054201, guid: fbc8e3b6dc091064da73be4d37a56de2, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4670447830666054206, guid: fbc8e3b6dc091064da73be4d37a56de2, type: 3}
       propertyPath: m_RootOrder
@@ -6398,11 +6398,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4670447830666054206, guid: fbc8e3b6dc091064da73be4d37a56de2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.59
+      value: -0.583
       objectReference: {fileID: 0}
     - target: {fileID: 4670447830666054206, guid: fbc8e3b6dc091064da73be4d37a56de2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.213
+      value: -0.462
       objectReference: {fileID: 0}
     - target: {fileID: 4670447830666054206, guid: fbc8e3b6dc091064da73be4d37a56de2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6440,6 +6440,38 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -1380570328, guid: c1e2c23fc9f7e5e4bb3a6cc1d56fb061, type: 3}
+    - target: {fileID: 4670447830666054207, guid: fbc8e3b6dc091064da73be4d37a56de2, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4670447830666054207, guid: fbc8e3b6dc091064da73be4d37a56de2, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4670447830666054207, guid: fbc8e3b6dc091064da73be4d37a56de2, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4670447830666054207, guid: fbc8e3b6dc091064da73be4d37a56de2, type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4670447830666054207, guid: fbc8e3b6dc091064da73be4d37a56de2, type: 3}
+      propertyPath: m_SortingOrder
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 4670447830666054207, guid: fbc8e3b6dc091064da73be4d37a56de2, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 2048797249
+      objectReference: {fileID: 0}
+    - target: {fileID: 4670447830666054207, guid: fbc8e3b6dc091064da73be4d37a56de2, type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4670447830666054207, guid: fbc8e3b6dc091064da73be4d37a56de2, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 35169c60d43b02346a5cfdfaad213355, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fbc8e3b6dc091064da73be4d37a56de2, type: 3}
 --- !u!1 &1282591061 stripped
@@ -7067,7 +7099,7 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
+  m_RenderingLayerMask: 513
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
@@ -7088,8 +7120,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1157859669
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 7498122, guid: 58ef5de35d5fee34f9de441f5b962678, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -7110,7 +7142,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1639532913}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.213, y: -0.216, z: 0}
+  m_LocalPosition: {x: -0.291, y: -0.505, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
