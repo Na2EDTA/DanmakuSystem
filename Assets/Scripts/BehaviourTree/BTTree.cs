@@ -11,7 +11,7 @@ public class BTTree : ScriptableObject
     public BTNode.State state = BTNode.State.Running;
     public List<BTNode> nodes = new();
     public BTBlackboard blackboard;
-    [HideInInspector] BTRuntime runtime;
+    [HideInInspector] public BTRuntime runtime;
 
     public BTNode.State Update()
     {

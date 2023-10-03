@@ -9,16 +9,37 @@ public class SimpleBulletsNode: BTActionNode
     UniTask t;
     public BulletStyle style;
     public Vector2 bulletPosition;
-    public int num, interval;
-    public float angle, angleSpread, 
+    public string num, interval, angle, angleSpread, 
         speedStart, speedEnd, aim, maxSpeed, acceleration, rotation;
+    float _angle, _angleSpread,
+        _speedStart, _speedEnd, _aim, _maxSpeed, _acceleration, _rotation;
+    int _num, _interval;
     public RelativeTo relativeTo;
 
     protected override void OnStart()
     {
-        t = UniTask.Create(async () => await DanmakuEmission.CreateSimpleBulletsAsync(num,
-            interval, angle, angleSpread, speedStart, speedEnd, style,
-            bulletPosition, aim, maxSpeed, acceleration, rotation));
+        if (relativeTo == RelativeTo.Local) bulletPosition +=
+        (Vector2)tree.runtime.gameObject.transform.position;
+
+        BTBlackboard b = tree.blackboard;
+
+        b.Parse(num, out _num);
+        b.Parse(interval, out _interval);
+
+        b.Parse(angle, out _angle);
+        b.Parse(angleSpread, out _angleSpread);
+
+        b.Parse(speedStart, out _speedStart);
+        b.Parse(speedEnd, out _speedEnd);
+
+        b.Parse(aim, out _aim);
+        b.Parse(maxSpeed, out _maxSpeed);
+        b.Parse(acceleration, out _acceleration);
+        b.Parse(rotation, out _rotation);
+
+        t = UniTask.Create(async () => await DanmakuEmission.CreateSimpleBulletsAsync(_num,
+             _interval, _angle, _angleSpread, _speedStart, _speedEnd, style,
+            bulletPosition, _aim, _maxSpeed, _acceleration, _rotation));
     }
 
     protected override void OnStop()

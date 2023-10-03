@@ -72,8 +72,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1157859669
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: -1380570328, guid: c1e2c23fc9f7e5e4bb3a6cc1d56fb061, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -100,13 +100,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFollowingTangent: 1
   followAngle: -90
-  target: {x: 0, y: 0}
   isAiming: 0
+  target: {x: 0, y: 0}
   method: 1
   x: 0
   y: 0
   magnitude: 0.1
   angle: -90
+  length: 0
+  path: {fileID: 0}
 --- !u!114 &-4224895569958120818
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119,7 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ecfcddf00dd11a4db6044f9acef99eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trans: {fileID: 0}
+  tr: {fileID: 0}
   isBullet: 1
   style:
     color: 5
@@ -127,5 +129,6 @@ MonoBehaviour:
   fallBackSprite: {fileID: -1380570328, guid: c1e2c23fc9f7e5e4bb3a6cc1d56fb061, type: 3}
   velocity: {fileID: 0}
   r: {fileID: 0}
-  paramList:
-  - da = 15
+  variables:
+    list: []
+  curves: []

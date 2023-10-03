@@ -9,6 +9,7 @@ public class BTRuntime : MonoBehaviour
     private void Start()
     {
         tree = tree.Clone();
+        tree.runtime = this;
     }
 
     void Update()

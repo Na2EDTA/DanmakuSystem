@@ -18,7 +18,12 @@ public class BTSelectorNode : BTCompositeNode
 
     protected override State OnUpdate()
     {
-        BTNode child = children[tree.blackboard.FindIntegerVariable(intVariableName)];
+        BTNode child;
+        if (tree.blackboard.FindVariable(intVariableName, out int value))
+            child = children[value];
+        else
+            throw new Exception($"Can't find variable {intVariableName}");
+
         return child.Update() switch
         {
             State.Running => State.Running,

@@ -8,10 +8,23 @@ public class BulletNode: BTActionNode
     public string bulletName; 
     public RelativeTo relativeTo;
     public Vector2 bulletPosition;
-    public List<float> arguments;
+    public List<string> arguments;
+    List<float> args;
+    [SerializeField] GameObject bullet;
+
     protected override void OnStart()
     {
+        if (relativeTo == RelativeTo.Local) bulletPosition += 
+                (Vector2) tree.runtime.gameObject.transform.position;
 
+        BTBlackboard b = tree.blackboard;
+
+        for (int i = 0; i < arguments.Count; i++)
+        {
+            float temp;
+            b.Parse(arguments[i], out temp);
+            args[i] = temp;
+        }
     }
 
     protected override void OnStop()
@@ -21,7 +34,7 @@ public class BulletNode: BTActionNode
 
     protected override State OnUpdate()
     {
-        Pool.instance.Create(bulletName, bulletPosition, arguments.ToArray());
+        bullet = Pool.instance.Create(bulletName, bulletPosition, args.ToArray());
         return State.Succeeded;
     }
 
@@ -30,5 +43,4 @@ public class BulletNode: BTActionNode
     {
         Local, World
     }
-
 }

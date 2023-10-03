@@ -145,6 +145,7 @@ MonoBehaviour:
   relativeTo: 0
   bulletPosition: {x: 0, y: 0}
   arguments: []
+  bullet: {fileID: 0}
 --- !u!114 &-4020979300221006994
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -266,7 +267,7 @@ MonoBehaviour:
   started: 0
   state: 0
   tree: {fileID: 11400000}
-  position: {x: 69.97428, y: 70.857155}
+  position: {x: 75.4286, y: 70.85715}
   child: {fileID: 7978671210570893167}
   count: 3
 --- !u!114 &-570456015561251401
@@ -367,6 +368,7 @@ MonoBehaviour:
   - {fileID: 7226454822210463300}
   - {fileID: -7163696795786351132}
   blackboard: {fileID: -3291095199373937889}
+  runtime: {fileID: 0}
 --- !u!114 &1042319157723746887
 MonoBehaviour:
   m_ObjectHideFlags: 0

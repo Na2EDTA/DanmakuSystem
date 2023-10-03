@@ -4,12 +4,17 @@ using UnityEngine;
 
 public class BTIteratorNode : BTDecoratorNode
 {
-    public int count = -1;
+    public string count = "inf";
+    int _count = -1;
     int i = 0;
 
     protected override void OnStart()
     {
+        BTBlackboard b = tree.blackboard;
 
+        if (count == "inf") return;
+
+        b.Parse(count, out _count);
     }
 
     protected override void OnStop()
@@ -19,7 +24,7 @@ public class BTIteratorNode : BTDecoratorNode
 
     protected override State OnUpdate()
     {
-        if (count == -1)//infinite loop
+        if (count == "inf")//infinite loop
         {
             state = child.Update();
             if (state == State.Failed)
@@ -30,7 +35,7 @@ public class BTIteratorNode : BTDecoratorNode
             else
                 state = child.state = State.Running;
         }
-        else if (i < count)//finite loop
+        else if (i < _count)//finite loop
         {
             state = child.Update();
             if (state == State.Failed)

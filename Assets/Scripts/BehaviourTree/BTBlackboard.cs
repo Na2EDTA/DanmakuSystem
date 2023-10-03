@@ -10,31 +10,106 @@ public class BTBlackboard: ScriptableObject
     public Danmaku.SerializeExtension.Dictionary<string, bool> booleanVariables = new();
     public Danmaku.SerializeExtension.Dictionary<string, bool> triggerVariables = new();
 
-    public bool FindBooleanVariable(string name)
+    public bool FindVariable(string name, out bool result)
     {
         if (booleanVariables.ContainsKey(name))
         {
-            return booleanVariables[name];
+            result = booleanVariables[name];
+            return true;
         }
-        else throw new Exception("Can't find the boolean variable.");
+        else
+        {
+            result = false;
+            return false;
+        }
     }
 
-    public int FindIntegerVariable(string name)
+    public bool FindVariable(string name, out int result)
     {
         if (intVariables.ContainsKey(name))
         {
-            return intVariables[name];
+            result = intVariables[name];
+            return true;
         }
-        else throw new Exception("Can't find the integer variable.");
+        else
+        {
+            result = 0;
+            return false;
+        }
     }
 
-    public float FindFloatVariable(string name)
+    public bool FindVariable(string name, out float result)
     {
         if (floatVariables.ContainsKey(name))
         {
-            return floatVariables[name];
+            result = floatVariables[name];
+            return true;
         }
-        else throw new Exception("Can't find the float variable.");
+        else
+        {
+            result = 0;
+            return false;
+        }
+    }
+
+    public bool Parse(string s, out bool result)
+    {
+        if (bool.TryParse(s, out bool temp))
+        {
+            result = temp;
+            return true;
+        }
+        else if (FindVariable(s, out temp))
+        {
+            result = temp;
+            return true;
+        }
+        else
+        {
+            Debug.LogWarning($"Can't find variable {s} in {this}.");
+            result = false;
+            return false;
+        }
+    }
+
+    public bool Parse(string s, out int result)
+    {
+        if (int.TryParse(s, out int temp))
+        {
+            result = temp;
+            return true;
+        }
+        else if (FindVariable(s, out temp))
+        {
+            result = temp;
+            return true;
+        }
+        else
+        {
+            Debug.LogWarning($"Can't find variable {s} in {this}.");
+            result = 0;
+            return false;
+        }
+    }
+
+    public bool Parse(string s, out float result)
+    {
+        if (float.TryParse(s, out float temp))
+        {
+            result = temp;
+            return true;
+        }
+        else if (FindVariable(s, out temp))
+        {
+            result = temp;
+            return true;
+        }
+        else
+        {
+            result = 0;
+            Debug.LogWarning($"Can't find variable {s} in {this}.");
+            return false;
+        }
     }
 
     public BTBlackboard Clone()
