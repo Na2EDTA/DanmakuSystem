@@ -11,7 +11,7 @@ public class BTTree : ScriptableObject
     public BTNode.State state = BTNode.State.Running;
     public List<BTNode> nodes = new();
     public BTBlackboard blackboard;
-    [HideInInspector] public BTRuntime runtime;
+    public BTRuntime runtime;
 
     public BTNode.State Update()
     {
@@ -175,7 +175,7 @@ public class BTTree : ScriptableObject
         tree.rootNode = tree.rootNode.Clone() as BTRootNode;
         tree.nodes = new List<BTNode>();
         tree.blackboard = blackboard.Clone();
-        Traverse(tree.rootNode, (n) => { tree.nodes.Add(n); });    
+        Traverse(tree.rootNode, (n) => { tree.nodes.Add(n); n.tree = tree; });    
         return tree;
     }
 }

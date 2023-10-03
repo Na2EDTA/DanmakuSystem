@@ -37,11 +37,11 @@ MonoBehaviour:
   started: 0
   state: 0
   tree: {fileID: 11400000}
-  position: {x: 787.42865, y: -252.7143}
+  position: {x: 787.4285, y: -190.85721}
   style:
     color: 5
     shape: 1
-  relativeTo: 0
+  relativeTo: 1
   bulletPosition: {x: 0, y: 0}
   angle: 90
   speed: 0.5
@@ -206,7 +206,7 @@ MonoBehaviour:
   started: 0
   state: 0
   tree: {fileID: 11400000}
-  position: {x: 807.99994, y: -190.85718}
+  position: {x: 795.4286, y: -269.80008}
   duriation: 2
   ignoreTimeScale: 0
 --- !u!114 &-1681053106921165277
@@ -388,8 +388,8 @@ MonoBehaviour:
   tree: {fileID: 11400000}
   position: {x: 562.28577, y: -198.85716}
   children:
-  - {fileID: -8830200562921213625}
   - {fileID: -2257653465888014877}
+  - {fileID: -8830200562921213625}
   - {fileID: -1681053106921165277}
 --- !u!114 &2038816846634116149
 MonoBehaviour:

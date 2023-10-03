@@ -28,6 +28,7 @@ public class BTSequencerNode : BTCompositeNode
                 break;
 
             case State.Failed:
+                Debug.LogError($"{child.name} failed in running!");
                 return State.Failed;
         }
 

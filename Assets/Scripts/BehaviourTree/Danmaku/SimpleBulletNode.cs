@@ -14,7 +14,7 @@ public class SimpleBulletNode: BTActionNode
     protected override void OnStart()
     {
         if (relativeTo == RelativeTo.Local) bulletPosition +=
-        (Vector2)tree.runtime.gameObject.transform.position;
+        (Vector2) tree.runtime.gameObject.transform.position;
 
         BTBlackboard b = tree.blackboard;
         b.Parse(angle, out _angle);
