@@ -54,8 +54,8 @@ public class Pool : MonoBehaviour
         GameObject obj = mainPool[objType].Dequeue();
         obj.transform.position = pos;
         obj.GetComponent<DanmakuObject>().InitParams(ps);
-        obj.SetActive(true);
         obj.transform.SetAsLastSibling();
+        obj.SetActive(true);
         return obj;
     }
 
@@ -65,8 +65,8 @@ public class Pool : MonoBehaviour
         GameObject obj = mainPool[objType].Dequeue();
         obj.transform.position = pos;
         obj.GetComponent<DanmakuObject>().InitParams(ps);
-        obj.SetActive(true);
         obj.transform.SetAsLastSibling();
+        obj.SetActive(true);
 
         return obj;
     }
