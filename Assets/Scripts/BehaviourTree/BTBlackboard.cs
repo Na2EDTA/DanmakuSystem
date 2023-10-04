@@ -52,6 +52,52 @@ public class BTBlackboard: ScriptableObject
         }
     }
 
+    public bool SetVariable(string name, IComparable ori)
+    {
+        float f = 0;
+        int i = 0;
+        bool b = false;
+
+        switch(ori)
+        {
+            case int:
+                i = (int)ori;
+                break;
+
+            case float:
+                f = (float)ori;
+                break;
+
+            case bool:
+                b = (bool)ori;
+                break;
+
+            default:
+                return false;
+        }
+
+        if (floatVariables.ContainsKey(name))
+        {
+            floatVariables[name] = f;
+            return true;
+        }
+        else if (intVariables.ContainsKey(name))
+        {
+            intVariables[name] = i;
+            return true;
+        }
+        else if (booleanVariables.ContainsKey(name))
+        {
+            booleanVariables[name] = b;
+            return true;
+        }
+        else
+        {
+            Debug.LogError($"Can't find variable {name}");
+            return false;
+        }
+    }
+
     public bool Parse(string s, out bool result)
     {
         if (bool.TryParse(s, out bool temp))

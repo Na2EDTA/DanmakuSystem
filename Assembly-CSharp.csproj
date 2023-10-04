@@ -71,6 +71,8 @@
     <Compile Include="Assets\BulletDef\Script\SOOBA.cs" />
     <Compile Include="Assets\Scripts\BehaviourTree\Danmaku\SimpleBulletsNode.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\GeneralUISpace.cs" />
+    <Compile Include="Assets\Scripts\BehaviourTree\BasicNodes\BTCalculateNode.cs" />
+    <Compile Include="Assets\Scripts\BehaviourTree\BTBlackboardUtility.cs" />
     <Compile Include="Assets\Scripts\BehaviourTree\BasicNodes\BTParallelNode.cs" />
     <Compile Include="Assets\Scripts\BulletStyle.cs" />
     <Compile Include="Assets\Scripts\BehaviourTree\BTBlackboard.cs" />
@@ -144,7 +146,6 @@
     <Compile Include="Assets\LeanTween\Examples\Scripts\GeneralBasic.cs" />
     <Compile Include="Assets\LeanTween\Examples\Archived\TestingRigidbodyCS.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\Following.cs" />
-    <Compile Include="Assets\Scripts\BehaviourTree\BTBlackboardUtility.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\LeanTween\ReadMe.txt" />

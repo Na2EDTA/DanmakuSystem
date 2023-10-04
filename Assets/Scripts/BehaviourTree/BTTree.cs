@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
-using UnityEditor.Experimental.GraphView;
 
 [CreateAssetMenu]
 public class BTTree : ScriptableObject
@@ -19,6 +18,7 @@ public class BTTree : ScriptableObject
         return state;
     }
 
+#if UNITY_EDITOR
     public BTBlackboard CreateBlackboard()
     {
         BTBlackboard blackboard = CreateInstance<BTBlackboard>();
@@ -37,8 +37,7 @@ public class BTTree : ScriptableObject
 
         Undo.RecordObject(this, "Behaviour Tree (Create Node)");
         nodes.Add(node);
-
-        if(!Application.isPlaying)
+        if (!Application.isPlaying)
         {
             AssetDatabase.AddObjectToAsset(node, this);
         }
@@ -137,7 +136,7 @@ public class BTTree : ScriptableObject
                 break;
         }*/
     }
-
+#endif
     public List<BTNode> GetChildren(BTNode parent)
     {
         List<BTNode> list = new();

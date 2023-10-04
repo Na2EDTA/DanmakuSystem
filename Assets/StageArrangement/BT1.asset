@@ -41,14 +41,34 @@ MonoBehaviour:
   style:
     color: 5
     shape: 1
-  relativeTo: 1
+  relativeTo: 0
   bulletPosition: {x: 0, y: 0}
-  angle: 90
+  angle: a
   speed: 0.5
   aim: 0
   maxSpeed: 0
   acceleration: 0
   rotation: 0
+--- !u!114 &-8472513753334056615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e342e7b4d0f3321409e1f7197234f216, type: 3}
+  m_Name: BTCalculateNode
+  m_EditorClassIdentifier: 
+  guid: 3f46664aa1c9d654a8618594b09b1a21
+  comment: 
+  started: 0
+  state: 0
+  tree: {fileID: 11400000}
+  position: {x: 802.2857, y: -346.815}
+  targetVariable: a
+  expression: a+5
 --- !u!114 &-8280871065426057134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71,6 +91,28 @@ MonoBehaviour:
   - {fileID: -570456015561251401}
   - {fileID: 7226454822210463300}
   - {fileID: 2038816846634116149}
+--- !u!114 &-8031346378290092990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30f88139afc2dba499cfb6af698b380f, type: 3}
+  m_Name: BTSequencerNode
+  m_EditorClassIdentifier: 
+  guid: 413901566056bee45be05581522c0bd3
+  comment: 
+  started: 0
+  state: 0
+  tree: {fileID: 11400000}
+  position: {x: 339.99994, y: -298.28564}
+  children:
+  - {fileID: -3878076803339813008}
+  - {fileID: -6710197382767729905}
+  - {fileID: -5568990368243956528}
 --- !u!114 &-7701956564937930759
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,6 +165,45 @@ MonoBehaviour:
   tree: {fileID: 11400000}
   position: {x: 825.7143, y: 50.28571}
   duriation: 300
+--- !u!114 &-6710197382767729905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad13dbe439ad701439d6228b43eb9763, type: 3}
+  m_Name: BTWaitFrameNode
+  m_EditorClassIdentifier: 
+  guid: 0bb67b1630a66c44289622dc0fef9102
+  comment: 
+  started: 0
+  state: 0
+  tree: {fileID: 11400000}
+  position: {x: 558.2856, y: -286.28564}
+  duriation: 3
+--- !u!114 &-5568990368243956528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e342e7b4d0f3321409e1f7197234f216, type: 3}
+  m_Name: BTCalculateNode
+  m_EditorClassIdentifier: 
+  guid: c63b62d7f349c614c88d143775f0ff07
+  comment: 
+  started: 0
+  state: 0
+  tree: {fileID: 11400000}
+  position: {x: 570.2857, y: -363.4286}
+  targetVariable: a
+  expression: a+5
 --- !u!114 &-5518346849228301782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,7 +245,56 @@ MonoBehaviour:
   state: 0
   tree: {fileID: 0}
   position: {x: -99.192955, y: 70.857155}
-  child: {fileID: -966514463440424344}
+  child: {fileID: -3735953284710900497}
+--- !u!114 &-3878076803339813008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f14778df866a8984dafeeb80befd1e80, type: 3}
+  m_Name: SimpleBulletNode
+  m_EditorClassIdentifier: 
+  guid: 8f4cc7a6e523c9942a79c30ed1c0ed16
+  comment: 
+  started: 0
+  state: 0
+  tree: {fileID: 11400000}
+  position: {x: 578.2857, y: -437.05167}
+  style:
+    color: 1
+    shape: 1
+  relativeTo: 1
+  bulletPosition: {x: 0, y: 0}
+  angle: a
+  speed: 0.15
+  aim: 0
+  maxSpeed: 0.3
+  acceleration: 0
+  rotation: 0
+--- !u!114 &-3735953284710900497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b742235029ec73048b1a5a2c4273db34, type: 3}
+  m_Name: BTIteratorNode
+  m_EditorClassIdentifier: 
+  guid: d0f25f374744edb46add1f499e30c374
+  comment: 
+  started: 0
+  state: 0
+  tree: {fileID: 11400000}
+  position: {x: 101.71419, y: -146.28572}
+  child: {fileID: -8031346378290092990}
+  count: inf
 --- !u!114 &-3291095199373937889
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -184,7 +314,7 @@ MonoBehaviour:
   floatVariables:
     list:
     - Key: a
-      Value: 5
+      Value: 0
   booleanVariables:
     list: []
   triggerVariables:
@@ -367,6 +497,12 @@ MonoBehaviour:
   - {fileID: -8962320355822052788}
   - {fileID: 7226454822210463300}
   - {fileID: -7163696795786351132}
+  - {fileID: -8472513753334056615}
+  - {fileID: -3735953284710900497}
+  - {fileID: -3878076803339813008}
+  - {fileID: -6710197382767729905}
+  - {fileID: -8031346378290092990}
+  - {fileID: -5568990368243956528}
   blackboard: {fileID: -3291095199373937889}
   runtime: {fileID: 0}
 --- !u!114 &1042319157723746887

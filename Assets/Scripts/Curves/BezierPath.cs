@@ -242,6 +242,7 @@ public class BezierPath : DanmakuPath, IEquatable<BezierPath>
         length = EvaluateLength(segments.Count);
     }
 
+#if UNITY_EDITOR
     public void Render()
     {
         for (int i = 0; i < segments.Count; i++)
@@ -255,6 +256,7 @@ public class BezierPath : DanmakuPath, IEquatable<BezierPath>
             Undo.RecordObject(this, "Modifies curve");
         }
     }
+#endif
 
     /// <summary>
     /// 引用判等
@@ -481,6 +483,7 @@ public class BezierCurve: IEquatable<BezierCurve>
         }
     }
 
+#if UNITY_EDITOR
     public void Render(in Color color)
     {
 
@@ -496,6 +499,7 @@ public class BezierCurve: IEquatable<BezierCurve>
             start = end;
         }
     }
+#endif
 
     /// <summary>
     /// 判定逻辑相等
