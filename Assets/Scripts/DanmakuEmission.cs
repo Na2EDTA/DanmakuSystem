@@ -20,8 +20,8 @@ public static class DanmakuEmission
     public static GameObject CreateSimpleBullet(BulletStyle style, Vector2 pos, params float[] args)
     {
         GameObject obj = Pool.instance?.Create("Simple", pos, args);
-        DanmakuCollider collider = obj.GetComponent<DanmakuCollider>();
-        obj.GetComponent<SpriteRenderer>().sprite = BulletStyleManager.instance?.GetStyle(style.color,style.shape, out collider.mainArg);
+        DanmakuCollider collider = obj?.GetComponent<DanmakuCollider>();
+        obj.GetComponent<SpriteRenderer>().sprite = BulletStyleManager.instance.GetStyle(style.color,style.shape, out collider.mainArg);
         return obj;
     }
 

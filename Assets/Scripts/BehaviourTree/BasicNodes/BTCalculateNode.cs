@@ -40,8 +40,8 @@ public class BTCalculateNode: BTActionNode
 
     public float ParseExpression(string expression)
     {
-        string expr = string.Empty;
         expression = expression.Replace(" ", string.Empty);
+        string expr = expression;
 
         // 检查表达式中的变量名是否在blackboard中存在
         var variables = GetVariables(expression);
@@ -55,13 +55,18 @@ public class BTCalculateNode: BTActionNode
         }
 
         // 替换变量名为对应的值
-        foreach (var variable in variables)
+        for (int i = 0; i < variables.Count; i++)
         {
-            if(b.floatVariables.ContainsKey(variable))
-                expr = expression.Replace(variable, b.floatVariables[variable].ToString());
-            else if(b.intVariables.ContainsKey(variable))
-                expr = expression.Replace(variable, b.intVariables[variable].ToString());
+            if (b.floatVariables.ContainsKey(variables[i]))
+            {
+                expr = expr.Replace(variables[i], b.floatVariables[variables[i]].ToString());
+            }
+            else if (b.intVariables.ContainsKey(variables[i]))
+            {
+                expr = expr.Replace(variables[i], b.intVariables[variables[i]].ToString());
+            }
         }
+
 
         // 计算表达式的结果
         try

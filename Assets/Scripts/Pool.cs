@@ -5,6 +5,7 @@ using UnityEngine;
 public class Pool : MonoBehaviour
 {
     public static Pool instance;
+    [HideInInspector] public static int order = 0; 
     Dictionary<string, Queue<GameObject>> mainPool = new();
     Dictionary<string, GameObject> dict = new();
     [SerializeField] GameObject[] prefabList;
@@ -52,10 +53,14 @@ public class Pool : MonoBehaviour
     {
         if (mainPool[objType].Count < defaultLeastCount) Fill(objType);
         GameObject obj = mainPool[objType].Dequeue();
-        obj.transform.position = pos;
-        obj.GetComponent<DanmakuObject>().InitParams(ps);
-        obj.transform.SetAsLastSibling();
-        obj.SetActive(true);
+        if (obj)
+        {
+            obj.transform.position = pos;
+            obj.GetComponent<DanmakuObject>().InitParams(ps);
+            obj.SetActive(true);
+            obj.GetComponent<SpriteRenderer>().sortingOrder = order;
+            order++;
+        }
         return obj;
     }
 
@@ -65,9 +70,9 @@ public class Pool : MonoBehaviour
         GameObject obj = mainPool[objType].Dequeue();
         obj.transform.position = pos;
         obj.GetComponent<DanmakuObject>().InitParams(ps);
-        obj.transform.SetAsLastSibling();
         obj.SetActive(true);
-
+        obj.GetComponent<SpriteRenderer>().sortingOrder = order;
+        order++;
         return obj;
     }
 

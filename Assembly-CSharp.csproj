@@ -117,6 +117,7 @@
     <Compile Include="Assets\LeanTween\Examples\Archived\TestingPunch.cs" />
     <Compile Include="Assets\Scripts\BehaviourTree\Runtime\BTGraph.cs" />
     <Compile Include="Assets\Scripts\BehaviourTree\Danmaku\SimpleBulletNode.cs" />
+    <Compile Include="Assets\BulletDef\Script\Spell00.cs" />
     <Compile Include="Assets\Scripts\BulletStyleManager.cs" />
     <Compile Include="Assets\Scripts\GameEnum.cs" />
     <Compile Include="Assets\LeanTween\Framework\LeanAudio.cs" />

@@ -8,13 +8,13 @@ public class SimpleBulletsNode: BTActionNode
 {   
     UniTask t;
     public BulletStyle style;
+    public RelativeTo relativeTo;
     public Vector2 bulletPosition;
     public string num, interval, angle, angleSpread, 
         speedStart, speedEnd, aim, maxSpeed, acceleration, rotation;
     float _angle, _angleSpread,
         _speedStart, _speedEnd, _aim, _maxSpeed, _acceleration, _rotation;
     int _num, _interval;
-    public RelativeTo relativeTo;
 
     protected override void OnStart()
     {
