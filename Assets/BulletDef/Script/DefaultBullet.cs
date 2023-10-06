@@ -1,5 +1,6 @@
 using UnityEngine;
 using System;
+
 public class DefaultBullet : DanmakuObject 
 {
     MainCharacter ch;
