@@ -17,9 +17,29 @@ MonoBehaviour:
   started: 0
   state: 0
   tree: {fileID: 11400000}
-  position: {x: 196.47856, y: -2.2500057}
+  position: {x: 178.65611, y: 6.8571715}
   child: {fileID: 6586606533506108343}
   count: inf
+--- !u!114 &-6283389849601166838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e342e7b4d0f3321409e1f7197234f216, type: 3}
+  m_Name: BTCalculateNode
+  m_EditorClassIdentifier: 
+  guid: 411bc8e57293ee74a85902579178dff6
+  comment: 
+  started: 0
+  state: 0
+  tree: {fileID: 11400000}
+  position: {x: 1088.7142, y: -38.857117}
+  targetVariable: angle
+  expression: angle+72
 --- !u!114 &-4214471150400750382
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -74,7 +94,7 @@ MonoBehaviour:
     - Key: rvel
       Value: 0
     - Key: racc
-      Value: 0.5
+      Value: 0.05
   booleanVariables:
     list: []
   triggerVariables:
@@ -120,8 +140,63 @@ MonoBehaviour:
   - {fileID: -4214471150400750382}
   - {fileID: -1589392162671687166}
   - {fileID: 7196125267378151654}
+  - {fileID: 3981636861513262026}
+  - {fileID: 2934568032227816877}
+  - {fileID: -6283389849601166838}
+  - {fileID: 1520313871416872107}
+  - {fileID: 776561255747229983}
   blackboard: {fileID: -2792395051585261669}
   runtime: {fileID: 0}
+--- !u!114 &776561255747229983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f14778df866a8984dafeeb80befd1e80, type: 3}
+  m_Name: SimpleBulletNode
+  m_EditorClassIdentifier: 
+  guid: 73872a1f4c3382b40a174b90a150969c
+  comment: 
+  started: 0
+  state: 0
+  tree: {fileID: 11400000}
+  position: {x: 420.00003, y: 108.57138}
+  style:
+    color: 1
+    shape: 1
+  relativeTo: 0
+  bulletPosition: {x: 0, y: 0}
+  angle: 90
+  speed: 1
+  aim: 0
+  maxSpeed: 0
+  acceleration: 0
+  rotation: 0
+--- !u!114 &1520313871416872107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30f88139afc2dba499cfb6af698b380f, type: 3}
+  m_Name: BTSequencerNode
+  m_EditorClassIdentifier: 
+  guid: ffe826167191adc48b4ffee453f38d68
+  comment: 
+  started: 0
+  state: 0
+  tree: {fileID: 11400000}
+  position: {x: 866.8572, y: -95.42857}
+  children:
+  - {fileID: 2934568032227816877}
+  - {fileID: -6283389849601166838}
 --- !u!114 &1826406003351815801
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,6 +216,55 @@ MonoBehaviour:
   tree: {fileID: 11400000}
   position: {x: 0, y: 0}
   child: {fileID: -6697698606078363184}
+--- !u!114 &2934568032227816877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f14778df866a8984dafeeb80befd1e80, type: 3}
+  m_Name: SimpleBulletNode
+  m_EditorClassIdentifier: 
+  guid: 6778fdfa302d5ac429a4fc51e75a2aeb
+  comment: 
+  started: 0
+  state: 0
+  tree: {fileID: 11400000}
+  position: {x: 1089.7142, y: -136.57144}
+  style:
+    color: 3
+    shape: 15
+  relativeTo: 0
+  bulletPosition: {x: 0, y: 0}
+  angle: angle
+  speed: 1
+  aim: 0
+  maxSpeed: 0
+  acceleration: 0
+  rotation: 0
+--- !u!114 &3981636861513262026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b742235029ec73048b1a5a2c4273db34, type: 3}
+  m_Name: BTIteratorNode
+  m_EditorClassIdentifier: 
+  guid: 1e67803622febae4d8033e7472faaf12
+  comment: 
+  started: 0
+  state: 0
+  tree: {fileID: 11400000}
+  position: {x: 675, y: -176.57143}
+  child: {fileID: 1520313871416872107}
+  count: 5
 --- !u!114 &6586606533506108343
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,9 +282,9 @@ MonoBehaviour:
   started: 0
   state: 0
   tree: {fileID: 11400000}
-  position: {x: 412.17108, y: -13.160055}
+  position: {x: 428, y: 35.428543}
   children:
-  - {fileID: -4214471150400750382}
+  - {fileID: 3981636861513262026}
   - {fileID: -1589392162671687166}
   - {fileID: 7196125267378151654}
 --- !u!114 &7196125267378151654
@@ -180,6 +304,6 @@ MonoBehaviour:
   started: 0
   state: 0
   tree: {fileID: 11400000}
-  position: {x: 705.7141, y: 100.52244}
+  position: {x: 713.7143, y: 116.571465}
   targetVariable: angle
   expression: angle+rvel

@@ -7074,7 +7074,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1612494520}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8bb5107533afbd445a9aafe18627a441, type: 3}
   m_Name: 
@@ -7097,8 +7097,8 @@ MonoBehaviour:
       Value: 1.6
   curves: []
   bulletStyle:
-    color: 5
-    shape: 1
+    color: 3
+    shape: 15
 --- !u!114 &1612494524
 MonoBehaviour:
   m_ObjectHideFlags: 0

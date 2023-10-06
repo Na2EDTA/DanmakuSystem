@@ -48,11 +48,15 @@ public class BTIteratorNode : BTDecoratorNode
                 i++;
                 state = child.state = State.Running;
             }
+            return state;
         }
         else//finished
         {
             state = State.Succeeded;
+            i = 0;
         }
+
+
         return state;
     }
 }
