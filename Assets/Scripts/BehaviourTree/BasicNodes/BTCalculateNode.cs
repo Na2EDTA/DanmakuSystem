@@ -1,8 +1,6 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-using Microsoft.CodeAnalysis;
-
 
 public class BTCalculateNode: BTActionNode
 {
@@ -21,7 +19,7 @@ public class BTCalculateNode: BTActionNode
 
     protected override void OnStop()
     {
-        
+        //CSharpScript.EvaluateAsync("", ScriptOptions.Default.WithImports("System"), this);
     }
 
     protected override State OnUpdate()
