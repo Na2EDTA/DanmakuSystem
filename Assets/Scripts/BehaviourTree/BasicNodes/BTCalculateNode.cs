@@ -1,6 +1,9 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using Microsoft.CodeAnalysis.Scripting;
+using Microsoft.CodeAnalysis.CSharp.Scripting;
+using System.Linq;
 
 public class BTCalculateNode: BTActionNode
 {
@@ -19,7 +22,7 @@ public class BTCalculateNode: BTActionNode
 
     protected override void OnStop()
     {
-        //CSharpScript.EvaluateAsync("", ScriptOptions.Default.WithImports("System"), this);
+        
     }
 
     protected override State OnUpdate()
@@ -34,6 +37,7 @@ public class BTCalculateNode: BTActionNode
             newInt = (int)MathF.Round(ParseExpression(expression));
             b.SetVariable(targetVariable, newInt);
         }
+
         return State.Succeeded;
     }
 
@@ -70,11 +74,17 @@ public class BTCalculateNode: BTActionNode
         // 计算表达式的结果
         try
         {
+            //var opt = ScriptOptions.Default.WithImports("System.Math");
+            //var runner = CSharpScript.EvaluateAsync<float>("(float)" + "(" + expr + ")", opt);
             var result = Convert.ToSingle(new System.Data.DataTable().Compute(expr, null));
+            
+            
+            //return runner.Result;
             return result;
         }
         catch (Exception ex)
         {
+            Debug.Log(ex);
             throw new Exception("Failed to evaluate the expression.", ex);
         }
     }
@@ -106,4 +116,25 @@ public class BTCalculateNode: BTActionNode
         }
         return variables;
     }
+
+    public static T EvaluateCode<T>(string code)
+    {
+        var options = ScriptOptions.Default.WithImports("System");
+        var script = CSharpScript.Create<T>(code, options);
+        var compilation = script.GetCompilation();
+        var diagnostics = compilation.GetDiagnostics();
+
+        if (diagnostics.Any())
+        {
+            for (int i = 0; i < diagnostics.Length; i++)
+            {
+                Debug.LogWarning(diagnostics[i]);
+            }
+            
+        }
+
+        var result = script.RunAsync().Result;
+        return result.ReturnValue;
+    }
+
 }
