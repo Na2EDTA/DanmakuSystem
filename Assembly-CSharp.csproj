@@ -55,6 +55,36 @@
   </PropertyGroup>
   <ItemGroup>
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
+    <Analyzer Include="I:\DanmakuSystem\Assets\Packages\Microsoft.CodeAnalysis.Analyzers.3.3.4\analyzers\dotnet\vb\cs\Microsoft.CodeAnalysis.Analyzers.resources.dll" />
+    <Analyzer Include="I:\DanmakuSystem\Assets\Packages\Microsoft.CodeAnalysis.Analyzers.3.3.4\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
+    <Analyzer Include="I:\DanmakuSystem\Assets\Packages\Microsoft.CodeAnalysis.Analyzers.3.3.4\analyzers\dotnet\cs\pt-BR\Microsoft.CodeAnalysis.Analyzers.resources.dll" />
+    <Analyzer Include="I:\DanmakuSystem\Assets\Packages\Microsoft.CodeAnalysis.Analyzers.3.3.4\analyzers\dotnet\vb\ja\Microsoft.CodeAnalysis.Analyzers.resources.dll" />
+    <Analyzer Include="I:\DanmakuSystem\Assets\Packages\Microsoft.CodeAnalysis.Analyzers.3.3.4\analyzers\dotnet\vb\tr\Microsoft.CodeAnalysis.Analyzers.resources.dll" />
+    <Analyzer Include="I:\DanmakuSystem\Assets\Packages\Microsoft.CodeAnalysis.Analyzers.3.3.4\analyzers\dotnet\vb\ru\Microsoft.CodeAnalysis.Analyzers.resources.dll" />
+    <Analyzer Include="I:\DanmakuSystem\Assets\Packages\Microsoft.CodeAnalysis.Analyzers.3.3.4\analyzers\dotnet\vb\zh-Hant\Microsoft.CodeAnalysis.Analyzers.resources.dll" />
+    <Analyzer Include="I:\DanmakuSystem\Assets\Packages\Microsoft.CodeAnalysis.Analyzers.3.3.4\analyzers\dotnet\cs\ja\Microsoft.CodeAnalysis.Analyzers.resources.dll" />
+    <Analyzer Include="I:\DanmakuSystem\Assets\Packages\Microsoft.CodeAnalysis.Analyzers.3.3.4\analyzers\dotnet\cs\zh-Hans\Microsoft.CodeAnalysis.Analyzers.resources.dll" />
+    <Analyzer Include="I:\DanmakuSystem\Assets\Packages\Microsoft.CodeAnalysis.Analyzers.3.3.4\analyzers\dotnet\cs\es\Microsoft.CodeAnalysis.Analyzers.resources.dll" />
+    <Analyzer Include="I:\DanmakuSystem\Assets\Packages\Microsoft.CodeAnalysis.Analyzers.3.3.4\analyzers\dotnet\vb\fr\Microsoft.CodeAnalysis.Analyzers.resources.dll" />
+    <Analyzer Include="I:\DanmakuSystem\Assets\Packages\Microsoft.CodeAnalysis.Analyzers.3.3.4\analyzers\dotnet\cs\ru\Microsoft.CodeAnalysis.Analyzers.resources.dll" />
+    <Analyzer Include="I:\DanmakuSystem\Assets\Packages\Microsoft.CodeAnalysis.Analyzers.3.3.4\analyzers\dotnet\cs\de\Microsoft.CodeAnalysis.Analyzers.resources.dll" />
+    <Analyzer Include="I:\DanmakuSystem\Assets\Packages\Microsoft.CodeAnalysis.Analyzers.3.3.4\analyzers\dotnet\vb\ko\Microsoft.CodeAnalysis.Analyzers.resources.dll" />
+    <Analyzer Include="I:\DanmakuSystem\Assets\Packages\Microsoft.CodeAnalysis.Analyzers.3.3.4\analyzers\dotnet\cs\fr\Microsoft.CodeAnalysis.Analyzers.resources.dll" />
+    <Analyzer Include="I:\DanmakuSystem\Assets\Packages\Microsoft.CodeAnalysis.Analyzers.3.3.4\analyzers\dotnet\cs\Microsoft.CodeAnalysis.Analyzers.dll" />
+    <Analyzer Include="I:\DanmakuSystem\Assets\Packages\Microsoft.CodeAnalysis.Analyzers.3.3.4\analyzers\dotnet\vb\pl\Microsoft.CodeAnalysis.Analyzers.resources.dll" />
+    <Analyzer Include="I:\DanmakuSystem\Assets\Packages\Microsoft.CodeAnalysis.Analyzers.3.3.4\analyzers\dotnet\cs\zh-Hant\Microsoft.CodeAnalysis.Analyzers.resources.dll" />
+    <Analyzer Include="I:\DanmakuSystem\Assets\Packages\Microsoft.CodeAnalysis.Analyzers.3.3.4\analyzers\dotnet\cs\it\Microsoft.CodeAnalysis.Analyzers.resources.dll" />
+    <Analyzer Include="I:\DanmakuSystem\Assets\Packages\Microsoft.CodeAnalysis.Analyzers.3.3.4\analyzers\dotnet\cs\cs\Microsoft.CodeAnalysis.Analyzers.resources.dll" />
+    <Analyzer Include="I:\DanmakuSystem\Assets\Packages\Microsoft.CodeAnalysis.Analyzers.3.3.4\analyzers\dotnet\cs\pl\Microsoft.CodeAnalysis.Analyzers.resources.dll" />
+    <Analyzer Include="I:\DanmakuSystem\Assets\Packages\Microsoft.CodeAnalysis.Analyzers.3.3.4\analyzers\dotnet\vb\pt-BR\Microsoft.CodeAnalysis.Analyzers.resources.dll" />
+    <Analyzer Include="I:\DanmakuSystem\Assets\Packages\Microsoft.CodeAnalysis.Analyzers.3.3.4\analyzers\dotnet\vb\Microsoft.CodeAnalysis.Analyzers.dll" />
+    <Analyzer Include="I:\DanmakuSystem\Assets\Packages\Microsoft.CodeAnalysis.Analyzers.3.3.4\analyzers\dotnet\vb\Microsoft.CodeAnalysis.VisualBasic.Analyzers.dll" />
+    <Analyzer Include="I:\DanmakuSystem\Assets\Packages\Microsoft.CodeAnalysis.Analyzers.3.3.4\analyzers\dotnet\vb\it\Microsoft.CodeAnalysis.Analyzers.resources.dll" />
+    <Analyzer Include="I:\DanmakuSystem\Assets\Packages\Microsoft.CodeAnalysis.Analyzers.3.3.4\analyzers\dotnet\vb\es\Microsoft.CodeAnalysis.Analyzers.resources.dll" />
+    <Analyzer Include="I:\DanmakuSystem\Assets\Packages\Microsoft.CodeAnalysis.Analyzers.3.3.4\analyzers\dotnet\cs\ko\Microsoft.CodeAnalysis.Analyzers.resources.dll" />
+    <Analyzer Include="I:\DanmakuSystem\Assets\Packages\Microsoft.CodeAnalysis.Analyzers.3.3.4\analyzers\dotnet\vb\zh-Hans\Microsoft.CodeAnalysis.Analyzers.resources.dll" />
+    <Analyzer Include="I:\DanmakuSystem\Assets\Packages\Microsoft.CodeAnalysis.Analyzers.3.3.4\analyzers\dotnet\vb\de\Microsoft.CodeAnalysis.Analyzers.resources.dll" />
+    <Analyzer Include="I:\DanmakuSystem\Assets\Packages\Microsoft.CodeAnalysis.Analyzers.3.3.4\analyzers\dotnet\cs\tr\Microsoft.CodeAnalysis.Analyzers.resources.dll" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\TimeAndRandom.cs" />
@@ -149,13 +179,121 @@
     <Compile Include="Assets\LeanTween\Examples\Scripts\Following.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Packages\System.Composition.AttributedModel.7.0.0\lib\netstandard2.0\System.Composition.AttributedModel.xml" />
+    <None Include="Assets\Packages\Microsoft.CodeAnalysis.Analyzers.3.3.4\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
+    <None Include="Assets\Packages\System.Threading.Channels.7.0.0\lib\netstandard2.1\System.Threading.Channels.dll" />
+    <None Include="Assets\Packages\System.Composition.AttributedModel.7.0.0\LICENSE.TXT" />
+    <None Include="Assets\Packages\System.Text.Encoding.CodePages.7.0.0\lib\netstandard2.0\System.Text.Encoding.CodePages.dll" />
+    <None Include="Assets\Packages\System.Threading.Channels.7.0.0\useSharedDesignerContext.txt" />
+    <None Include="Assets\Packages\Microsoft.CodeAnalysis.Analyzers.3.3.4\analyzers\dotnet\vb\es\Microsoft.CodeAnalysis.Analyzers.resources.dll" />
+    <None Include="Assets\Packages\System.Text.Encoding.CodePages.7.0.0\LICENSE.TXT" />
+    <None Include="Assets\Packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.xml" />
+    <None Include="Assets\Packages\Microsoft.CodeAnalysis.Analyzers.3.3.4\analyzers\dotnet\cs\pl\Microsoft.CodeAnalysis.Analyzers.resources.dll" />
+    <None Include="Assets\Packages\System.IO.Pipelines.7.0.0\LICENSE.TXT" />
+    <None Include="Assets\Packages\System.Collections.Immutable.7.0.0\THIRD-PARTY-NOTICES.TXT" />
+    <None Include="Assets\Packages\System.Reflection.Metadata.7.0.0\useSharedDesignerContext.txt" />
+    <None Include="Assets\Packages\Microsoft.CodeAnalysis.Analyzers.3.3.4\analyzers\dotnet\cs\zh-Hant\Microsoft.CodeAnalysis.Analyzers.resources.dll" />
+    <None Include="Assets\Packages\Microsoft.Bcl.AsyncInterfaces.7.0.0\lib\netstandard2.1\Microsoft.Bcl.AsyncInterfaces.dll" />
+    <None Include="Assets\Packages\Microsoft.CodeAnalysis.Analyzers.3.3.4\analyzers\dotnet\vb\ru\Microsoft.CodeAnalysis.Analyzers.resources.dll" />
+    <None Include="Assets\Packages\Microsoft.CodeAnalysis.Analyzers.3.3.4\analyzers\dotnet\vb\pl\Microsoft.CodeAnalysis.Analyzers.resources.dll" />
+    <None Include="Assets\Packages\System.IO.Pipelines.7.0.0\THIRD-PARTY-NOTICES.TXT" />
+    <None Include="Assets\Packages\Microsoft.Bcl.AsyncInterfaces.7.0.0\useSharedDesignerContext.txt" />
+    <None Include="Assets\Packages\System.Text.Encoding.CodePages.7.0.0\lib\netstandard2.0\System.Text.Encoding.CodePages.xml" />
     <None Include="Assets\LeanTween\ReadMe.txt" />
+    <None Include="Assets\Packages\System.Composition.AttributedModel.7.0.0\lib\netstandard2.0\System.Composition.AttributedModel.dll" />
+    <None Include="Assets\Packages\Microsoft.CodeAnalysis.Analyzers.3.3.4\analyzers\dotnet\vb\it\Microsoft.CodeAnalysis.Analyzers.resources.dll" />
+    <None Include="Assets\Packages\System.Composition.AttributedModel.7.0.0\useSharedDesignerContext.txt" />
+    <None Include="Assets\Packages\System.Runtime.CompilerServices.Unsafe.6.0.0\useSharedDesignerContext.txt" />
+    <None Include="Assets\Packages\Microsoft.CodeAnalysis.CSharp.Workspaces.4.7.0\lib\netstandard2.0\Microsoft.CodeAnalysis.CSharp.Workspaces.xml" />
+    <None Include="Assets\Packages\Microsoft.CodeAnalysis.Analyzers.3.3.4\analyzers\dotnet\vb\Microsoft.CodeAnalysis.Analyzers.dll" />
+    <None Include="Assets\Packages\Microsoft.CodeAnalysis.Analyzers.3.3.4\analyzers\dotnet\cs\es\Microsoft.CodeAnalysis.Analyzers.resources.dll" />
+    <None Include="Assets\Packages\Microsoft.CodeAnalysis.VisualBasic.4.7.0\lib\netstandard2.0\Microsoft.CodeAnalysis.VisualBasic.xml" />
+    <None Include="Assets\Packages\System.Collections.Immutable.7.0.0\LICENSE.TXT" />
+    <None Include="Assets\Packages\System.Composition.TypedParts.7.0.0\THIRD-PARTY-NOTICES.TXT" />
+    <None Include="Assets\Packages\System.Composition.Convention.7.0.0\lib\netstandard2.0\System.Composition.Convention.xml" />
+    <None Include="Assets\Packages\System.Composition.Hosting.7.0.0\lib\netstandard2.0\System.Composition.Hosting.xml" />
+    <None Include="Assets\Packages\System.Composition.Hosting.7.0.0\THIRD-PARTY-NOTICES.TXT" />
     <None Include="Assets\LeanTween\License.txt" />
+    <None Include="Assets\Packages\System.Composition.AttributedModel.7.0.0\THIRD-PARTY-NOTICES.TXT" />
+    <None Include="Assets\Packages\Microsoft.CodeAnalysis.Analyzers.3.3.4\analyzers\dotnet\cs\ko\Microsoft.CodeAnalysis.Analyzers.resources.dll" />
+    <None Include="Assets\Packages\System.Threading.Channels.7.0.0\THIRD-PARTY-NOTICES.TXT" />
+    <None Include="Assets\Packages\Microsoft.CodeAnalysis.VisualBasic.Workspaces.4.7.0\lib\netstandard2.0\Microsoft.CodeAnalysis.VisualBasic.Workspaces.xml" />
+    <None Include="Assets\Packages\System.Collections.Immutable.7.0.0\lib\netstandard2.0\System.Collections.Immutable.dll" />
+    <None Include="Assets\Packages\Microsoft.CodeAnalysis.CSharp.4.7.0\lib\netstandard2.0\Microsoft.CodeAnalysis.CSharp.xml" />
+    <None Include="Assets\Packages\Humanizer.Core.2.14.1\lib\netstandard2.0\Humanizer.dll" />
+    <None Include="Assets\Packages\System.Composition.Convention.7.0.0\lib\netstandard2.0\System.Composition.Convention.dll" />
+    <None Include="Assets\Packages\System.Composition.TypedParts.7.0.0\lib\netstandard2.0\System.Composition.TypedParts.dll" />
+    <None Include="Assets\Packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll" />
+    <None Include="Assets\Packages\System.Composition.Convention.7.0.0\LICENSE.TXT" />
+    <None Include="Assets\Packages\System.Reflection.Metadata.7.0.0\THIRD-PARTY-NOTICES.TXT" />
+    <None Include="Assets\Packages\Microsoft.CodeAnalysis.CSharp.Workspaces.4.7.0\lib\netstandard2.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll" />
+    <None Include="Assets\Packages\System.Collections.Immutable.7.0.0\useSharedDesignerContext.txt" />
+    <None Include="Assets\Packages\Microsoft.CodeAnalysis.Analyzers.3.3.4\analyzers\dotnet\vb\cs\Microsoft.CodeAnalysis.Analyzers.resources.dll" />
+    <None Include="Assets\Packages\Microsoft.CodeAnalysis.Analyzers.3.3.4\analyzers\dotnet\cs\Microsoft.CodeAnalysis.Analyzers.dll" />
+    <None Include="Assets\Packages\System.Composition.TypedParts.7.0.0\LICENSE.TXT" />
+    <None Include="Assets\Packages\System.Composition.7.0.0\THIRD-PARTY-NOTICES.TXT" />
+    <None Include="Assets\Packages\Microsoft.CodeAnalysis.CSharp.4.7.0\lib\netstandard2.0\Microsoft.CodeAnalysis.CSharp.dll" />
     <None Include="Assets\ScriptTemplates\84-BT Node__ActionNode-NewBTActionNode.cs.txt" />
+    <None Include="Assets\Packages\System.Composition.Hosting.7.0.0\lib\netstandard2.0\System.Composition.Hosting.dll" />
+    <None Include="Assets\Packages\System.Runtime.CompilerServices.Unsafe.6.0.0\THIRD-PARTY-NOTICES.TXT" />
+    <None Include="Assets\Packages\System.IO.Pipelines.7.0.0\lib\netstandard2.0\System.IO.Pipelines.dll" />
+    <None Include="Assets\Packages\System.Text.Encoding.CodePages.7.0.0\useSharedDesignerContext.txt" />
+    <None Include="Assets\Packages\System.IO.Pipelines.7.0.0\useSharedDesignerContext.txt" />
+    <None Include="Assets\Packages\Microsoft.Bcl.AsyncInterfaces.7.0.0\lib\netstandard2.1\Microsoft.Bcl.AsyncInterfaces.xml" />
+    <None Include="Assets\Packages\System.Composition.Runtime.7.0.0\useSharedDesignerContext.txt" />
+    <None Include="Assets\Packages\Microsoft.CodeAnalysis.Analyzers.3.3.4\analyzers\dotnet\vb\zh-Hans\Microsoft.CodeAnalysis.Analyzers.resources.dll" />
+    <None Include="Assets\Packages\Microsoft.CodeAnalysis.Common.4.7.0\lib\netstandard2.0\Microsoft.CodeAnalysis.dll" />
+    <None Include="Assets\Packages\System.Composition.7.0.0\LICENSE.TXT" />
+    <None Include="Assets\Packages\Microsoft.CodeAnalysis.Analyzers.3.3.4\analyzers\dotnet\cs\pt-BR\Microsoft.CodeAnalysis.Analyzers.resources.dll" />
+    <None Include="Assets\Packages\System.Text.Encoding.CodePages.7.0.0\THIRD-PARTY-NOTICES.TXT" />
+    <None Include="Assets\Packages\System.Composition.Runtime.7.0.0\THIRD-PARTY-NOTICES.TXT" />
+    <None Include="Assets\Packages\System.Composition.Convention.7.0.0\useSharedDesignerContext.txt" />
     <None Include="Assets\Shaders\NewSurfaceShader.shader" />
+    <None Include="Assets\Packages\Microsoft.CodeAnalysis.Workspaces.Common.4.7.0\lib\netstandard2.0\Microsoft.CodeAnalysis.Workspaces.dll" />
     <None Include="Assets\ScriptTemplates\84-BT Node__DecoratorNode-NewBTDecoratorNode.cs.txt" />
+    <None Include="Assets\Packages\System.Composition.Hosting.7.0.0\LICENSE.TXT" />
+    <None Include="Assets\Packages\Microsoft.CodeAnalysis.Common.4.7.0\lib\netstandard2.0\Microsoft.CodeAnalysis.xml" />
+    <None Include="Assets\Packages\Microsoft.CodeAnalysis.VisualBasic.4.7.0\lib\netstandard2.0\Microsoft.CodeAnalysis.VisualBasic.dll" />
+    <None Include="Assets\Packages\System.Composition.Runtime.7.0.0\lib\netstandard2.0\System.Composition.Runtime.xml" />
     <None Include="Assets\ScriptTemplates\84-BT Node__CompositeNode-NewBTCompositeNode.cs.txt" />
+    <None Include="Assets\Packages\Microsoft.CodeAnalysis.Analyzers.3.3.4\analyzers\dotnet\vb\tr\Microsoft.CodeAnalysis.Analyzers.resources.dll" />
+    <None Include="Assets\Packages\System.Composition.TypedParts.7.0.0\useSharedDesignerContext.txt" />
+    <None Include="Assets\Packages\Microsoft.CodeAnalysis.Analyzers.3.3.4\ThirdPartyNotices.txt" />
+    <None Include="Assets\Packages\Microsoft.CodeAnalysis.Analyzers.3.3.4\analyzers\dotnet\cs\it\Microsoft.CodeAnalysis.Analyzers.resources.dll" />
+    <None Include="Assets\Packages\System.Composition.7.0.0\useSharedDesignerContext.txt" />
+    <None Include="Assets\Packages\System.Composition.Convention.7.0.0\THIRD-PARTY-NOTICES.TXT" />
+    <None Include="Assets\Packages\System.Composition.TypedParts.7.0.0\lib\netstandard2.0\System.Composition.TypedParts.xml" />
     <None Include="Assets\LeanTween\Examples\Archived\2dUnlitWithFade.shader" />
+    <None Include="Assets\Packages\Microsoft.CodeAnalysis.Analyzers.3.3.4\analyzers\dotnet\cs\ja\Microsoft.CodeAnalysis.Analyzers.resources.dll" />
+    <None Include="Assets\Packages\Microsoft.CodeAnalysis.Analyzers.3.3.4\analyzers\dotnet\vb\Microsoft.CodeAnalysis.VisualBasic.Analyzers.dll" />
+    <None Include="Assets\Packages\Humanizer.Core.2.14.1\lib\netstandard2.0\Humanizer.xml" />
+    <None Include="Assets\Packages\Microsoft.CodeAnalysis.Analyzers.3.3.4\analyzers\dotnet\cs\fr\Microsoft.CodeAnalysis.Analyzers.resources.dll" />
+    <None Include="Assets\Packages\Microsoft.CodeAnalysis.Workspaces.Common.4.7.0\lib\netstandard2.0\Microsoft.CodeAnalysis.Workspaces.xml" />
+    <None Include="Assets\Packages\Microsoft.CodeAnalysis.Analyzers.3.3.4\analyzers\dotnet\vb\ko\Microsoft.CodeAnalysis.Analyzers.resources.dll" />
+    <None Include="Assets\Packages\Microsoft.CodeAnalysis.Analyzers.3.3.4\analyzers\dotnet\cs\cs\Microsoft.CodeAnalysis.Analyzers.resources.dll" />
+    <None Include="Assets\Packages\Microsoft.CodeAnalysis.Analyzers.3.3.4\analyzers\dotnet\vb\fr\Microsoft.CodeAnalysis.Analyzers.resources.dll" />
+    <None Include="Assets\Packages\Microsoft.CodeAnalysis.Analyzers.3.3.4\analyzers\dotnet\vb\pt-BR\Microsoft.CodeAnalysis.Analyzers.resources.dll" />
+    <None Include="Assets\Packages\System.Composition.Runtime.7.0.0\LICENSE.TXT" />
+    <None Include="Assets\Packages\Microsoft.CodeAnalysis.Analyzers.3.3.4\analyzers\dotnet\cs\de\Microsoft.CodeAnalysis.Analyzers.resources.dll" />
+    <None Include="Assets\Packages\System.Threading.Channels.7.0.0\LICENSE.TXT" />
+    <None Include="Assets\Packages\Microsoft.Bcl.AsyncInterfaces.7.0.0\THIRD-PARTY-NOTICES.TXT" />
+    <None Include="Assets\Packages\Microsoft.CodeAnalysis.Analyzers.3.3.4\analyzers\dotnet\vb\zh-Hant\Microsoft.CodeAnalysis.Analyzers.resources.dll" />
+    <None Include="Assets\Packages\System.Composition.Runtime.7.0.0\lib\netstandard2.0\System.Composition.Runtime.dll" />
+    <None Include="Assets\Packages\System.Reflection.Metadata.7.0.0\lib\netstandard2.0\System.Reflection.Metadata.xml" />
+    <None Include="Assets\Packages\Microsoft.CodeAnalysis.Analyzers.3.3.4\analyzers\dotnet\cs\zh-Hans\Microsoft.CodeAnalysis.Analyzers.resources.dll" />
+    <None Include="Assets\Packages\Microsoft.CodeAnalysis.Analyzers.3.3.4\analyzers\dotnet\cs\ru\Microsoft.CodeAnalysis.Analyzers.resources.dll" />
+    <None Include="Assets\Packages\Microsoft.CodeAnalysis.VisualBasic.Workspaces.4.7.0\lib\netstandard2.0\Microsoft.CodeAnalysis.VisualBasic.Workspaces.dll" />
+    <None Include="Assets\Packages\System.Runtime.CompilerServices.Unsafe.6.0.0\LICENSE.TXT" />
+    <None Include="Assets\Packages\System.Threading.Channels.7.0.0\lib\netstandard2.1\System.Threading.Channels.xml" />
+    <None Include="Assets\Packages\System.Reflection.Metadata.7.0.0\lib\netstandard2.0\System.Reflection.Metadata.dll" />
+    <None Include="Assets\Packages\Microsoft.CodeAnalysis.Analyzers.3.3.4\analyzers\dotnet\cs\tr\Microsoft.CodeAnalysis.Analyzers.resources.dll" />
+    <None Include="Assets\Packages\System.Composition.Hosting.7.0.0\useSharedDesignerContext.txt" />
+    <None Include="Assets\Packages\System.Reflection.Metadata.7.0.0\LICENSE.TXT" />
+    <None Include="Assets\Packages\System.IO.Pipelines.7.0.0\lib\netstandard2.0\System.IO.Pipelines.xml" />
+    <None Include="Assets\Packages\System.Collections.Immutable.7.0.0\lib\netstandard2.0\System.Collections.Immutable.xml" />
+    <None Include="Assets\Packages\Microsoft.CodeAnalysis.Analyzers.3.3.4\analyzers\dotnet\vb\de\Microsoft.CodeAnalysis.Analyzers.resources.dll" />
+    <None Include="Assets\Packages\Microsoft.CodeAnalysis.Analyzers.3.3.4\analyzers\dotnet\vb\ja\Microsoft.CodeAnalysis.Analyzers.resources.dll" />
+    <None Include="Assets\Packages\Microsoft.Bcl.AsyncInterfaces.7.0.0\LICENSE.TXT" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -421,6 +559,63 @@
     </Reference>
     <Reference Include="Unity.Burst.Cecil.Rocks">
       <HintPath>Library\PackageCache\com.unity.burst@1.7.3\Unity.Burst.CodeGen\Unity.Burst.Cecil.Rocks.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe">
+      <HintPath>Assets\Packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Immutable">
+      <HintPath>Assets\Packages\System.Collections.Immutable.7.0.0\lib\netstandard2.0\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reflection.Metadata">
+      <HintPath>Assets\Packages\System.Reflection.Metadata.7.0.0\lib\netstandard2.0\System.Reflection.Metadata.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encoding.CodePages">
+      <HintPath>Assets\Packages\System.Text.Encoding.CodePages.7.0.0\lib\netstandard2.0\System.Text.Encoding.CodePages.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis">
+      <HintPath>Assets\Packages\Microsoft.CodeAnalysis.Common.4.7.0\lib\netstandard2.0\Microsoft.CodeAnalysis.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.CSharp">
+      <HintPath>Assets\Packages\Microsoft.CodeAnalysis.CSharp.4.7.0\lib\netstandard2.0\Microsoft.CodeAnalysis.CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Humanizer">
+      <HintPath>Assets\Packages\Humanizer.Core.2.14.1\lib\netstandard2.0\Humanizer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces">
+      <HintPath>Assets\Packages\Microsoft.Bcl.AsyncInterfaces.7.0.0\lib\netstandard2.1\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Composition.AttributedModel">
+      <HintPath>Assets\Packages\System.Composition.AttributedModel.7.0.0\lib\netstandard2.0\System.Composition.AttributedModel.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Composition.Convention">
+      <HintPath>Assets\Packages\System.Composition.Convention.7.0.0\lib\netstandard2.0\System.Composition.Convention.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Composition.Runtime">
+      <HintPath>Assets\Packages\System.Composition.Runtime.7.0.0\lib\netstandard2.0\System.Composition.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Composition.Hosting">
+      <HintPath>Assets\Packages\System.Composition.Hosting.7.0.0\lib\netstandard2.0\System.Composition.Hosting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Composition.TypedParts">
+      <HintPath>Assets\Packages\System.Composition.TypedParts.7.0.0\lib\netstandard2.0\System.Composition.TypedParts.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Pipelines">
+      <HintPath>Assets\Packages\System.IO.Pipelines.7.0.0\lib\netstandard2.0\System.IO.Pipelines.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Channels">
+      <HintPath>Assets\Packages\System.Threading.Channels.7.0.0\lib\netstandard2.1\System.Threading.Channels.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.Workspaces">
+      <HintPath>Assets\Packages\Microsoft.CodeAnalysis.Workspaces.Common.4.7.0\lib\netstandard2.0\Microsoft.CodeAnalysis.Workspaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.CSharp.Workspaces">
+      <HintPath>Assets\Packages\Microsoft.CodeAnalysis.CSharp.Workspaces.4.7.0\lib\netstandard2.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.VisualBasic">
+      <HintPath>Assets\Packages\Microsoft.CodeAnalysis.VisualBasic.4.7.0\lib\netstandard2.0\Microsoft.CodeAnalysis.VisualBasic.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.VisualBasic.Workspaces">
+      <HintPath>Assets\Packages\Microsoft.CodeAnalysis.VisualBasic.Workspaces.4.7.0\lib\netstandard2.0\Microsoft.CodeAnalysis.VisualBasic.Workspaces.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>H:\Unity\2021.3.15f1c1\Editor\Data\PlaybackEngines\AppleTVSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>

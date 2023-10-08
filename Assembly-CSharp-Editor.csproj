@@ -76,6 +76,7 @@
     <None Include="Assets\Scripts\Editor\BehaviourTree\BTNodeView.uxml" />
     <None Include="Assets\Scripts\Editor\BehaviourTree\BTEditorWindow.uxml" />
     <None Include="Assets\Scripts\Editor\BehaviourTree\BTEditorWindow.uss" />
+    <None Include="Assets\NuGet\Editor\NugetForUnity.dll" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -374,6 +375,9 @@
     </Reference>
     <Reference Include="Unity.Burst.Cecil.Rocks">
       <HintPath>Library\PackageCache\com.unity.burst@1.7.3\Unity.Burst.CodeGen\Unity.Burst.Cecil.Rocks.dll</HintPath>
+    </Reference>
+    <Reference Include="NugetForUnity">
+      <HintPath>Assets\NuGet\Editor\NugetForUnity.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
       <HintPath>Library\PackageCache\com.unity.ext.nunit@1.0.6\net35\unity-custom\nunit.framework.dll</HintPath>
