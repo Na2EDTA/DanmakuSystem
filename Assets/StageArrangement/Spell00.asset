@@ -37,9 +37,9 @@ MonoBehaviour:
   started: 0
   state: 0
   tree: {fileID: 11400000}
-  position: {x: 1088.7142, y: -38.857117}
+  position: {x: 1097.7142, y: -38.857132}
   targetVariable: angle
-  expression: angle+72
+  expression: b.floatVariable["angle"]+72
 --- !u!114 &-4214471150400750382
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118,7 +118,7 @@ MonoBehaviour:
   tree: {fileID: 11400000}
   position: {x: 682.8571, y: 18.85715}
   targetVariable: rvel
-  expression: rvel+racc
+  expression: b.floatVariable["rvel"]+b.floatVariable["racc"]
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -304,6 +304,6 @@ MonoBehaviour:
   started: 0
   state: 0
   tree: {fileID: 11400000}
-  position: {x: 713.7143, y: 116.571465}
+  position: {x: 721.7143, y: 128.53896}
   targetVariable: angle
-  expression: angle+rvel
+  expression: (b.floatVariable["angle"]+b.floatVariable["rvel"])%360

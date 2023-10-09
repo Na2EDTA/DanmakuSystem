@@ -5,29 +5,37 @@ using Microsoft.CodeAnalysis.Scripting;
 using Microsoft.CodeAnalysis.CSharp.Scripting;
 using System.Linq;
 
-public class BTCalculateNode: BTActionNode
+public class BTCalculateNode : BTActionNode
 {
     BTBlackboard b;
     public string targetVariable;
     float newFloat = 0;
     int newInt = 0;
+    ScriptOptions opt;
+    Script<float> script;
 
     [TextArea]
     public string expression;
 
+    
+
     protected override void OnStart()
     {
         b = tree.blackboard;
+        opt = ScriptOptions.Default.WithImports("System.Math");
+        opt.AddReferences(typeof(BTCalculateNode).Assembly);
+        opt.AddReferences("UnityEngine");
+        script = CSharpScript.Create<float>("using UnityEngine;" + expression, opt, typeof(BTCalculateNode));
     }
 
     protected override void OnStop()
     {
-        
+
     }
 
     protected override State OnUpdate()
     {
-        if (b.FindVariable(targetVariable, out newFloat))
+        /*if (b.FindVariable(targetVariable, out newFloat))
         {
             newFloat = ParseExpression(expression);
             b.SetVariable(targetVariable, newFloat);
@@ -36,8 +44,16 @@ public class BTCalculateNode: BTActionNode
         {
             newInt = (int)MathF.Round(ParseExpression(expression));
             b.SetVariable(targetVariable, newInt);
+        }*/
+        try
+        {
+            if (b.FindVariable(targetVariable, out newFloat))
+                newFloat = script.RunAsync(globals: this).Result.ReturnValue;
         }
-
+        catch(Exception e)
+        {
+            Debug.Log(e.Message);
+        }
         return State.Succeeded;
     }
 
@@ -74,13 +90,12 @@ public class BTCalculateNode: BTActionNode
         // 计算表达式的结果
         try
         {
-            //var opt = ScriptOptions.Default.WithImports("System.Math");
-            //var runner = CSharpScript.EvaluateAsync<float>("(float)" + "(" + expr + ")", opt);
-            var result = Convert.ToSingle(new System.Data.DataTable().Compute(expr, null));
+            var runner = CSharpScript.EvaluateAsync<float>(expr, opt, globals:this);
+            //var result = Convert.ToSingle(new System.Data.DataTable().Compute(expr, null));
             
             
-            //return runner.Result;
-            return result;
+            return runner.Result;
+            //return result;
         }
         catch (Exception ex)
         {
@@ -136,5 +151,5 @@ public class BTCalculateNode: BTActionNode
         var result = script.RunAsync().Result;
         return result.ReturnValue;
     }
-
+    
 }

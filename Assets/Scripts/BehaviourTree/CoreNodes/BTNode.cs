@@ -13,6 +13,18 @@ public abstract class BTNode: ScriptableObject
     [HideInInspector] public Vector2 position;
 #endif
 
+    public float this[string index]
+    {
+        get
+        {
+            return tree.blackboard.floatVariables[index];
+        }
+        set
+        {
+            tree.blackboard.floatVariables[index] = value;
+        }
+    }
+
     public enum State
     {
         Running, Succeeded, Failed
