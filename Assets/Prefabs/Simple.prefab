@@ -75,8 +75,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1641221407
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: -330406307, guid: c1e2c23fc9f7e5e4bb3a6cc1d56fb061, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -132,21 +132,12 @@ MonoBehaviour:
   fallBackSprite: {fileID: -330406307, guid: c1e2c23fc9f7e5e4bb3a6cc1d56fb061, type: 3}
   velocity: {fileID: 0}
   r: {fileID: 0}
-  variables:
-    list:
-    - Key: angle
-      Value: 0
-    - Key: speed
-      Value: 0
-    - Key: aim
-      Value: 0
-    - Key: maxSpeed
-      Value: 0
-    - Key: acceleration
-      Value: 0
-    - Key: rotation
-      Value: 0
-  curves: []
+  angle: 0
+  speed: 0
+  maxSpeed: 0
+  acceleration: 0
+  rotation: 0
+  aim: 0
 --- !u!114 &2551981971269639273
 MonoBehaviour:
   m_ObjectHideFlags: 0

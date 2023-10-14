@@ -3,18 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using Method = GameEnum.MovingMethod;
 
-public class SOOBA : DanmakuObject
+public class S00BA : DanmakuObject
 {
-    public override void InitParams(params float[] ps)
+    [SerializeField] float a;
+    public override void OnInit(params float[] ps)
     {
-        base.InitParams(ps);
+        a = ps[0];
+    }
+
+    public override void Dispose()
+    {
+        Pool.instance.Dispose<S00BA>(gameObject);
     }
 
     void OnEnable()
     {
         Method method = velocity.method;
         velocity.SwitchMethod(Method.Polar);
-        velocity.Angle = variables["da"];
         velocity.SwitchMethod(method);
     }
 

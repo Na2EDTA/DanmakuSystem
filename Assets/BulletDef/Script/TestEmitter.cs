@@ -9,6 +9,16 @@ public class TestEmitter : DanmakuObject
     [SerializeField] BezierPath path;
     [SerializeField] float arg, len;
 
+    public override void OnInit(params float[] ps)
+    {
+        
+    }
+
+    public override void Dispose()
+    {
+
+    }
+
     private async void Start()
     {
         DanmakuEmission.CreateSimpleBullet(style, Vector2.zero, 90, 0.2f, 0, 0, 0, 2.5f);

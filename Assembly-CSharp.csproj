@@ -68,7 +68,7 @@
     <Compile Include="Assets\Scripts\BehaviourTree\Runtime\ExternalProperty.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\TestingUnitTests.cs" />
     <Compile Include="Assets\LeanTween\Framework\LTSeq.cs" />
-    <Compile Include="Assets\BulletDef\Script\SOOBA.cs" />
+    <Compile Include="Assets\BulletDef\Script\S00BA.cs" />
     <Compile Include="Assets\Scripts\BehaviourTree\Danmaku\SimpleBulletsNode.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\GeneralUISpace.cs" />
     <Compile Include="Assets\Scripts\BehaviourTree\BasicNodes\BTCalculateNode.cs" />
@@ -124,7 +124,7 @@
     <Compile Include="Assets\Scripts\Pool.cs" />
     <Compile Include="Assets\Scripts\Dynamic\Acceleration.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\PathSpline.cs" />
-    <Compile Include="Assets\BulletDef\Script\DefaultBullet.cs" />
+    <Compile Include="Assets\BulletDef\Script\Simple.cs" />
     <Compile Include="Assets\Scripts\BehaviourTree\CoreNodes\BTCompositeNode.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\GeneralAdvancedTechniques.cs" />
     <Compile Include="Assets\LeanTween\Framework\LeanSmooth.cs" />

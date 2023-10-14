@@ -23,7 +23,7 @@ public class BTCalculateNode : BTActionNode
     {
         b = tree.blackboard;
         opt = ScriptOptions.Default.WithImports("System.Math");
-        opt.AddReferences(typeof(BTCalculateNode).Assembly);
+        opt.AddReferences(typeof(ScriptableObject).Assembly);
         opt.AddReferences("UnityEngine");
         script = CSharpScript.Create<float>("using UnityEngine;" + expression, opt, typeof(BTCalculateNode));
     }

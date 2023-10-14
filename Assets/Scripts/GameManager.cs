@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     [SerializeField] Text fpsUI;
+    public Text debugger;
     public float fps;
     int intTimer = 0;
     float timeRecorder = 0;
@@ -39,6 +40,8 @@ public class GameManager : MonoBehaviour
         float dt = Time.time - timeRecorder;
         fps = 1 / dt;
         timeRecorder = Time.time;
+
+        debugger.text = Pool.objectCountOnStage.ToString();
     }
 
     async UniTask FpsInUI()

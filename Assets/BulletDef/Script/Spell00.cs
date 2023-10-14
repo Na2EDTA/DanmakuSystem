@@ -6,18 +6,24 @@ using System.Threading;
 
 public class Spell00 : DanmakuObject
 {
-    float a = 0, da = 0, dda = 0, v;
-    int t = 0;
+    float a = 0, da = 0;
+    [SerializeField] float dda = 0, v;
+    [SerializeField]int interval = 0;
     [SerializeField] BulletStyle bulletStyle;
     UniTask task;
     CancellationToken cancellationToken;
     CancellationTokenSource cancellationTokenSource = new();
 
-    private void Start()
+    public override void OnInit(params float[] ps)
     {
-        dda = variables["dda"];
-        t = (int)variables["interval"];
-        v = variables["velocity"];
+        dda = ps[0];
+        interval = (int)ps[1];
+        v = ps[2];
+    }
+
+    public override void Dispose()
+    {
+        Pool.instance.Dispose<Spell00>(gameObject);
     }
 
     private void OnEnable()
@@ -31,7 +37,7 @@ public class Spell00 : DanmakuObject
     {
         da += dda;
         a += da;
-        
+        a %= 360;
     }
 
     async UniTask Emit(CancellationToken cancellationToken)
@@ -43,7 +49,7 @@ public class Spell00 : DanmakuObject
                 DanmakuEmission.CreateSimpleBullet
                     (bulletStyle, tr.position, a + 72 * i, v, 0, 0, 0, 0);
             }
-            await UniTask.DelayFrame(t, PlayerLoopTiming.Update, cancellationToken);
+            await UniTask.DelayFrame(interval, PlayerLoopTiming.Update, cancellationToken);
         }
     }
 
@@ -58,4 +64,5 @@ public class Spell00 : DanmakuObject
 
         }
     }
+
 }
