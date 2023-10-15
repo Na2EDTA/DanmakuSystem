@@ -171,7 +171,7 @@ public class Pool : MonoBehaviour
     }
 #endif
 
-    void Fill<T>(int count = 50, int leastCount = 15)
+    void Fill<T>(int count = 50, int leastCount = 15) where T : DanmakuObject
     {
         SubPool pool = objectPool[typeof(T)];
 
@@ -232,7 +232,7 @@ public class Pool : MonoBehaviour
         return obj;
     }
 
-    public void Dispose<T>(GameObject obj)
+    public void Dispose<T>(GameObject obj) where T : DanmakuObject
     {
         obj.SetActive(false);
         objectPool[typeof(T)].queue.Enqueue(obj);

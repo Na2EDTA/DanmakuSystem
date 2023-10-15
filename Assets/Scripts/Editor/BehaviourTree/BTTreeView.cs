@@ -33,6 +33,7 @@ public class BTTreeView : GraphView
         AssetDatabase.SaveAssets();
     }
 
+    //创建节点菜单
     public override void BuildContextualMenu(ContextualMenuPopulateEvent evt)
     {
         {
@@ -68,6 +69,7 @@ public class BTTreeView : GraphView
         }
     }
 
+    //读取树并显示
     public void PopulateView(BTTree tree)
     {
         this.tree = tree;
@@ -113,6 +115,7 @@ public class BTTreeView : GraphView
         return GetNodeByGuid(node.guid) as BTNodeView;
     }
 
+    //获取可连接的节点
     public override List<Port> GetCompatiblePorts(Port startPort, NodeAdapter nodeAdapter)
     {
         return ports.ToList().Where(endPort =>
@@ -120,6 +123,7 @@ public class BTTreeView : GraphView
         endPort.node != startPort.node).ToList();
     }
 
+    //图发生改变时的响应函数，改变runtime的树
     private GraphViewChange OnGraphViewChanged(GraphViewChange graphViewChange)
     {
         if (graphViewChange.elementsToRemove != null)

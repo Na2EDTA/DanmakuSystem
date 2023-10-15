@@ -111,8 +111,8 @@ MonoBehaviour:
   position: {x: 339.99994, y: -298.28564}
   children:
   - {fileID: -3878076803339813008}
-  - {fileID: -6710197382767729905}
   - {fileID: -5568990368243956528}
+  - {fileID: -6710197382767729905}
 --- !u!114 &-7701956564937930759
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -244,7 +244,7 @@ MonoBehaviour:
   started: 0
   state: 0
   tree: {fileID: 0}
-  position: {x: -99.192955, y: 70.857155}
+  position: {x: -110.34612, y: 78.85715}
   child: {fileID: -3735953284710900497}
 --- !u!114 &-3878076803339813008
 MonoBehaviour:
@@ -311,6 +311,10 @@ MonoBehaviour:
     list:
     - Key: branch
       Value: 0
+    - Key: rot
+      Value: 2
+    - Key: last
+      Value: 4
   floatVariables:
     list:
     - Key: a
@@ -377,7 +381,7 @@ MonoBehaviour:
   started: 0
   state: 0
   tree: {fileID: 11400000}
-  position: {x: 260.57144, y: 159.99997}
+  position: {x: 268.57147, y: 180.57144}
   children: []
   intVariableName: branch
 --- !u!114 &-966514463440424344
@@ -421,6 +425,7 @@ MonoBehaviour:
   style:
     color: 1
     shape: 10
+  relativeTo: 0
   bulletPosition: {x: 0, y: 0}
   num: 3
   interval: 30
@@ -432,7 +437,6 @@ MonoBehaviour:
   maxSpeed: 0
   acceleration: 0
   rotation: 0
-  relativeTo: 0
 --- !u!114 &-498135466556985543
 MonoBehaviour:
   m_ObjectHideFlags: 0

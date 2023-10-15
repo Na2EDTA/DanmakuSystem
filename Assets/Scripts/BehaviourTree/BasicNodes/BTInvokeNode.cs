@@ -19,7 +19,14 @@ public class BTInvokeNode: BTActionNode
 
     protected override State OnUpdate()
     {
-        unityEvent.Invoke();
+        try
+        {
+            unityEvent.Invoke();
+        }
+        catch
+        {
+            return State.Failed;
+        }
         return State.Succeeded;
     }
 }

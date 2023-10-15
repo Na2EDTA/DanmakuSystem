@@ -13,7 +13,7 @@ public class BTSelectorNode : BTCompositeNode
 
     protected override void OnStop()
     {
-        
+        children.ForEach(c => c.state = State.Running);
     }
 
     protected override State OnUpdate()

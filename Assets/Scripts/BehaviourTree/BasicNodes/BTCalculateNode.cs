@@ -91,7 +91,7 @@ public class BTCalculateNode : BTActionNode
         try
         {
             var runner = CSharpScript.EvaluateAsync<float>(expr, opt, globals:this);
-            //var result = Convert.ToSingle(new System.Data.DataTable().Compute(expr, null));
+            var result = Convert.ToSingle(new System.Data.DataTable().Compute(expr, null));
             
             
             return runner.Result;

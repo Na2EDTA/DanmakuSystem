@@ -40,6 +40,7 @@ public class BTEditorWindow : EditorWindow
         EditorApplication.playModeStateChanged -= OnPlayModeStateChanged;
     }
 
+    //实例与原型的编辑切换
     private void OnPlayModeStateChanged(PlayModeStateChange obj)
     {
         switch (obj)
@@ -112,11 +113,13 @@ public class BTEditorWindow : EditorWindow
         }
     }
 
+    //更新inspector监视对象到所选的节点
     void OnNodeSelectionChanged(BTNodeView nodeView)
     {
         inspectorView.UpdateSelection(nodeView);
     }
 
+    //根据inspector变化更新节点状态
     private void OnInspectorUpdate()
     {
         treeView?.UpdateNodeStates();

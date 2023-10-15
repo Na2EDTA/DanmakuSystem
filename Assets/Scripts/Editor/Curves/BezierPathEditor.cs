@@ -16,7 +16,7 @@ public class BezierPathEditor : Editor
 
     private void OnSceneGUI()
     {
-        _target.UpdateAllSegments(); //性能好随便开
+        _target.UpdateAllSegments(); 
         _target.Render();
     }
 }

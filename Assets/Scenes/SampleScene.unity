@@ -136,15 +136,13 @@ GameObject:
   - component: {fileID: 16380108}
   - component: {fileID: 16380107}
   - component: {fileID: 16380106}
-  - component: {fileID: 16380111}
-  - component: {fileID: 16380112}
   m_Layer: 0
   m_Name: bullet_music_11 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &16380106
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -546,13 +544,13 @@ MonoBehaviour:
   followAngle: -90
   isAiming: 0
   target: {x: 0, y: 0}
-  method: 2
+  method: 1
   x: 1
   y: 0
   magnitude: 1
   angle: 0
   length: 0
-  path: {fileID: 16380112}
+  path: {fileID: 0}
 --- !u!114 &16380108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -634,58 +632,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 16380105}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.279, y: -0.495, z: 0}
+  m_LocalPosition: {x: 0.001, y: 0.048, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &16380111
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 16380105}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38cf0abb7c735ed4589de0f2fc570159, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  length: 6.28
-  color: {r: 0, g: 0.25520697, b: 0.7882353, a: 1}
-  radius: 1
-  clockwise: 0
-  argOffset: 0
-  positionOffset: {x: 1, y: 0}
---- !u!114 &16380112
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 16380105}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e27a384c4f269ae40b189585d9e20502, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  length: 5.8369975
-  color: {r: 0, g: 0.5566038, b: 0.19648044, a: 1}
-  waypoints:
-  - {x: 0, y: 0}
-  - {x: -1, y: 1}
-  - {x: -1.6184819, y: 0.4819176}
-  - {x: -1.6157837, y: -0.531469}
-  - {x: -0.62917, y: -1.2382604}
-  - {x: 0, y: 0}
-  segments:
-  - {x: -1, y: 1}
-  - {x: -0.6184819, y: -0.5180824}
-  - {x: 0.002698183, y: -1.0133866}
-  - {x: 0.9866137, y: -0.7067914}
-  - {x: 0.62917, y: 1.2382604}
 --- !u!1 &57977642
 GameObject:
   m_ObjectHideFlags: 0
@@ -699,6 +652,8 @@ GameObject:
   - component: {fileID: 57977644}
   - component: {fileID: 57977643}
   - component: {fileID: 57977647}
+  - component: {fileID: 57977649}
+  - component: {fileID: 57977648}
   m_Layer: 0
   m_Name: bullet_music_11
   m_TagString: Untagged
@@ -810,7 +765,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 57977642}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.294, y: 0.231, z: 0}
+  m_LocalPosition: {x: -0.014, y: 0.005, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1171,6 +1126,51 @@ MonoBehaviour:
     - 0.016626704
     - 0.016694421
     - 0.016764324
+--- !u!114 &57977648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 57977642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e27a384c4f269ae40b189585d9e20502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  length: 5.8369975
+  color: {r: 0, g: 0.5566038, b: 0.19648044, a: 1}
+  waypoints:
+  - {x: 0, y: 0}
+  - {x: -1, y: 1}
+  - {x: -1.6184819, y: 0.4819176}
+  - {x: -1.6157837, y: -0.531469}
+  - {x: -0.62917, y: -1.2382604}
+  - {x: 0, y: 0}
+  segments:
+  - {x: -1, y: 1}
+  - {x: -0.6184819, y: -0.5180824}
+  - {x: 0.002698183, y: -1.0133866}
+  - {x: 0.9866137, y: -0.7067914}
+  - {x: 0.62917, y: 1.2382604}
+--- !u!114 &57977649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 57977642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38cf0abb7c735ed4589de0f2fc570159, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  length: 6.28
+  color: {r: 0, g: 0.25520697, b: 0.7882353, a: 1}
+  radius: 1
+  clockwise: 0
+  argOffset: 0
+  positionOffset: {x: 1, y: 0}
 --- !u!1 &66861471
 GameObject:
   m_ObjectHideFlags: 0
@@ -6735,7 +6735,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1405491249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7274,7 +7274,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1639532914
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7335,7 +7335,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1639532913}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.291, y: -0.505, z: 0}
+  m_LocalPosition: {x: 0.643, y: 0.298, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

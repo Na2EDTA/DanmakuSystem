@@ -110,6 +110,7 @@ public class BTNodeView : Node
         }
     }
 
+    //支持鼠标拖动位置，并且可以撤回
     public override void SetPosition(Rect newPos)
     {
         base.SetPosition(newPos);
@@ -128,6 +129,7 @@ public class BTNodeView : Node
         }
     }
 
+    //重排子节点顺序
     public void SortChildren()
     {
         BTCompositeNode compositeNode = node as BTCompositeNode;
@@ -142,6 +144,7 @@ public class BTNodeView : Node
         return up.position.y < down.position.y ? -1 : 1;
     }
 
+    //外观更新状态
     public void UpdateState()
     {
         RemoveFromClassList("running");

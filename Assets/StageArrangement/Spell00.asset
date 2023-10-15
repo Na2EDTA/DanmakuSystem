@@ -17,7 +17,7 @@ MonoBehaviour:
   started: 0
   state: 0
   tree: {fileID: 11400000}
-  position: {x: 178.65611, y: 6.8571715}
+  position: {x: 192.42856, y: 228.42856}
   child: {fileID: 6586606533506108343}
   count: inf
 --- !u!114 &-6283389849601166838
@@ -57,7 +57,7 @@ MonoBehaviour:
   started: 0
   state: 0
   tree: {fileID: 11400000}
-  position: {x: 654.92145, y: -54.85717}
+  position: {x: 678.8571, y: -34.285706}
   style:
     color: 3
     shape: 15
@@ -86,7 +86,9 @@ MonoBehaviour:
   m_Name: Blackboard
   m_EditorClassIdentifier: 
   intVariables:
-    list: []
+    list:
+    - Key: 
+      Value: 0
   floatVariables:
     list:
     - Key: angle
@@ -116,7 +118,7 @@ MonoBehaviour:
   started: 0
   state: 0
   tree: {fileID: 11400000}
-  position: {x: 682.8571, y: 18.85715}
+  position: {x: 701.71423, y: 52.57144}
   targetVariable: rvel
   expression: b.floatVariable["rvel"]+b.floatVariable["racc"]
 --- !u!114 &11400000
@@ -262,7 +264,7 @@ MonoBehaviour:
   started: 0
   state: 0
   tree: {fileID: 11400000}
-  position: {x: 675, y: -176.57143}
+  position: {x: 718.2858, y: -160.57141}
   child: {fileID: 1520313871416872107}
   count: 5
 --- !u!114 &6586606533506108343
@@ -282,7 +284,7 @@ MonoBehaviour:
   started: 0
   state: 0
   tree: {fileID: 11400000}
-  position: {x: 428, y: 35.428543}
+  position: {x: 421.14276, y: 20.45718}
   children:
   - {fileID: 3981636861513262026}
   - {fileID: -1589392162671687166}
@@ -304,6 +306,6 @@ MonoBehaviour:
   started: 0
   state: 0
   tree: {fileID: 11400000}
-  position: {x: 721.7143, y: 128.53896}
+  position: {x: 710.10724, y: 130.74289}
   targetVariable: angle
   expression: (b.floatVariable["angle"]+b.floatVariable["rvel"])%360

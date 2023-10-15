@@ -19,11 +19,11 @@ public class BTInspectorView : VisualElement
 
     internal void UpdateSelection(BTNodeView nodeView)
     {
-        Clear();
+        Clear();//更换节点，在UIElements元素意义上
+        UnityEngine.Object.DestroyImmediate(editor);//销毁原来的inspector
 
-        UnityEngine.Object.DestroyImmediate(editor);
         editor = Editor.CreateEditor(nodeView.node);
-        IMGUIContainer container = new(() => { 
+        IMGUIContainer container = new(() => { //container是元素
             if(editor.target)
                 editor.OnInspectorGUI(); 
         });
