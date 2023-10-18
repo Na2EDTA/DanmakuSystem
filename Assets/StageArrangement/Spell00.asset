@@ -17,7 +17,7 @@ MonoBehaviour:
   started: 0
   state: 0
   tree: {fileID: 11400000}
-  position: {x: 192.42856, y: 228.42856}
+  position: {x: 202.57144, y: 101.71428}
   child: {fileID: 6586606533506108343}
   count: inf
 --- !u!114 &-6283389849601166838

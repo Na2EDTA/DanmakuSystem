@@ -68,8 +68,6 @@ MonoBehaviour:
     the 2D Renderer in Universal RP.
   preview: {fileID: -3604256930052969394}
   dependencies:
-  - dependency: {fileID: 11400000, guid: 7a4a4853caad44a4781c5c9793ddb71e, type: 2}
-    instantiationMode: 1
   - dependency: {fileID: 2640631609377604977, guid: 5131e985ec895774e995aef3b510db42, type: 3}
     instantiationMode: 0
   - dependency: {fileID: 2800000, guid: 93be9657f2623d64e9a5d09a48c337d5, type: 3}
@@ -78,8 +76,8 @@ MonoBehaviour:
     instantiationMode: 0
   - dependency: {fileID: 2800000, guid: 796e31697f97e174da694a5eb3687ed9, type: 3}
     instantiationMode: 0
-  - dependency: {fileID: 2800000, guid: 228b5da7065723540ba18636abee2c52, type: 3}
-    instantiationMode: 0
+  - dependency: {fileID: 11400000, guid: 8b50b15a4f63d9d4ab5fa6bde7b19c00, type: 2}
+    instantiationMode: 1
   - dependency: {fileID: 2800000, guid: b9a110ece73dde442bf4ff4d48c14386, type: 3}
     instantiationMode: 0
   - dependency: {fileID: 4670447830666054201, guid: fbc8e3b6dc091064da73be4d37a56de2, type: 3}
@@ -87,6 +85,8 @@ MonoBehaviour:
   - dependency: {fileID: 2800000, guid: 58ef5de35d5fee34f9de441f5b962678, type: 3}
     instantiationMode: 0
   - dependency: {fileID: 2800000, guid: c1e2c23fc9f7e5e4bb3a6cc1d56fb061, type: 3}
+    instantiationMode: 0
+  - dependency: {fileID: 2800000, guid: 228b5da7065723540ba18636abee2c52, type: 3}
     instantiationMode: 0
   - dependency: {fileID: 2800000, guid: e0db5186c44378f4dbd70aef6d926ca0, type: 3}
     instantiationMode: 0
@@ -104,9 +104,9 @@ MonoBehaviour:
     instantiationMode: 0
   - dependency: {fileID: 3044831332731041964, guid: 015dececc74e97c43a7276c7572513b4, type: 3}
     instantiationMode: 0
-  - dependency: {fileID: 2800000, guid: 126f3a9d078bbf64fa112ed429800348, type: 3}
-    instantiationMode: 0
   - dependency: {fileID: 2871933979256603183, guid: cc4860a8ae37f204b9bbf76a2b12ea1f, type: 3}
+    instantiationMode: 0
+  - dependency: {fileID: 2800000, guid: 126f3a9d078bbf64fa112ed429800348, type: 3}
     instantiationMode: 0
   templatePipeline: {fileID: 0}
   addToDefaults: 1
