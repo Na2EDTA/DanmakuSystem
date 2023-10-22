@@ -135,6 +135,7 @@
     <Compile Include="Assets\Scripts\BehaviourTree\BTNodeSearchWindow.cs" />
     <Compile Include="Assets\Scripts\Curves\BezierPath.cs" />
     <Compile Include="Assets\Scripts\BehaviourTree\BasicNodes\BTLogNode.cs" />
+    <Compile Include="Assets\Scripts\BehaviourTree\CoreNodes\BTData.cs" />
     <Compile Include="Assets\LeanTween\Framework\LeanTest.cs" />
     <Compile Include="Assets\Scripts\BehaviourTree\BasicNodes\BTWaitSecondNode.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\PathSpline2d.cs" />
@@ -147,7 +148,6 @@
     <Compile Include="Assets\LeanTween\Examples\Scripts\GeneralBasic.cs" />
     <Compile Include="Assets\LeanTween\Examples\Archived\TestingRigidbodyCS.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\Following.cs" />
-    <Compile Include="Assets\Scripts\BehaviourTree\CoreNodes\BTDataNode.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\LeanTween\ReadMe.txt" />

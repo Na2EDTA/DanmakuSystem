@@ -9,6 +9,7 @@ public class BTTree : ScriptableObject
     public BTRootNode rootNode;
     public BTNode.State state = BTNode.State.Running;
     public List<BTNode> nodes = new();
+    public List<BTData> datas = new();
     public BTBlackboard blackboard;
     public BTRuntime runtime;
 
