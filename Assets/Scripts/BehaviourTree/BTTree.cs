@@ -29,6 +29,7 @@ public class BTTree : ScriptableObject
         return blackboard;
     }
 
+    //创建控制流节点
     public BTNode CreateNode(System.Type type)
     {
         BTNode node = CreateInstance(type) as BTNode;
@@ -47,12 +48,54 @@ public class BTTree : ScriptableObject
         return node;
     }
 
+    //创建数据节点
+    public BTData<T> CreateData<T>()
+    {
+        BTData<T> data = CreateInstance<BTData<T>>();
+        data.name = typeof(T).ToString();
+        data.guid = GUID.Generate().ToString();
+        data.tree = this; 
+        
+        Undo.RecordObject(this, "Behaviour Tree (Create Data)");
+        datas.Add(data);
+        if (!Application.isPlaying)
+            AssetDatabase.AddObjectToAsset(data, this);
+        Undo.RegisterCreatedObjectUndo(data, "Behaviour Tree (Create Data)");
+        AssetDatabase.SaveAssets();
+        return data;
+    }
+
+    public BTData CreateData(System.Type type)
+    {
+        BTData data = CreateInstance<BTData>();
+        data.name = type.Name;
+        data.guid = GUID.Generate().ToString();
+        data.tree = this;
+
+        Undo.RecordObject(this, "Behaviour Tree (Create Data)");
+        datas.Add(data);
+        if (!Application.isPlaying)
+            AssetDatabase.AddObjectToAsset(data, this);
+        Undo.RegisterCreatedObjectUndo(data, "Behaviour Tree (Create Data)");
+        AssetDatabase.SaveAssets();
+        return data;
+    }
+
     public void RemoveNode(BTNode node)
     {
         Undo.RecordObject(this, "Behaviour Tree (Delete Node)");
         nodes.Remove(node);
         //AssetDatabase.RemoveObjectFromAsset(node);
         Undo.DestroyObjectImmediate(node);
+        AssetDatabase.SaveAssets();
+    }
+
+    public void RemoveData(BTData data)
+    {
+        Undo.RecordObject(this, "Behaviour Tree (Delete Data)");
+        datas.Remove(data);
+        //AssetDatabase.RemoveObjectFromAsset(data);
+        Undo.DestroyObjectImmediate(data);
         AssetDatabase.SaveAssets();
     }
 

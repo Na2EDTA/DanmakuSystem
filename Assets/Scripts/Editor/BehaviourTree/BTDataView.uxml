@@ -1,0 +1,23 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/Scripts/Editor/BehaviourTree/BTDataView.uss?fileID=7433441132597879392&amp;guid=ad681969d364b314687eb4b18f217b72&amp;type=3#BTDataView" />
+    <ui:VisualElement name="node-border" style="max-width: none;">
+        <ui:VisualElement name="contents">
+            <ui:VisualElement name="divider" class="horizontal" />
+            <ui:VisualElement name="top">
+                <ui:VisualElement name="title" style="-unity-text-align: upper-center; -unity-font: url(&apos;project://database/Assets/Fonts/SourceHanSans-Regular_mianfeiziti.com%201.otf?fileID=12800000&amp;guid=68fe685591e7b4c49894958845ff037c&amp;type=3#SourceHanSans-Regular_mianfeiziti.com 1&apos;); -unity-font-style: bold-and-italic;">
+                    <ui:Label name="title-label" text="BTData" class="unity-text-element unity-label" style="-unity-font-style: bold; color: rgba(164, 210, 155, 255);" />
+                    <ui:VisualElement name="title-button-container">
+                        <ui:VisualElement name="collapse-button">
+                            <ui:VisualElement name="icon" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="divider" class="vertical" />
+                <ui:VisualElement name="input" />
+                <ui:VisualElement name="output" style="bottom: 25px;" />
+                <ui:VisualElement name="node-state" style="width: 40px; height: 40px; position: absolute; left: 150px; top: 5px; bottom: -29px;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:VisualElement name="selection-border" picking-mode="Ignore" />
+</ui:UXML>

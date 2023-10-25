@@ -68,16 +68,18 @@
     <Compile Include="Assets\LeanTween\Editor\LeanTweenDocumentationEditor.cs" />
     <Compile Include="Assets\Scripts\Editor\VelocityEditor.cs" />
     <Compile Include="Assets\Scripts\Editor\Curves\CircularPathEditor.cs" />
+    <Compile Include="Assets\Scripts\Editor\BehaviourTree\BTDataView.cs" />
     <Compile Include="Assets\Scripts\Editor\DictionaryDrawer.cs" />
     <Compile Include="Assets\Scripts\Editor\BehaviourTree\BTEditorWindow.cs" />
-    <Compile Include="Assets\Scripts\Editor\BehaviourTree\BTDataView.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Scripts\Editor\BehaviourTree\BTNodeView.uss" />
     <None Include="Assets\Scripts\Editor\BehaviourTree\BTNodeView.uxml" />
+    <None Include="Assets\Scripts\Editor\BehaviourTree\BTDataView.uxml" />
     <None Include="Assets\Scripts\Editor\BehaviourTree\BTEditorWindow.uxml" />
     <None Include="Assets\Scripts\Editor\BehaviourTree\BTEditorWindow.uss" />
     <None Include="Assets\NuGet\Editor\NugetForUnity.dll" />
+    <None Include="Assets\Scripts\Editor\BehaviourTree\BTDataView.uss" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

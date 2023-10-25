@@ -11,6 +11,7 @@ public class BTTreeView : GraphView
 {
     public BTTree tree;
     public Action<BTNodeView> OnNodeSelected;
+    public Action<BTDataView> OnDataSelected;
 
     public class UxmlFactroy: UxmlFactory<BTTreeView, UxmlTraits> { }
     public BTTreeView()
@@ -65,6 +66,14 @@ public class BTTreeView : GraphView
             foreach (var type in types)
             {
                 evt.menu.AppendAction($"[{type.BaseType.Name}] {type.Name}", (a) => CreateNode(type));
+            }
+        }
+
+        {
+            var types = TypeCache.GetTypesDerivedFrom<BTData>();
+            foreach (var type in types)
+            {
+                evt.menu.AppendAction($"[{type.Name}]", (a) => CreateData(type));
             }
         }
     }
@@ -154,7 +163,6 @@ public class BTTreeView : GraphView
                 BTNodeView childView = edge.input.node as BTNodeView;
                 tree.AddChild(parentView.node, childView.node);
             });
-                
         }
 
         //重排子节点顺序
@@ -176,12 +184,32 @@ public class BTTreeView : GraphView
         CreateNodeView(node);
     }
 
+    void CreateData<T>()
+    {
+        BTData<T> data = tree.CreateData<T>();
+        CreateDataView(data);
+    }
+
+    void CreateData(Type type)
+    {
+        BTData data = tree.CreateData(type);
+        CreateDataView(data);
+    }
+
     void CreateNodeView(BTNode node)
     {
         BTNodeView nodeView = new(node);
         nodeView.OnNodeSelected = OnNodeSelected;
 
         AddElement(nodeView);
+    }
+
+    void CreateDataView(BTData data)
+    {
+        BTDataView dataView = new(data);
+        dataView.OnDataSelected = OnDataSelected;
+
+        AddElement(dataView);
     }
 
     public void UpdateNodeStates()
