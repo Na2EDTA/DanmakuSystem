@@ -116,12 +116,27 @@ public class BTTreeView : GraphView
                 Edge edge = parentView?.output.ConnectTo(childView.input);
                 AddElement(edge);
             });
-        });   
+        });
+
+        //create datas in view
+        tree.datas.ForEach(n => CreateDataView(n));
+        //create edges in view
+        //tree.datas.ForEach(n =>
+        //{
+        //    BTDataView InputView = FindDataView(n.next);
+        //    BTDataView OutputView = FindDataView(n);
+        //    Edge edge = OutputView.output.ConnectTo(InputView?.input);
+        //    AddElement(edge);
+        //});
     }
 
     BTNodeView FindNodeView(BTNode node)
     {
         return GetNodeByGuid(node.guid) as BTNodeView;
+    }
+    BTDataView FindDataView(BTData data)
+    {
+        return GetNodeByGuid(data.guid) as BTDataView;
     }
 
     //获取可连接的节点
