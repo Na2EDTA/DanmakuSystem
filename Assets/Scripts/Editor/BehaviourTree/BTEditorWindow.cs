@@ -78,6 +78,7 @@ public class BTEditorWindow : EditorWindow
         inspectorView = root.Q<BTInspectorView>();
         blackboardView = root.Q<BTBlackboardView>();
         treeView.OnNodeSelected = OnNodeSelectionChanged;
+        treeView.OnDataSelected = OnDataSelectionChanged;
         OnSelectionChange();
     }
 
@@ -117,6 +118,10 @@ public class BTEditorWindow : EditorWindow
     void OnNodeSelectionChanged(BTNodeView nodeView)
     {
         inspectorView.UpdateSelection(nodeView);
+    }
+    void OnDataSelectionChanged(BTDataView dataView)
+    {
+        inspectorView.UpdateSelection(dataView);
     }
 
     //根据inspector变化更新节点状态

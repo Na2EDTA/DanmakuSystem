@@ -170,8 +170,11 @@ public class BTTreeView : GraphView
         {
             nodes.ForEach((n) =>
             {
-                BTNodeView view = n as BTNodeView;
-                view.SortChildren();
+                if (n.GetType() == typeof(BTNodeView))
+                {
+                    BTNodeView view = n as BTNodeView;
+                    view.SortChildren();
+                }
             });
         }
 
@@ -216,8 +219,11 @@ public class BTTreeView : GraphView
     {
         nodes.ForEach(n =>
         {
-            BTNodeView view = n as BTNodeView;
-            view.UpdateState();
+            if (n.GetType() == typeof(BTNode))
+            {
+                BTNodeView view = n as BTNodeView;
+                view.UpdateState();
+            }
         });
     }
 }

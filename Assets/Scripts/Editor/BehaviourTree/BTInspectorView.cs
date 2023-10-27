@@ -29,4 +29,16 @@ public class BTInspectorView : VisualElement
         });
         Add(container);
     }
+    internal void UpdateSelection(BTDataView dataView)
+    {
+        Clear();//更换节点，在UIElements元素意义上
+        UnityEngine.Object.DestroyImmediate(editor);//销毁原来的inspector
+
+        editor = Editor.CreateEditor(dataView.data);
+        IMGUIContainer container = new(() => { //container是元素
+            if (editor.target)
+                editor.OnInspectorGUI();
+        });
+        Add(container);
+    }
 }
