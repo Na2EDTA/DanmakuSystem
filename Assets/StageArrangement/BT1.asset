@@ -146,6 +146,24 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &-7415600091718261917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e72ed9d5f66a7b44a8ca288b2bc10a0c, type: 3}
+  m_Name: BTData`1
+  m_EditorClassIdentifier: 
+  comment: 
+  guid: 032ee3c517be0b04c96ebe833bec8334
+  previous: {fileID: 0}
+  next: {fileID: 0}
+  tree: {fileID: 11400000}
+  position: {x: 0, y: 0}
 --- !u!114 &-7163696795786351132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -244,7 +262,7 @@ MonoBehaviour:
   previous: {fileID: 0}
   next: {fileID: 0}
   tree: {fileID: 11400000}
-  position: {x: 0, y: 0}
+  position: {x: 82.285706, y: 424.64572}
 --- !u!114 &-4020979300221006994
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -418,7 +436,7 @@ MonoBehaviour:
   started: 0
   state: 0
   tree: {fileID: 11400000}
-  position: {x: 268.57147, y: 180.57144}
+  position: {x: 280, y: 200}
   children: []
   intVariableName: branch
 --- !u!114 &-966514463440424344
@@ -441,24 +459,6 @@ MonoBehaviour:
   position: {x: 75.4286, y: 70.85715}
   child: {fileID: 7978671210570893167}
   count: 3
---- !u!114 &-826668507587230879
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e72ed9d5f66a7b44a8ca288b2bc10a0c, type: 3}
-  m_Name: BTData`1
-  m_EditorClassIdentifier: 
-  comment: 
-  guid: d20447ec6d96f5b4faffc481436661f6
-  previous: {fileID: 0}
-  next: {fileID: 0}
-  tree: {fileID: 11400000}
-  position: {x: 310.2858, y: 288}
 --- !u!114 &-570456015561251401
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -565,8 +565,8 @@ MonoBehaviour:
   - {fileID: -1949744994324461942}
   - {fileID: 8766591146406126864}
   datas:
-  - {fileID: -826668507587230879}
   - {fileID: -4854557870085712221}
+  - {fileID: -7415600091718261917}
   blackboard: {fileID: -3291095199373937889}
   runtime: {fileID: 0}
 --- !u!114 &1042319157723746887

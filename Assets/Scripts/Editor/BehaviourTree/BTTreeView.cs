@@ -121,13 +121,13 @@ public class BTTreeView : GraphView
         //create datas in view
         tree.datas.ForEach(n => CreateDataView(n));
         //create edges in view
-        tree.datas.ForEach(n =>
-        {
-            BTDataView inputView = FindDataView(n?.next);
-            BTDataView outputView = FindDataView(n);
-            Edge edge = outputView.output.ConnectTo(inputView?.input);
-            AddElement(edge);
-        });
+        //tree.datas.ForEach(n =>
+        //{
+        //    BTDataView inputView = FindDataView(n.next);
+        //    BTDataView outputView = FindDataView(n);
+        //    Edge edge = outputView.output.ConnectTo(inputView?.input);
+        //    AddElement(edge);
+        //});
     }
 
     BTNodeView FindNodeView(BTNode node)
@@ -170,9 +170,16 @@ public class BTTreeView : GraphView
                 Edge edge = elem as Edge;
                 if (edge != null)
                 {
-                    BTNodeView parentView = edge.output.node as BTNodeView;
-                    BTNodeView childView = edge.input.node as BTNodeView;
-                    tree.RemoveChild(parentView.node, childView.node);
+                    if (edge.input.portName == "" && edge.input.portName == edge.output.portName) 
+                    {
+                        BTNodeView parentView = edge.output.node as BTNodeView;
+                        BTNodeView childView = edge.input.node as BTNodeView;
+                        tree.RemoveChild(parentView.node, childView.node); 
+                    }
+                    else if(edge.input.portType == edge.output.portType && edge.input.portType == typeof(float))
+                    {
+                        //数据节点链接行为
+                    }
                 }
             });
         }
@@ -191,7 +198,7 @@ public class BTTreeView : GraphView
                 }
                 else if (edge.input.portType == edge.output.portType && edge.input.portType  == typeof(float))
                 {
-                    //do sth...
+                    //数据节点链接行为
                 }
             });
         }

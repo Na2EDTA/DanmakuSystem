@@ -56,7 +56,7 @@ MonoBehaviour:
   previous: {fileID: 0}
   next: {fileID: 0}
   tree: {fileID: 11400000}
-  position: {x: 199.99988, y: -148.66667}
+  position: {x: 83.14285, y: -154.57143}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,7 +154,7 @@ MonoBehaviour:
   previous: {fileID: 0}
   next: {fileID: 0}
   tree: {fileID: 11400000}
-  position: {x: 0, y: 0}
+  position: {x: 90.85715, y: 74.074265}
 --- !u!114 &3619113277671211318
 MonoBehaviour:
   m_ObjectHideFlags: 0
