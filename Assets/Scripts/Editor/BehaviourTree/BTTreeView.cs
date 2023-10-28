@@ -121,19 +121,20 @@ public class BTTreeView : GraphView
         //create datas in view
         tree.datas.ForEach(n => CreateDataView(n));
         //create edges in view
-        //tree.datas.ForEach(n =>
-        //{
-        //    BTDataView InputView = FindDataView(n.next);
-        //    BTDataView OutputView = FindDataView(n);
-        //    Edge edge = OutputView.output.ConnectTo(InputView?.input);
-        //    AddElement(edge);
-        //});
+        tree.datas.ForEach(n =>
+        {
+            BTDataView inputView = FindDataView(n?.next);
+            BTDataView outputView = FindDataView(n);
+            Edge edge = outputView.output.ConnectTo(inputView?.input);
+            AddElement(edge);
+        });
     }
 
     BTNodeView FindNodeView(BTNode node)
     {
         return GetNodeByGuid(node.guid) as BTNodeView;
     }
+
     BTDataView FindDataView(BTData data)
     {
         return GetNodeByGuid(data.guid) as BTDataView;
@@ -144,7 +145,7 @@ public class BTTreeView : GraphView
     {
         return ports.ToList().Where(endPort =>
         endPort.direction != startPort.direction &&
-        endPort.node != startPort.node).ToList();
+        endPort.node != startPort.node && endPort.portName == startPort.portName).ToList();
     }
 
     //图发生改变时的响应函数，改变runtime的树
@@ -160,6 +161,12 @@ public class BTTreeView : GraphView
                     tree.RemoveNode(nodeView.node);
                 }
 
+                BTDataView dataView = elem as BTDataView;
+                if (dataView != null)
+                {
+                    tree.RemoveData(dataView.data);
+                }
+
                 Edge edge = elem as Edge;
                 if (edge != null)
                 {
@@ -170,13 +177,22 @@ public class BTTreeView : GraphView
             });
         }
 
-        if (graphViewChange.edgesToCreate != null)
+        var edgesToCreate = graphViewChange.edgesToCreate;
+
+        if (edgesToCreate != null)
         {
-            graphViewChange.edgesToCreate.ForEach(edge => 
+            edgesToCreate.ForEach(edge => 
             {
-                BTNodeView parentView = edge.output.node as BTNodeView;
-                BTNodeView childView = edge.input.node as BTNodeView;
-                tree.AddChild(parentView.node, childView.node);
+                if (edge.input.portName == edge.output.portName && edge.input.portName == "") 
+                {
+                    BTNodeView parentView = edge.output.node as BTNodeView;
+                    BTNodeView childView = edge.input.node as BTNodeView;
+                    tree.AddChild(parentView.node, childView.node); 
+                }
+                else if (edge.input.portType == edge.output.portType && edge.input.portType  == typeof(float))
+                {
+                    //do sth...
+                }
             });
         }
 

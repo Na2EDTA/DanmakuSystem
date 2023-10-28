@@ -5,7 +5,7 @@
             <ui:VisualElement name="divider" class="horizontal" />
             <ui:VisualElement name="top">
                 <ui:VisualElement name="title" style="-unity-text-align: upper-center; -unity-font: url(&apos;project://database/Assets/Fonts/SourceHanSans-Regular_mianfeiziti.com%201.otf?fileID=12800000&amp;guid=68fe685591e7b4c49894958845ff037c&amp;type=3#SourceHanSans-Regular_mianfeiziti.com 1&apos;); -unity-font-style: bold-and-italic;">
-                    <ui:Label name="title-label" text="BTData" class="unity-text-element unity-label" style="-unity-font-style: bold; color: rgba(164, 210, 155, 255);" />
+                    <ui:Label name="title-label" text="BTData" class="unity-text-element unity-label" style="-unity-font-style: bold; color: rgb(127, 192, 128);" />
                     <ui:VisualElement name="title-button-container">
                         <ui:VisualElement name="collapse-button">
                             <ui:VisualElement name="icon" />

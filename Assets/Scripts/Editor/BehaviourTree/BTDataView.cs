@@ -29,12 +29,26 @@ public class BTDataView : Node
 
     private void CreateInputPorts()
     {
-        input = InstantiatePort(Orientation.Horizontal, Direction.Input, Port.Capacity.Single, typeof(bool));
+        input = InstantiatePort(Orientation.Horizontal, Direction.Input, Port.Capacity.Single, typeof(float));
+        input.portColor = new(0.5f, 0.75f, 0.5f, 1);
+        if (input != null)
+        {
+            input.style.flexDirection = FlexDirection.Row;
+            input.portName = " ";
+            inputContainer.Add(input);
+        }
     }
 
     private void CreateOutputPorts()
     {
-        output = InstantiatePort(Orientation.Horizontal, Direction.Output, Port.Capacity.Single, typeof(bool));
+        output = InstantiatePort(Orientation.Horizontal, Direction.Output, Port.Capacity.Single, typeof(float));
+        output.portColor = new(0.5f, 0.75f, 0.5f, 1);
+        if (output != null)
+        {
+            output.style.flexDirection = FlexDirection.RowReverse;
+            output.portName = " ";
+            outputContainer.Add(output);
+        }
     }
 
     //支持鼠标拖动位置，并且可以撤回

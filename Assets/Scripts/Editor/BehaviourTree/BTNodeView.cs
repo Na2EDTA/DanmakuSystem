@@ -15,8 +15,7 @@ public class BTNodeView : Node
 
     public BTNodeView(BTNode node): base("Assets/Scripts/Editor/BehaviourTree/BTNodeView.uxml")
     {
-        BTSubTreeNode subTreeNode = new BTSubTreeNode();
-        if (node is BTSubTreeNode) subTreeNode = node as BTSubTreeNode;
+        if (node is BTSubTreeNode) SetUpSubtreeNode(node);
 
         this.node = node;
         title = node.name;
@@ -28,13 +27,18 @@ public class BTNodeView : Node
         CreateOutputPorts();
         CreateInputPorts();
         SetupClasses();
+    }
+
+    void SetUpSubtreeNode(BTNode node)
+    {
+        var subtreeNode = node as BTSubTreeNode;
 
         //双击BTSubTreeNode事件监听
         this.RegisterCallback<MouseDownEvent>(evt =>
         {
             if (evt.clickCount == 2 && title == "BTSubTreeNode") // 检查是否是双击事件并且节点的名称是"BTSubTreeNode"
             {
-                Selection.activeObject = subTreeNode.subTree;
+                Selection.activeObject = subtreeNode.subTree;
             }
         });
     }

@@ -109,7 +109,7 @@
 }
 
 .failed #title {
-    color: rgb(255, 59, 59);
+    color: rgb(255, 72, 72);
 }
 
 .root #output {
