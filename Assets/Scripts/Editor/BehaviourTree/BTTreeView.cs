@@ -145,7 +145,8 @@ public class BTTreeView : GraphView
     {
         return ports.ToList().Where(endPort =>
         endPort.direction != startPort.direction &&
-        endPort.node != startPort.node && endPort.portName == startPort.portName).ToList();
+        endPort.node != startPort.node && endPort.portName == startPort.portName 
+        && endPort.portType == startPort.portType).ToList();
     }
 
     //图发生改变时的响应函数，改变runtime的树
@@ -176,7 +177,7 @@ public class BTTreeView : GraphView
                         BTNodeView childView = edge.input.node as BTNodeView;
                         tree.RemoveChild(parentView.node, childView.node); 
                     }
-                    else if(edge.input.portType == edge.output.portType && edge.input.portType == typeof(float))
+                    else if(edge.input.portType == edge.output.portType && edge.input.portName == " ")
                     {
                         //数据节点链接行为
                     }
@@ -196,7 +197,7 @@ public class BTTreeView : GraphView
                     BTNodeView childView = edge.input.node as BTNodeView;
                     tree.AddChild(parentView.node, childView.node); 
                 }
-                else if (edge.input.portType == edge.output.portType && edge.input.portType  == typeof(float))
+                else if (edge.input.portType == edge.output.portType && edge.input.portName  == " ")
                 {
                     //数据节点链接行为
                 }
@@ -257,9 +258,10 @@ public class BTTreeView : GraphView
     {
         nodes.ForEach(n =>
         {
-            if (n.GetType() == typeof(BTNode))
+            if (n.GetType() == typeof(BTNodeView))
             {
                 BTNodeView view = n as BTNodeView;
+
                 view.UpdateState();
             }
         });

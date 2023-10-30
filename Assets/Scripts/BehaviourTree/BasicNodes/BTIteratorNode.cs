@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BTIteratorNode : BTDecoratorNode
 {
-    public string count = "inf";
+    [Input]public string count = "inf";
     int _count = -1;
     int i = 0;
 

@@ -6,8 +6,8 @@ public class BTData : ScriptableObject
 {
     public string comment;
     public string guid;
-    public BTData previous;
-    public BTData next;
+    public BTData source;
+    public List<BTData> destinations;
     [HideInInspector] public BTTree tree;
     [HideInInspector] public Vector2 position;
 }

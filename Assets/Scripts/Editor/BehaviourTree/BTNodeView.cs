@@ -6,11 +6,13 @@ using UnityEditor.Experimental.GraphView;
 using UnityEngine.UIElements;
 using UnityEditor.UIElements;
 using System.Linq;
+using System.Reflection;
 
 public class BTNodeView : Node
 {
     public BTNode node;
     public Port input, output;
+    public List<Port> dataInputs, dataOutputs;
     public Action<BTNodeView> OnNodeSelected;
 
     public BTNodeView(BTNode node): base("Assets/Scripts/Editor/BehaviourTree/BTNodeView.uxml")
@@ -26,7 +28,37 @@ public class BTNodeView : Node
 
         CreateOutputPorts();
         CreateInputPorts();
+        CreateDataPorts(node);//根据attribute的情况，添加数据端口
         SetupClasses();
+    }
+
+    private void CreateDataPorts(BTNode node)
+    {
+        var fields = node.GetType().GetFields();
+        for (int i = 0; i < fields.Length; i++)
+        {
+            if (fields[i].FieldType.GetCustomAttribute<InputAttribute>() != null)
+            {
+                Port data = InstantiatePort(Orientation.Horizontal, 
+                    Direction.Input, Port.Capacity.Single, fields[i].FieldType);
+                data.style.flexDirection = FlexDirection.Row;
+                data.portName = " ";
+                data.portColor = new(0.5f, 0.75f, 0.5f, 1);
+                inputContainer.Add(data);
+                dataInputs.Add(data);
+            }
+            else if (fields[i].FieldType.GetCustomAttribute<OutputAttribute>() != null)
+            {
+                Port data = InstantiatePort(Orientation.Horizontal,
+                    Direction.Output, Port.Capacity.Multi, fields[i].FieldType);
+                data.style.flexDirection = FlexDirection.Row;
+                data.portName = " ";
+                data.portColor = new(0.5f, 0.75f, 0.5f, 1);
+                outputContainer.Add(data);
+                dataOutputs.Add(data);
+            }
+
+        }
     }
 
     void SetUpSubtreeNode(BTNode node)
@@ -192,9 +224,7 @@ public class BTNodeView : Node
             }
             else
                 AddToClassList("unstarted");
-        }
-        
-    }
 
-   
+        }
+    }
 }
