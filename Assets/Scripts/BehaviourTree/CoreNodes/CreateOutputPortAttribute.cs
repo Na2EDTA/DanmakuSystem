@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [AttributeUsage(AttributeTargets.Field, AllowMultiple = false)]
-public class InputAttribute : Attribute
+public sealed class CreateOutputPortAttribute : Attribute
 {
-
+    
 }

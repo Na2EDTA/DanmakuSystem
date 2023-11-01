@@ -35,19 +35,23 @@ public class BTNodeView : Node
     private void CreateDataPorts(BTNode node)
     {
         var fields = node.GetType().GetFields();
+        if (node is BTIteratorNode)
+        {
+            //fields[0].FieldType.GetTypeInfo().CustomAttributes.First(a => Debug.Log(a));
+        }
         for (int i = 0; i < fields.Length; i++)
         {
-            if (fields[i].FieldType.GetCustomAttribute<InputAttribute>() != null)
+            if (fields[i].FieldType.IsDefined(typeof(CreateInputPortAttribute)))
             {
                 Port data = InstantiatePort(Orientation.Horizontal, 
-                    Direction.Input, Port.Capacity.Single, fields[i].FieldType);
+                Direction.Input, Port.Capacity.Single, fields[i].FieldType);
                 data.style.flexDirection = FlexDirection.Row;
                 data.portName = " ";
                 data.portColor = new(0.5f, 0.75f, 0.5f, 1);
                 inputContainer.Add(data);
                 dataInputs.Add(data);
             }
-            else if (fields[i].FieldType.GetCustomAttribute<OutputAttribute>() != null)
+            else if (fields[i].FieldType.IsDefined(typeof(CreateOutputPortAttribute)))
             {
                 Port data = InstantiatePort(Orientation.Horizontal,
                     Direction.Output, Port.Capacity.Multi, fields[i].FieldType);
