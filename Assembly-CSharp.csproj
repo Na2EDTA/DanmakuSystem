@@ -124,6 +124,7 @@
     <Compile Include="Assets\LeanTween\Framework\LeanAudio.cs" />
     <Compile Include="Assets\Scripts\Pool.cs" />
     <Compile Include="Assets\Scripts\Dynamic\Acceleration.cs" />
+    <Compile Include="Assets\Scripts\BehaviourTree\CoreNodes\CreateOutputPortAttribute.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\PathSpline.cs" />
     <Compile Include="Assets\BulletDef\Script\Simple.cs" />
     <Compile Include="Assets\Scripts\BehaviourTree\CoreNodes\BTCompositeNode.cs" />
@@ -150,7 +151,6 @@
     <Compile Include="Assets\LeanTween\Examples\Archived\TestingRigidbodyCS.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\Following.cs" />
     <Compile Include="Assets\Scripts\BehaviourTree\CoreNodes\CreateInputPortAttribute.cs" />
-    <Compile Include="Assets\Scripts\BehaviourTree\CoreNodes\CreateOutputPortAttribute.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\LeanTween\ReadMe.txt" />

@@ -7,6 +7,7 @@ using UnityEngine.UIElements;
 using UnityEditor.UIElements;
 using System.Linq;
 using System.Reflection;
+using Danmaku.BehaviourTree;
 
 public class BTNodeView : Node
 {
@@ -35,13 +36,9 @@ public class BTNodeView : Node
     private void CreateDataPorts(BTNode node)
     {
         var fields = node.GetType().GetFields();
-        if (node is BTIteratorNode)
-        {
-            //fields[0].FieldType.GetTypeInfo().CustomAttributes.First(a => Debug.Log(a));
-        }
         for (int i = 0; i < fields.Length; i++)
         {
-            if (fields[i].FieldType.IsDefined(typeof(CreateInputPortAttribute)))
+            if (fields[i].IsDefined(typeof(CreateInputPortAttribute)))
             {
                 Port data = InstantiatePort(Orientation.Horizontal, 
                 Direction.Input, Port.Capacity.Single, fields[i].FieldType);

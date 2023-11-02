@@ -49,26 +49,10 @@ public class BTTree : ScriptableObject
     }
 
     //创建数据节点
-    public BTData<T> CreateData<T>()
-    {
-        BTData<T> data = CreateInstance<BTData<T>>();
-        data.name = typeof(T).ToString();
-        data.guid = GUID.Generate().ToString();
-        data.tree = this; 
-        
-        Undo.RecordObject(this, "Behaviour Tree (Create Data)");
-        datas.Add(data);
-        if (!Application.isPlaying)
-            AssetDatabase.AddObjectToAsset(data, this);
-        Undo.RegisterCreatedObjectUndo(data, "Behaviour Tree (Create Data)");
-        AssetDatabase.SaveAssets();
-        return data;
-    }
-
-    public BTData CreateData(System.Type type)
+    public BTData CreateData()
     {
         BTData data = CreateInstance<BTData>();
-        data.name = type.Name;
+        data.name = "BTData(float)";
         data.guid = GUID.Generate().ToString();
         data.tree = this;
 

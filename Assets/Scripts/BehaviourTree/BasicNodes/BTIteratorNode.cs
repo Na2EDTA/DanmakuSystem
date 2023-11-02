@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BTIteratorNode : BTDecoratorNode
 {
-    [CreateInputPort]public string count = "inf";
+    [Danmaku.BehaviourTree.CreateInputPort] public string count = "inf";
     int _count = -1;
     int i = 0;
 

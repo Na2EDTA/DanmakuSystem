@@ -226,12 +226,6 @@ public class BTTreeView : GraphView
         CreateNodeView(node);
     }
 
-    void CreateData<T>()
-    {
-        BTData<T> data = tree.CreateData<T>();
-        CreateDataView(data);
-    }
-
     void CreateData(Type type)
     {
         BTData data = tree.CreateData(type);
