@@ -73,7 +73,7 @@ public class BTTreeView : GraphView
             var types = TypeCache.GetTypesDerivedFrom<BTData>();
             foreach (var type in types)
             {
-                evt.menu.AppendAction($"[{type.Name}]", (a) => CreateData(type));
+                evt.menu.AppendAction($"[{type.Name}]", (a) => CreateData());
             }
         }
     }
@@ -226,9 +226,9 @@ public class BTTreeView : GraphView
         CreateNodeView(node);
     }
 
-    void CreateData(Type type)
+    void CreateData()
     {
-        BTData data = tree.CreateData(type);
+        BTData data = tree.CreateData();
         CreateDataView(data);
     }
 

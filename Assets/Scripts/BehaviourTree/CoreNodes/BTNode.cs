@@ -2,16 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class BTNode: ScriptableObject
+public abstract class BTNode: BTElement
 {
-    /*[HideInInspector]*/ public string guid;
-    public string comment;
     /*[HideInInspector]*/ public bool started = false;
     /*[HideInInspector]*/ public State state = State.Running;
-    [HideInInspector] public BTTree tree;
-#if UNITY_EDITOR
-    [HideInInspector] public Vector2 position;
-#endif
+
 
     public float this[string index]
     {

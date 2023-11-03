@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 566deb95dad968248911a6a7f623961e, type: 3}
   m_Name: BTWaitSecondNode
   m_EditorClassIdentifier: 
-  guid: 567daa3d4f0b5b74aacc24b713c0bcc9
   comment: 
-  started: 0
-  state: 0
+  guid: 567daa3d4f0b5b74aacc24b713c0bcc9
   tree: {fileID: 11400000}
   position: {x: 809.1429, y: -12.149421}
+  started: 0
+  state: 0
   duriation: 1
   ignoreTimeScale: 0
 --- !u!114 &-8830200562921213625
@@ -32,12 +32,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f14778df866a8984dafeeb80befd1e80, type: 3}
   m_Name: SimpleBulletNode
   m_EditorClassIdentifier: 
-  guid: 786eee33df8b9024c849e0373d56fc75
   comment: 
-  started: 0
-  state: 0
+  guid: 786eee33df8b9024c849e0373d56fc75
   tree: {fileID: 11400000}
   position: {x: 787.4285, y: -190.85721}
+  started: 0
+  state: 0
   style:
     color: 5
     shape: 1
@@ -61,12 +61,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e342e7b4d0f3321409e1f7197234f216, type: 3}
   m_Name: BTCalculateNode
   m_EditorClassIdentifier: 
-  guid: 3f46664aa1c9d654a8618594b09b1a21
   comment: 
-  started: 0
-  state: 0
+  guid: 3f46664aa1c9d654a8618594b09b1a21
   tree: {fileID: 11400000}
   position: {x: 802.2857, y: -346.815}
+  started: 0
+  state: 0
   targetVariable: a
   expression: a+5
 --- !u!114 &-8280871065426057134
@@ -81,12 +81,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30f88139afc2dba499cfb6af698b380f, type: 3}
   m_Name: BTSequencerNode
   m_EditorClassIdentifier: 
-  guid: 5b3d21e3801364948a148e4bdb9b50b4
   comment: 
-  started: 0
-  state: 0
+  guid: 5b3d21e3801364948a148e4bdb9b50b4
   tree: {fileID: 11400000}
   position: {x: 567.4286, y: 280.00006}
+  started: 0
+  state: 0
   children:
   - {fileID: -570456015561251401}
   - {fileID: 7226454822210463300}
@@ -103,12 +103,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30f88139afc2dba499cfb6af698b380f, type: 3}
   m_Name: BTSequencerNode
   m_EditorClassIdentifier: 
-  guid: 413901566056bee45be05581522c0bd3
   comment: 
-  started: 0
-  state: 0
+  guid: 413901566056bee45be05581522c0bd3
   tree: {fileID: 11400000}
   position: {x: 339.99994, y: -298.28564}
+  started: 0
+  state: 0
   children:
   - {fileID: -3878076803339813008}
   - {fileID: -5568990368243956528}
@@ -125,12 +125,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29e826b44628c764eb824b352a551977, type: 3}
   m_Name: BTInvokeNode
   m_EditorClassIdentifier: 
-  guid: 059db8cb174ea224aa71c9c29ffa20d5
   comment: 
-  started: 0
-  state: 0
+  guid: 059db8cb174ea224aa71c9c29ffa20d5
   tree: {fileID: 11400000}
   position: {x: 74.28575, y: 308.00003}
+  started: 0
+  state: 0
   unityEvent:
     m_PersistentCalls:
       m_Calls:
@@ -158,12 +158,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad13dbe439ad701439d6228b43eb9763, type: 3}
   m_Name: BTWaitFrameNode
   m_EditorClassIdentifier: 
-  guid: 089b366c6ceef124bb147ccbb7350052
   comment: 
-  started: 0
-  state: 0
+  guid: 089b366c6ceef124bb147ccbb7350052
   tree: {fileID: 11400000}
   position: {x: 825.7143, y: 50.28571}
+  started: 0
+  state: 0
   duriation: 300
 --- !u!114 &-6710197382767729905
 MonoBehaviour:
@@ -177,12 +177,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad13dbe439ad701439d6228b43eb9763, type: 3}
   m_Name: BTWaitFrameNode
   m_EditorClassIdentifier: 
-  guid: 0bb67b1630a66c44289622dc0fef9102
   comment: 
-  started: 0
-  state: 0
+  guid: 0bb67b1630a66c44289622dc0fef9102
   tree: {fileID: 11400000}
   position: {x: 558.2856, y: -286.28564}
+  started: 0
+  state: 0
   duriation: 3
 --- !u!114 &-5568990368243956528
 MonoBehaviour:
@@ -196,12 +196,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e342e7b4d0f3321409e1f7197234f216, type: 3}
   m_Name: BTCalculateNode
   m_EditorClassIdentifier: 
-  guid: c63b62d7f349c614c88d143775f0ff07
   comment: 
-  started: 0
-  state: 0
+  guid: c63b62d7f349c614c88d143775f0ff07
   tree: {fileID: 11400000}
   position: {x: 570.2857, y: -363.4286}
+  started: 0
+  state: 0
   targetVariable: a
   expression: a+5
 --- !u!114 &-5518346849228301782
@@ -216,12 +216,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ead9b992bedafc4fbe2b5988a3d0d43, type: 3}
   m_Name: BulletNode
   m_EditorClassIdentifier: 
-  guid: da92d9deba85ff147a47acace2591e28
   comment: 
-  started: 0
-  state: 0
+  guid: da92d9deba85ff147a47acace2591e28
   tree: {fileID: 11400000}
   position: {x: 82.28575, y: 245.7143}
+  started: 0
+  state: 0
   bulletName: 
   relativeTo: 0
   bulletPosition: {x: 0, y: 0}
@@ -239,12 +239,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58eac34e58fd70148ab69bf437e07f8e, type: 3}
   m_Name: BTRootNode
   m_EditorClassIdentifier: 
-  guid: 8142bdc496b00c64fa5d678f733a02af
   comment: 
-  started: 0
-  state: 0
+  guid: 8142bdc496b00c64fa5d678f733a02af
   tree: {fileID: 0}
   position: {x: -110.34612, y: 78.85715}
+  started: 0
+  state: 0
   child: {fileID: -966514463440424344}
 --- !u!114 &-3878076803339813008
 MonoBehaviour:
@@ -258,12 +258,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f14778df866a8984dafeeb80befd1e80, type: 3}
   m_Name: SimpleBulletNode
   m_EditorClassIdentifier: 
-  guid: 8f4cc7a6e523c9942a79c30ed1c0ed16
   comment: 
-  started: 0
-  state: 0
+  guid: 8f4cc7a6e523c9942a79c30ed1c0ed16
   tree: {fileID: 11400000}
   position: {x: 578.2857, y: -437.05167}
+  started: 0
+  state: 0
   style:
     color: 1
     shape: 10
@@ -287,12 +287,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b742235029ec73048b1a5a2c4273db34, type: 3}
   m_Name: BTIteratorNode
   m_EditorClassIdentifier: 
-  guid: d0f25f374744edb46add1f499e30c374
   comment: 
-  started: 0
-  state: 0
+  guid: d0f25f374744edb46add1f499e30c374
   tree: {fileID: 11400000}
   position: {x: 101.71419, y: -146.28572}
+  started: 0
+  state: 0
   child: {fileID: -8031346378290092990}
   count: inf
 --- !u!114 &-3291095199373937889
@@ -335,12 +335,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 566deb95dad968248911a6a7f623961e, type: 3}
   m_Name: BTWaitSecondNode
   m_EditorClassIdentifier: 
-  guid: 1747b930a3c6b4a4e8f6885fbe72e9ea
   comment: 
-  started: 0
-  state: 0
+  guid: 1747b930a3c6b4a4e8f6885fbe72e9ea
   tree: {fileID: 11400000}
   position: {x: 795.4286, y: -269.80008}
+  started: 0
+  state: 0
   duriation: 2
   ignoreTimeScale: 0
 --- !u!114 &-2086667876670011209
@@ -357,10 +357,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   comment: 
   guid: bf2840617dcd611468da410674358ce3
+  tree: {fileID: 11400000}
+  position: {x: 82.28572, y: -14.236086}
+  value: 0
   source: {fileID: 0}
   destinations: []
-  tree: {fileID: 11400000}
-  position: {x: 15.428562, y: -22.857159}
 --- !u!114 &-1949744994324461942
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -373,12 +374,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 302c1ae467f1fd74dbdb7e1c8dd0c81b, type: 3}
   m_Name: BTSubTreeNode
   m_EditorClassIdentifier: 
-  guid: 023ffd9f884941e4caac29b716c741a6
   comment: 
-  started: 0
-  state: 0
+  guid: 023ffd9f884941e4caac29b716c741a6
   tree: {fileID: 11400000}
   position: {x: 279.42856, y: 384}
+  started: 0
+  state: 0
   subTree: {fileID: 11400000, guid: 068613077ad959748a01cf0f01c51a6a, type: 2}
 --- !u!114 &-1681053106921165277
 MonoBehaviour:
@@ -392,12 +393,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1651ed64ef268b4080ddf47844f902f, type: 3}
   m_Name: BTLogNode
   m_EditorClassIdentifier: 
-  guid: 56ded9b51b3a82547b887fd8811fa69f
   comment: 
-  started: 0
-  state: 0
+  guid: 56ded9b51b3a82547b887fd8811fa69f
   tree: {fileID: 11400000}
   position: {x: 1026.8572, y: -101.14291}
+  started: 0
+  state: 0
   startLog: 
   stopLog: 
   updateLog: 3
@@ -413,12 +414,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13a2a3893121713449343b176e27485a, type: 3}
   m_Name: BTSelectorNode
   m_EditorClassIdentifier: 
-  guid: 5c2a920a63df5474793afda5483ae5c2
   comment: 
+  guid: 5c2a920a63df5474793afda5483ae5c2
+  tree: {fileID: 11400000}
+  position: {x: 280.00003, y: 200}
   started: 0
   state: 0
-  tree: {fileID: 11400000}
-  position: {x: 280, y: 200}
   children: []
   intVariableName: branch
 --- !u!114 &-966514463440424344
@@ -433,12 +434,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b742235029ec73048b1a5a2c4273db34, type: 3}
   m_Name: BTIteratorNode
   m_EditorClassIdentifier: 
-  guid: 99556451ad1ef1b44b08346d9c359d8d
   comment: 
-  started: 0
-  state: 0
+  guid: 99556451ad1ef1b44b08346d9c359d8d
   tree: {fileID: 11400000}
   position: {x: 75.4286, y: 70.85715}
+  started: 0
+  state: 0
   child: {fileID: 7978671210570893167}
   count: 3
 --- !u!114 &-570456015561251401
@@ -453,12 +454,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 614a961368dada7459d2a6193c4f7452, type: 3}
   m_Name: SimpleBulletsNode
   m_EditorClassIdentifier: 
-  guid: 9d9d2e389cd05f245b984e62746f6091
   comment: 
-  started: 0
-  state: 0
+  guid: 9d9d2e389cd05f245b984e62746f6091
   tree: {fileID: 11400000}
   position: {x: 792, y: 201.76433}
+  started: 0
+  state: 0
   style:
     color: 1
     shape: 10
@@ -486,12 +487,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f14778df866a8984dafeeb80befd1e80, type: 3}
   m_Name: SimpleBulletNode
   m_EditorClassIdentifier: 
-  guid: df4d6b5e2e1b9b4419bd31aeb36d718d
   comment: 
-  started: 0
-  state: 0
+  guid: df4d6b5e2e1b9b4419bd31aeb36d718d
   tree: {fileID: 11400000}
   position: {x: 56.571465, y: 192.00003}
+  started: 0
+  state: 0
   style:
     color: 0
     shape: 0
@@ -564,12 +565,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30f88139afc2dba499cfb6af698b380f, type: 3}
   m_Name: BTSequencerNode
   m_EditorClassIdentifier: 
-  guid: 067f36579d6a69443ade6da36dd7218c
   comment: 
-  started: 0
-  state: 0
+  guid: 067f36579d6a69443ade6da36dd7218c
   tree: {fileID: 11400000}
   position: {x: 562.28577, y: -198.85716}
+  started: 0
+  state: 0
   children:
   - {fileID: -2257653465888014877}
   - {fileID: -8830200562921213625}
@@ -588,10 +589,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   comment: 
   guid: 870c078bd61072f40867600c77d46709
-  source: {fileID: 0}
-  destinations: []
   tree: {fileID: 11400000}
   position: {x: 288, y: 288.00003}
+  value: 0
+  source: {fileID: 0}
+  destinations: []
 --- !u!114 &1303314157045635380
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -604,12 +606,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b742235029ec73048b1a5a2c4273db34, type: 3}
   m_Name: BTIteratorNode
   m_EditorClassIdentifier: 
-  guid: f7a27b393cd45f64a8adf1be4da77b8b
   comment: 
-  started: 0
-  state: 0
+  guid: f7a27b393cd45f64a8adf1be4da77b8b
   tree: {fileID: 11400000}
   position: {x: 75.428665, y: 392}
+  started: 0
+  state: 0
   child: {fileID: 0}
   count: inf
 --- !u!114 &2038816846634116149
@@ -624,12 +626,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1651ed64ef268b4080ddf47844f902f, type: 3}
   m_Name: BTLogNode
   m_EditorClassIdentifier: 
-  guid: 8f8d828549804d545b759bde8ed1f588
   comment: 
-  started: 0
-  state: 0
+  guid: 8f8d828549804d545b759bde8ed1f588
   tree: {fileID: 11400000}
   position: {x: 793.71436, y: 326.8571}
+  started: 0
+  state: 0
   startLog: 
   stopLog: 
   updateLog: 9
@@ -645,12 +647,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1739bd2a5639944f99b4feb0108e9a2, type: 3}
   m_Name: BTParallelNode
   m_EditorClassIdentifier: 
-  guid: eff41da8bdb59fd409bd2acb25231044
   comment: 
-  started: 0
-  state: 0
+  guid: eff41da8bdb59fd409bd2acb25231044
   tree: {fileID: 11400000}
   position: {x: 260.57144, y: -10.294555}
+  started: 0
+  state: 0
   children: []
 --- !u!114 &5369774965888169864
 MonoBehaviour:
@@ -664,12 +666,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1651ed64ef268b4080ddf47844f902f, type: 3}
   m_Name: BTLogNode
   m_EditorClassIdentifier: 
-  guid: 7701ff78f37ec134a8c49718aa10ef2d
   comment: 
-  started: 0
-  state: 0
+  guid: 7701ff78f37ec134a8c49718aa10ef2d
   tree: {fileID: 11400000}
   position: {x: 817.14294, y: 127.99998}
+  started: 0
+  state: 0
   startLog: 
   stopLog: end
   updateLog: 
@@ -685,12 +687,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30f88139afc2dba499cfb6af698b380f, type: 3}
   m_Name: BTSequencerNode
   m_EditorClassIdentifier: 
-  guid: 2e22b64e43fb0d74e99b5c86da0683b8
   comment: 
-  started: 0
-  state: 0
+  guid: 2e22b64e43fb0d74e99b5c86da0683b8
   tree: {fileID: 0}
   position: {x: 550.52924, y: 42.28571}
+  started: 0
+  state: 0
   children:
   - {fileID: -8962320355822052788}
   - {fileID: -7163696795786351132}
@@ -707,12 +709,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 566deb95dad968248911a6a7f623961e, type: 3}
   m_Name: BTWaitSecondNode
   m_EditorClassIdentifier: 
-  guid: c7f66010f80696345ac385115797b2fb
   comment: 
-  started: 0
-  state: 0
+  guid: c7f66010f80696345ac385115797b2fb
   tree: {fileID: 11400000}
   position: {x: 800, y: 263.42853}
+  started: 0
+  state: 0
   duriation: 1.5
   ignoreTimeScale: 0
 --- !u!114 &7978671210570893167
@@ -727,12 +729,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30f88139afc2dba499cfb6af698b380f, type: 3}
   m_Name: BTSequencerNode
   m_EditorClassIdentifier: 
-  guid: d35ff3cfdc290334f97b1e752ee455f4
   comment: 
-  started: 0
-  state: 0
+  guid: d35ff3cfdc290334f97b1e752ee455f4
   tree: {fileID: 11400000}
   position: {x: 252.57146, y: 78.85715}
+  started: 0
+  state: 0
   children:
   - {fileID: 1042319157723746887}
   - {fileID: 6907180866080670687}
@@ -749,10 +751,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 302c1ae467f1fd74dbdb7e1c8dd0c81b, type: 3}
   m_Name: BTSubTreeNode
   m_EditorClassIdentifier: 
-  guid: 0138ee74891b84e489a73078df2bad09
   comment: 
-  started: 0
-  state: 0
+  guid: 0138ee74891b84e489a73078df2bad09
   tree: {fileID: 11400000}
   position: {x: 810.2857, y: -93.14289}
+  started: 0
+  state: 0
   subTree: {fileID: 11400000, guid: d8f1888c3638699419f574e6ef8da556, type: 2}

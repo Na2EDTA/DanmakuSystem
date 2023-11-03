@@ -13,7 +13,7 @@ public class BTNodeView : Node
 {
     public BTNode node;
     public Port input, output;
-    public List<Port> dataInputs, dataOutputs;
+    public List<Port> dataInputs = new(), dataOutputs = new();
     public Action<BTNodeView> OnNodeSelected;
 
     public BTNodeView(BTNode node): base("Assets/Scripts/Editor/BehaviourTree/BTNodeView.uxml")
@@ -40,23 +40,23 @@ public class BTNodeView : Node
         {
             if (fields[i].IsDefined(typeof(CreateInputPortAttribute)))
             {
-                Port data = InstantiatePort(Orientation.Horizontal, 
+                Port dataPort = InstantiatePort(Orientation.Horizontal, 
                 Direction.Input, Port.Capacity.Single, fields[i].FieldType);
-                data.style.flexDirection = FlexDirection.Row;
-                data.portName = " ";
-                data.portColor = new(0.5f, 0.75f, 0.5f, 1);
-                inputContainer.Add(data);
-                dataInputs.Add(data);
+                dataPort.style.flexDirection = FlexDirection.Row;
+                dataPort.portName = " ";
+                dataPort.portColor = new(0.5f, 0.75f, 0.5f, 1);
+                inputContainer.Add(dataPort);
+                dataInputs.Add(dataPort);
             }
             else if (fields[i].FieldType.IsDefined(typeof(CreateOutputPortAttribute)))
             {
-                Port data = InstantiatePort(Orientation.Horizontal,
+                Port dataPort = InstantiatePort(Orientation.Horizontal,
                     Direction.Output, Port.Capacity.Multi, fields[i].FieldType);
-                data.style.flexDirection = FlexDirection.Row;
-                data.portName = " ";
-                data.portColor = new(0.5f, 0.75f, 0.5f, 1);
-                outputContainer.Add(data);
-                dataOutputs.Add(data);
+                dataPort.style.flexDirection = FlexDirection.Row;
+                dataPort.portName = " ";
+                dataPort.portColor = new(0.5f, 0.75f, 0.5f, 1);
+                outputContainer.Add(dataPort);
+                dataOutputs.Add(dataPort);
             }
 
         }
