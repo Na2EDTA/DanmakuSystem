@@ -10,6 +10,8 @@ using System.Linq;
 public class BTTreeView : GraphView
 {
     public BTTree tree;
+    public BTSearchMenu searchMenu;
+    public BTEditorWindow editorWindow;
     public Action<BTNodeView> OnNodeSelected;
     public Action<BTDataView> OnDataSelected;
 
@@ -21,11 +23,19 @@ public class BTTreeView : GraphView
         this.AddManipulator(new ContentDragger());
         this.AddManipulator(new SelectionDragger());
         this.AddManipulator(new RectangleSelector());
+        AddSearchMenu();
 
         var styleSheet = AssetDatabase.LoadAssetAtPath<StyleSheet>("Assets/Scripts/Editor/BehaviourTree/BTEditorWindow.uss");
         styleSheets.Add(styleSheet);
 
         Undo.undoRedoPerformed += OnUndoRedo;
+    }
+
+    private void AddSearchMenu()
+    {
+        searchMenu = ScriptableObject.CreateInstance<BTSearchMenu>();
+        searchMenu.Init(this, editorWindow);
+        nodeCreationRequest = context => SearchWindow.Open(new(context.screenMousePosition), searchMenu);
     }
 
     private void OnUndoRedo()
@@ -35,7 +45,7 @@ public class BTTreeView : GraphView
     }
 
     //创建节点菜单
-    public override void BuildContextualMenu(ContextualMenuPopulateEvent evt)
+    /*public override void BuildContextualMenu(ContextualMenuPopulateEvent evt)
     {
         {
             var types = TypeCache.GetTypesDerivedFrom<BTActionNode>();
@@ -73,10 +83,10 @@ public class BTTreeView : GraphView
             var types = TypeCache.GetTypesDerivedFrom<BTData>();
             foreach (var type in types)
             {
-                evt.menu.AppendAction($"[{type.Name}]", (a) => CreateData());
+                evt.menu.AppendAction($"[{type.Name}]", (a) => CreateData(type));
             }
         }
-    }
+    }*/
 
     //读取树并显示
     public void PopulateView(BTTree tree)
@@ -219,20 +229,20 @@ public class BTTreeView : GraphView
 
         return graphViewChange;
     }
-
-    void CreateNode(Type type)
+/*
+    public void CreateNode(Type type)
     {
         BTNode node = tree.CreateNode(type);
         CreateNodeView(node);
     }
 
-    void CreateData()
+    public void CreateData(Type type)
     {
-        BTData data = tree.CreateData();
+        BTData data = tree.CreateData(type);
         CreateDataView(data);
     }
-
-    void CreateNodeView(BTNode node)
+*/
+    public void CreateNodeView(BTNode node)
     {
         BTNodeView nodeView = new(node);
         nodeView.OnNodeSelected = OnNodeSelected;
@@ -240,7 +250,7 @@ public class BTTreeView : GraphView
         AddElement(nodeView);
     }
 
-    void CreateDataView(BTData data)
+    public void CreateDataView(BTData data)
     {
         BTDataView dataView = new(data);
         dataView.OnDataSelected = OnDataSelected;

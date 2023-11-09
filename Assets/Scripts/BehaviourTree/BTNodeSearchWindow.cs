@@ -9,13 +9,13 @@ using System.Linq;
 
 public class BTNodeSearchWindow : ScriptableObject, ISearchWindowProvider
 {
-    private BTGraphView _graphView;
+    private BTTreeView _graphView;
     private EditorWindow _editorWindow;
     Texture2D _identationIcon;
 
-    public void Init(BTGraphView graphView, EditorWindow editorWindow)
+    public void Init(BTGraphView treeView, EditorWindow editorWindow)
     {
-        _graphView = graphView;
+        _graphView = treeView;
         _editorWindow = editorWindow;
         _identationIcon = new(1, 1);
         _identationIcon.SetPixel(0, 0, Color.clear);
@@ -42,7 +42,7 @@ public class BTNodeSearchWindow : ScriptableObject, ISearchWindowProvider
     public bool OnSelectEntry(SearchTreeEntry SearchTreeEntry, SearchWindowContext context)
     {
         Vector2 worldMousePosition = _editorWindow.rootVisualElement.ChangeCoordinatesTo(
-            _editorWindow.rootVisualElement.parent, 
+            _editorWindow.rootVisualElement.parent,
             context.screenMousePosition - _editorWindow.position.position);
 
         Vector2 localMousePosition = _graphView.contentViewContainer.WorldToLocal(worldMousePosition);

@@ -49,10 +49,10 @@ public class BTTree : ScriptableObject
     }
 
     //创建数据节点
-    public BTData CreateData()
+    public BTData CreateData(System.Type type)
     {
         BTData data = CreateInstance<BTData>();
-        data.name = "BTData(float)";
+        data.name = $"BTData({type.Name})";
         data.guid = GUID.Generate().ToString();
         data.tree = this;
 

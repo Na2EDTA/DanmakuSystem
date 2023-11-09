@@ -88,6 +88,7 @@
     <Compile Include="Assets\Scripts\DanmakuCollider.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\PathSplines.cs" />
     <Compile Include="Assets\Scripts\BehaviourTree\BasicNodes\BTSequencerNode.cs" />
+    <Compile Include="Assets\Scripts\BehaviourTree\BTElement.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\GeneralEventsListeners.cs" />
     <Compile Include="Assets\Scripts\Curves\BrokenlinePath.cs" />
     <Compile Include="Assets\Scripts\DanmakuEmission.cs" />
@@ -151,7 +152,7 @@
     <Compile Include="Assets\LeanTween\Examples\Archived\TestingRigidbodyCS.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\Following.cs" />
     <Compile Include="Assets\Scripts\BehaviourTree\CoreNodes\CreateInputPortAttribute.cs" />
-    <Compile Include="Assets\Scripts\BehaviourTree\BTElement.cs" />
+    <Compile Include="Assets\Scripts\BehaviourTree\BasicNodes\BTFloat.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\LeanTween\ReadMe.txt" />
