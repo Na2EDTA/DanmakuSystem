@@ -26,7 +26,6 @@ public class BTTreeView : GraphView
 
         var styleSheet = AssetDatabase.LoadAssetAtPath<StyleSheet>("Assets/Scripts/Editor/BehaviourTree/BTEditorWindow.uss");
         styleSheets.Add(styleSheet);
-        Debug.Log(GetHashCode());
 
         Undo.undoRedoPerformed += OnUndoRedo;
     }

@@ -31,7 +31,7 @@ public class BTSearchMenu : ScriptableObject, ISearchWindowProvider
 
         foreach (var type in TypeCache.GetTypesDerivedFrom<BTData>())
         {
-            tree.Add(new SearchTreeEntry(new GUIContent($" {type.Name}"))
+            tree.Add(new SearchTreeEntry(new GUIContent($"  {type.Name}"))
             {
                 userData = type,
                 level = 2
@@ -44,11 +44,11 @@ public class BTSearchMenu : ScriptableObject, ISearchWindowProvider
         {
             if(type == typeof(BTActionNode) || type == typeof(BTCompositeNode) || type == typeof(BTDecoratorNode))
             {
-                tree.Add(new SearchTreeGroupEntry(new GUIContent($" {type.Name}"), 2));
+                tree.Add(new SearchTreeGroupEntry(new GUIContent($"  {type.Name}"), 2));
 
                 foreach (var t in TypeCache.GetTypesDerivedFrom(type))
                 {
-                    tree.Add(new SearchTreeEntry(new GUIContent($" {t.Name}"))
+                    tree.Add(new SearchTreeEntry(new GUIContent($"  {t.Name}"))
                     {
                         userData = t,
                         level = 3
@@ -62,7 +62,7 @@ public class BTSearchMenu : ScriptableObject, ISearchWindowProvider
     public bool OnSelectEntry(SearchTreeEntry SearchTreeEntry, SearchWindowContext context)
     {
         Vector2 worldMousePosition = editorWindow.rootVisualElement.ChangeCoordinatesTo(
-            editorWindow.rootVisualElement.parent,
+            editorWindow.rootVisualElement,
             context.screenMousePosition - editorWindow.position.position);
 
         Vector2 localMousePosition = treeView.contentViewContainer.WorldToLocal(worldMousePosition);

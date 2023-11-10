@@ -9,6 +9,6 @@ public abstract class BTElement : ScriptableObject
     [HideInInspector] public BTTree tree;
 
 #if UNITY_EDITOR
-    [HideInInspector] public Vector2 position;
+     public Vector2 position;
 #endif
 }
