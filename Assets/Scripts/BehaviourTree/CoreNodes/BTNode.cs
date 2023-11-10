@@ -7,7 +7,6 @@ public abstract class BTNode: BTElement
     /*[HideInInspector]*/ public bool started = false;
     /*[HideInInspector]*/ public State state = State.Running;
 
-
     public float this[string index]
     {
         get

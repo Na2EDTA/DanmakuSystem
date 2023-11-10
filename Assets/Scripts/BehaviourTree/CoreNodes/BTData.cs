@@ -4,7 +4,8 @@ using UnityEngine;
 
 public abstract class BTData : BTElement
 {
-    public float value;
     public BTData source;
     public List<BTData> destinations;
+
+    public abstract object Value { get; set; }
 }

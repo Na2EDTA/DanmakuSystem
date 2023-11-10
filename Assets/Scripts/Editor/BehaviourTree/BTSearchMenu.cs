@@ -9,13 +9,13 @@ using System.Linq;
 public class BTSearchMenu : ScriptableObject, ISearchWindowProvider
 {
     BTTreeView treeView;
-    BTEditorWindow editorWindow;
+    EditorWindow editorWindow;
     Texture2D identationIcon;
 
-    public void Init(BTTreeView treeView, BTEditorWindow editorWindow)
+    public void Init(BTTreeView treeView)
     {
         this.treeView = treeView;
-        this.editorWindow = editorWindow;
+        this.editorWindow = EditorWindow.focusedWindow;
         identationIcon = new(1, 1);
         identationIcon.SetPixel(0, 0, Color.clear);
         identationIcon.Apply();
@@ -25,39 +25,37 @@ public class BTSearchMenu : ScriptableObject, ISearchWindowProvider
     {
         List<SearchTreeEntry> tree = new();
 
-
         tree.Add(new SearchTreeGroupEntry(new GUIContent("Create Element"), 0));
+
         tree.Add(new SearchTreeGroupEntry(new GUIContent("Data"), 1));
+
+        foreach (var type in TypeCache.GetTypesDerivedFrom<BTData>())
+        {
+            tree.Add(new SearchTreeEntry(new GUIContent($" {type.Name}"))
+            {
+                userData = type,
+                level = 2
+            });
+        }
+
         tree.Add(new SearchTreeGroupEntry(new GUIContent("Node"), 1));
 
         foreach (var type in TypeCache.GetTypesDerivedFrom<BTNode>())
         {
             if(type == typeof(BTActionNode) || type == typeof(BTCompositeNode) || type == typeof(BTDecoratorNode))
             {
-                Debug.Log(type);
-                tree.Add(new SearchTreeGroupEntry(new GUIContent($"Create {type.Name}"), 2));
+                tree.Add(new SearchTreeGroupEntry(new GUIContent($" {type.Name}"), 2));
 
                 foreach (var t in TypeCache.GetTypesDerivedFrom(type))
                 {
-                    Debug.Log(t.Name);
-                    tree.Add(new SearchTreeEntry(new GUIContent($"Create {t.Name}"))
+                    tree.Add(new SearchTreeEntry(new GUIContent($" {t.Name}"))
                     {
-                        userData = treeView.tree.CreateNode(t),
+                        userData = t,
                         level = 3
                     });
                 }
             }
         }
-
-        /*foreach (var type in TypeCache.GetTypesDerivedFrom<BTData>())
-        {
-            tree.Add(new SearchTreeEntry(new GUIContent($"Create {type.Name}"))
-            {
-                userData = treeView.tree.CreateData(type),
-                level = 2
-            }) ;
-        }*/
-
         return tree;
     }
 
@@ -69,19 +67,35 @@ public class BTSearchMenu : ScriptableObject, ISearchWindowProvider
 
         Vector2 localMousePosition = treeView.contentViewContainer.WorldToLocal(worldMousePosition);
 
-        switch (SearchTreeEntry.userData)
+        switch ((SearchTreeEntry.userData as Type).BaseType.Name)
         {
-            case BTNode:
-                var node = SearchTreeEntry.userData as BTNode;
-                treeView.CreateNodeView(node);
-                node.position = localMousePosition;
-                return true;
+            case "BTActionNode":
+                {
+                    var type = SearchTreeEntry.userData as Type;
+                    treeView.CreateNode(type, localMousePosition);
+                    return true;
+                }
 
-            case BTData:
-                var data = SearchTreeEntry.userData as BTData;
-                treeView.CreateDataView(data);
-                data.position = localMousePosition;
-                return true;
+            case "BTCompositeNode":
+                {
+                    var type = SearchTreeEntry.userData as Type;
+                    treeView.CreateNode(type, localMousePosition);
+                    return true;
+                }
+
+            case "BTDecoratorNode":
+                {
+                    var type = SearchTreeEntry.userData as Type;
+                    treeView.CreateNode(type, localMousePosition);
+                    return true;
+                }
+
+            case "BTData":
+                {
+                    var type = SearchTreeEntry.userData as Type;
+                    treeView.CreateData(type, localMousePosition);
+                    return true;
+                }
 
             default:
                 return false;

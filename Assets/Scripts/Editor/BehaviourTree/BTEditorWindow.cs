@@ -75,7 +75,6 @@ public class BTEditorWindow : EditorWindow
         root.styleSheets.Add(styleSheet);
 
         treeView = root.Q<BTTreeView>();
-        treeView.editorWindow = this;
         inspectorView = root.Q<BTInspectorView>();
         blackboardView = root.Q<BTBlackboardView>();
         treeView.OnNodeSelected = OnNodeSelectionChanged;
