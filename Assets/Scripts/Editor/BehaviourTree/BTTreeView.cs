@@ -228,26 +228,26 @@ public class BTTreeView : GraphView
 
         return graphViewChange;
     }
-/*
-    public void CreateNode(Type type)
+
+/*    public void CreateNode(Type type)
     {
         BTNode node = tree.CreateNode(type);
         CreateNodeView(node);
-    }
-*/
+    }*/
+
     public void CreateNode(Type type, Vector2 pos)
     {
         BTNode node = tree.CreateNode(type);
         node.position = pos;
         CreateNodeView(node);
     }
-/*
-    public void CreateData(Type type)
+
+/*    public void CreateData(Type type)
     {
         BTData data = tree.CreateData(type);
         CreateDataView(data);
-    }
-*/
+    }*/
+
     public void CreateData(Type type, Vector2 pos)
     {
         BTData data = tree.CreateData(type);
