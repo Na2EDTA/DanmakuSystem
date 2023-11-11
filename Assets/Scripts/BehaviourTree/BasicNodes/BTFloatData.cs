@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BTFloat : BTData
+public class BTFloatData : BTData
 {
     public float value;
 

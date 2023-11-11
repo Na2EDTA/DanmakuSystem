@@ -52,9 +52,10 @@ public class BTTree : ScriptableObject
     public BTData CreateData(System.Type type)
     {
         BTData data = CreateInstance(type) as BTData;
-        data.name = $"BTData({type.Name})";
         data.guid = GUID.Generate().ToString();
         data.tree = this;
+        data.type = data.Value.GetType();
+        data.name = data.type.FullName;
 
         Undo.RecordObject(this, "Behaviour Tree (Create Data)");
         datas.Add(data);

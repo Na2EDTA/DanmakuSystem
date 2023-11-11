@@ -6,6 +6,7 @@ public abstract class BTNode: BTElement
 {
     /*[HideInInspector]*/ public bool started = false;
     /*[HideInInspector]*/ public State state = State.Running;
+    public Dictionary<BTElement,HashSet<object>> inputs = new(), outputs = new();
 
     public float this[string index]
     {

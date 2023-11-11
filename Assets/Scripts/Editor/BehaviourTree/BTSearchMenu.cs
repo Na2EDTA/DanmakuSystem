@@ -62,7 +62,7 @@ public class BTSearchMenu : ScriptableObject, ISearchWindowProvider
     public bool OnSelectEntry(SearchTreeEntry SearchTreeEntry, SearchWindowContext context)
     {
         Vector2 worldMousePosition = editorWindow.rootVisualElement.ChangeCoordinatesTo(
-            editorWindow.rootVisualElement,
+            editorWindow.rootVisualElement.parent,
             context.screenMousePosition - editorWindow.position.position);
 
         Vector2 localMousePosition = treeView.contentViewContainer.WorldToLocal(worldMousePosition);

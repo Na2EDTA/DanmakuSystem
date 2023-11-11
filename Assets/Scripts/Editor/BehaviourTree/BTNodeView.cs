@@ -58,7 +58,6 @@ public class BTNodeView : Node
                 outputContainer.Add(dataPort);
                 dataOutputs.Add(dataPort);
             }
-
         }
     }
 

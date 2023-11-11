@@ -103,7 +103,7 @@
     <Compile Include="Assets\Scripts\Dynamic\Velocity.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\PathBezier2d.cs" />
     <Compile Include="Assets\Scripts\BehaviourTree\CoreNodes\BTRootNode.cs" />
-    <Compile Include="Assets\Scripts\BehaviourTree\BasicNodes\BTFloat.cs" />
+    <Compile Include="Assets\Scripts\BehaviourTree\BasicNodes\BTFloatData.cs" />
     <Compile Include="Assets\Scripts\BehaviourTree\GraphSaveUtility.cs" />
     <Compile Include="Assets\Scripts\BehaviourTree\BTRuntime.cs" />
     <Compile Include="Assets\Scripts\BehaviourTree\BTGraphEditorWindow.cs" />

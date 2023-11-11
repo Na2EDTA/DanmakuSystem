@@ -71,6 +71,25 @@ MonoBehaviour:
   - {fileID: -570456015561251401}
   - {fileID: 7226454822210463300}
   - {fileID: 2038816846634116149}
+--- !u!114 &-8169270164749532687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e10b10b9ddce7f4e874fafd331dd425, type: 3}
+  m_Name: System.Single
+  m_EditorClassIdentifier: 
+  comment: 
+  guid: ee6e22a69ce19c34aa29672540b823d7
+  tree: {fileID: 11400000}
+  position: {x: 0, y: 0}
+  source: {fileID: 0}
+  destinations: []
+  value: 0
 --- !u!114 &-8031346378290092990
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -145,24 +164,6 @@ MonoBehaviour:
   started: 0
   state: 0
   duriation: 300
---- !u!114 &-6986908680846666644
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e10b10b9ddce7f4e874fafd331dd425, type: 3}
-  m_Name: BTData(BTFloat)
-  m_EditorClassIdentifier: 
-  comment: 
-  guid: 4ba696ffcc810d7468a0adc95214a578
-  tree: {fileID: 11400000}
-  position: {x: 276.57147, y: 292}
-  source: {fileID: 0}
-  destinations: []
 --- !u!114 &-6710197382767729905
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,24 +183,6 @@ MonoBehaviour:
   started: 0
   state: 0
   duriation: 3
---- !u!114 &-6182666619884052658
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e10b10b9ddce7f4e874fafd331dd425, type: 3}
-  m_Name: BTData(BTFloat)
-  m_EditorClassIdentifier: 
-  comment: 
-  guid: 3f7b0e7a76f6786488c9f18908c2d05a
-  tree: {fileID: 11400000}
-  position: {x: 38.121433, y: -22.857126}
-  source: {fileID: 0}
-  destinations: []
 --- !u!114 &-5568990368243956528
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -566,8 +549,7 @@ MonoBehaviour:
   - {fileID: 1303314157045635380}
   - {fileID: -4029584147271456823}
   datas:
-  - {fileID: -6182666619884052658}
-  - {fileID: -6986908680846666644}
+  - {fileID: -8169270164749532687}
   blackboard: {fileID: -3291095199373937889}
   runtime: {fileID: 0}
 --- !u!114 &1042319157723746887
