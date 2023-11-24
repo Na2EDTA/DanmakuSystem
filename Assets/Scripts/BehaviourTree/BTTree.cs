@@ -51,11 +51,11 @@ public class BTTree : ScriptableObject
     //创建数据节点
     public BTData CreateData(System.Type type)
     {
-        BTData data = CreateInstance(type) as BTData;
+        BTData data = ScriptableObject.CreateInstance(type) as BTData;
+        
         data.guid = GUID.Generate().ToString();
         data.tree = this;
-        data.type = data.Value.GetType();
-        data.name = data.type.FullName;
+        data.name = type.Name;
 
         Undo.RecordObject(this, "Behaviour Tree (Create Data)");
         datas.Add(data);
@@ -82,6 +82,16 @@ public class BTTree : ScriptableObject
         //AssetDatabase.RemoveObjectFromAsset(data);
         Undo.DestroyObjectImmediate(data);
         AssetDatabase.SaveAssets();
+    }
+
+    public void LinkDatas(BTElement start, int startPortIndex, BTElement end, int endPortIndex)
+    {
+        start.outputs[startPortIndex].destinations.Add(end.inputs[endPortIndex]);
+        end.inputs[endPortIndex].sources.Add(start.outputs[startPortIndex]);
+        Undo.RecordObject(start, "Behaviour Tree (Link Data)");
+        Undo.RecordObject(end, "Behaviour Tree (Link Data)");
+        EditorUtility.SetDirty(start);
+        EditorUtility.SetDirty(end);
     }
 
     public void AddChild(BTNode parent, BTNode child)

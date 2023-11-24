@@ -188,7 +188,7 @@ public class BTTreeView : GraphView
                     }
                     else if(edge.input.portType == edge.output.portType && edge.input.portName == " ")
                     {
-                        //数据节点链接行为
+                        //数据节点删除链接行为
                     }
                 }
             });
@@ -208,7 +208,10 @@ public class BTTreeView : GraphView
                 }
                 else if (edge.input.portType == edge.output.portType && edge.input.portName  == " ")
                 {
-                    //数据节点链接行为
+                    BTElementView startView = edge.output.node as BTElementView;
+                    BTElementView endView = edge.input.node as BTElementView;
+                    //求取端口的序号
+                    //tree.LinkDatas(startView.Element, , endView.Element, );
                 }
             });
         }
@@ -283,4 +286,6 @@ public class BTTreeView : GraphView
             }
         });
     }
+
+
 }

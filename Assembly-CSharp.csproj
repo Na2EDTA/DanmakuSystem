@@ -103,7 +103,6 @@
     <Compile Include="Assets\Scripts\Dynamic\Velocity.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\PathBezier2d.cs" />
     <Compile Include="Assets\Scripts\BehaviourTree\CoreNodes\BTRootNode.cs" />
-    <Compile Include="Assets\Scripts\BehaviourTree\BasicNodes\BTFloatData.cs" />
     <Compile Include="Assets\Scripts\BehaviourTree\GraphSaveUtility.cs" />
     <Compile Include="Assets\Scripts\BehaviourTree\BTRuntime.cs" />
     <Compile Include="Assets\Scripts\BehaviourTree\BTGraphEditorWindow.cs" />
@@ -119,6 +118,7 @@
     <Compile Include="Assets\LeanTween\Examples\Scripts\GeneralCameraShake.cs" />
     <Compile Include="Assets\LeanTween\Examples\Archived\TestingPunch.cs" />
     <Compile Include="Assets\Scripts\BehaviourTree\Runtime\BTGraph.cs" />
+    <Compile Include="Assets\Scripts\BehaviourTree\BTInputDataPort.cs" />
     <Compile Include="Assets\Scripts\BehaviourTree\Danmaku\SimpleBulletNode.cs" />
     <Compile Include="Assets\BulletDef\Script\Spell00.cs" />
     <Compile Include="Assets\Scripts\BulletStyleManager.cs" />
@@ -133,6 +133,7 @@
     <Compile Include="Assets\LeanTween\Examples\Scripts\GeneralAdvancedTechniques.cs" />
     <Compile Include="Assets\LeanTween\Framework\LeanSmooth.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\GeneralBasics2d.cs" />
+    <Compile Include="Assets\Scripts\BehaviourTree\BasicNodes\BTSimpleFloat.cs" />
     <Compile Include="Assets\Scripts\UI\ButtonPro.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\PathSplineTrack.cs" />
     <Compile Include="Assets\Scripts\ClearBox.cs" />
@@ -145,9 +146,11 @@
     <Compile Include="Assets\LeanTween\Examples\Scripts\PathSpline2d.cs" />
     <Compile Include="Assets\Scripts\BehaviourTree\BTGraphView.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\PathSplinePerformance.cs" />
+    <Compile Include="Assets\Scripts\BehaviourTree\BTOutputDataPort.cs" />
     <Compile Include="Assets\Scripts\BehaviourTree\Danmaku\BulletNode.cs" />
     <Compile Include="Assets\Scripts\BehaviourTree\Runtime\BTNodeLinkData.cs" />
     <Compile Include="Assets\Scripts\MainCharacter.cs" />
+    <Compile Include="Assets\Scripts\BehaviourTree\BasicNodes\BTSimpleInt.cs" />
     <Compile Include="Assets\Scripts\BehaviourTree\BasicNodes\BTIteratorNode.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\GeneralBasic.cs" />
     <Compile Include="Assets\LeanTween\Examples\Archived\TestingRigidbodyCS.cs" />

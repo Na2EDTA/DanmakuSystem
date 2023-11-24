@@ -9,12 +9,13 @@ using System.Linq;
 using System.Reflection;
 using Danmaku.BehaviourTree;
 
-public class BTNodeView : Node
+public class BTNodeView : BTElementView
 {
     public BTNode node;
     public Port input, output;
-    public List<Port> dataInputs = new(), dataOutputs = new();
     public Action<BTNodeView> OnNodeSelected;
+
+    public override BTElement Element { get => node; set => node = value as BTNode; }
 
     public BTNodeView(BTNode node): base("Assets/Scripts/Editor/BehaviourTree/BTNodeView.uxml")
     {
@@ -35,7 +36,7 @@ public class BTNodeView : Node
 
     private void CreateDataPorts(BTNode node)
     {
-        var fields = node.GetType().GetFields();
+        FieldInfo[] fields = node.GetType().GetFields();
         for (int i = 0; i < fields.Length; i++)
         {
             if (fields[i].IsDefined(typeof(CreateInputPortAttribute)))
@@ -48,7 +49,7 @@ public class BTNodeView : Node
                 inputContainer.Add(dataPort);
                 dataInputs.Add(dataPort);
             }
-            else if (fields[i].FieldType.IsDefined(typeof(CreateOutputPortAttribute)))
+            else if (fields[i].IsDefined(typeof(CreateOutputPortAttribute)))
             {
                 Port dataPort = InstantiatePort(Orientation.Horizontal,
                     Direction.Output, Port.Capacity.Multi, fields[i].FieldType);

@@ -7,7 +7,5 @@ public abstract class BTData : BTElement
 {
     public BTData source;
     public List<BTData> destinations;
-    public Type type;
 
-    public abstract object Value { get; set; }
 }

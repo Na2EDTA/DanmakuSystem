@@ -6,13 +6,15 @@ using UnityEditor.Experimental.GraphView;
 using UnityEngine.UIElements;
 using UnityEditor.UIElements;
 using System.Linq;
+using System.Reflection;
+using Danmaku.BehaviourTree;
 
-
-public class BTDataView : Node
+public class BTDataView : BTElementView
 {
     public BTData data;
-    public Port input, output;
     public Action<BTDataView> OnDataSelected;
+
+    public override BTElement Element { get => data; set => data = value as BTData; }
 
     public BTDataView(BTData data) : base("Assets/Scripts/Editor/BehaviourTree/BTDataView.uxml")
     {
@@ -23,31 +25,54 @@ public class BTDataView : Node
         style.left = data.position.x;
         style.top = data.position.y;
 
-        CreateOutputPorts();
-        CreateInputPorts();
+        CreateDataPorts(data);
+        //CreateOutputPorts();
+        //CreateInputPorts();
     }
 
-    private void CreateInputPorts()
+    private void CreateDataPorts(BTData data)
     {
-        input = InstantiatePort(Orientation.Horizontal, Direction.Input, Port.Capacity.Single, typeof(float));
-        input.portColor = new(0.5f, 0.75f, 0.5f, 1);
-        if (input != null)
-        {
-            input.style.flexDirection = FlexDirection.Row;
-            input.portName = " ";
-            inputContainer.Add(input);
-        }
-    }
+        data.inputs.Clear();
+        data.outputs.Clear();
 
-    private void CreateOutputPorts()
-    {
-        output = InstantiatePort(Orientation.Horizontal, Direction.Output, Port.Capacity.Single, typeof(float));
-        output.portColor = new(0.5f, 0.75f, 0.5f, 1);
-        if (output != null)
+        FieldInfo[] fields = data.GetType().GetFields();
+        for (int i = 0; i < fields.Length; i++)
         {
-            output.style.flexDirection = FlexDirection.RowReverse;
-            output.portName = " ";
-            outputContainer.Add(output);
+            if (fields[i].IsDefined(typeof(CreateInputPortAttribute)))
+            {
+                Port dataPort = InstantiatePort(Orientation.Horizontal,
+                Direction.Input, Port.Capacity.Single, fields[i].FieldType);
+                dataPort.style.flexDirection = FlexDirection.Row;
+                dataPort.portName = " ";
+                dataPort.portColor = new(0.5f, 0.75f, 0.5f, 1);
+                inputContainer.Add(dataPort);
+                dataInputs.Add(dataPort);
+
+                var inputData = new BTInputDataPort()
+                {
+                    fieldName = fields[i].Name,
+                    valueType = fields[i].FieldType,
+                    element = data
+                };
+                data.inputs.Add(inputData);
+            }
+            if (fields[i].IsDefined(typeof(CreateOutputPortAttribute)))
+            {
+                Port dataPort = InstantiatePort(Orientation.Horizontal,
+                    Direction.Output, Port.Capacity.Multi, fields[i].FieldType);
+                dataPort.style.flexDirection = FlexDirection.Row;
+                dataPort.portName = " ";
+                dataPort.portColor = new(0.5f, 0.75f, 0.5f, 1);
+                outputContainer.Add(dataPort);
+                dataOutputs.Add(dataPort);
+
+                var outputData = new BTOutputDataPort()
+                {
+                    fieldName = fields[i].Name,
+                    valueType = fields[i].FieldType,
+                    element = data
+                };
+            }
         }
     }
 

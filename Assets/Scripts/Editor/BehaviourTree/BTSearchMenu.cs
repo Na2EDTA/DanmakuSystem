@@ -31,11 +31,29 @@ public class BTSearchMenu : ScriptableObject, ISearchWindowProvider
 
         foreach (var type in TypeCache.GetTypesDerivedFrom<BTData>())
         {
-            tree.Add(new SearchTreeEntry(new GUIContent($"  {type.Name}"))
+            if (TypeCache.GetTypesDerivedFrom(type).Count != 0)
             {
-                userData = type,
-                level = 2
-            });
+                tree.Add(new SearchTreeGroupEntry(new GUIContent($"{type.Name}"), 2));
+
+                var ts = TypeCache.GetTypesDerivedFrom(type);
+
+                for (int i = 0; i < ts.Count; i++)
+                {
+                    tree.Add(new SearchTreeEntry(new GUIContent($"{ts[i].Name}"))
+                    {
+                        userData = ts[i],
+                        level = 3
+                    });
+                }
+            }
+            else
+            {
+                tree.Add(new SearchTreeEntry(new GUIContent($"  {type.Name}"))
+                {
+                    userData = type,
+                    level = 2
+                });
+            }
         }
 
         tree.Add(new SearchTreeGroupEntry(new GUIContent("Node"), 1));
