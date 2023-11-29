@@ -111,6 +111,7 @@ public class BTTreeView : GraphView
             AssetDatabase.SaveAssets();
         }
 
+
         //create nodes in view
         tree.nodes.ForEach(n => CreateNodeView(n)); 
         //create edges in view
@@ -130,13 +131,22 @@ public class BTTreeView : GraphView
         //create datas in view
         tree.datas.ForEach(n => CreateDataView(n));
         //create edges in view
-        //tree.datas.ForEach(n =>
-        //{
-        //    BTDataView inputView = FindDataView(n.next);
-        //    BTDataView outputView = FindDataView(n);
-        //    Edge edge = outputView.output.ConnectTo(inputView?.input);
-        //    AddElement(edge);
-        //});
+        tree.MergeDatasAndNodes();
+        tree.elements.ForEach(e =>//逐个节点操作
+        {
+            BTElementView ev = FindElementView(e);
+            List<Port> outputPorts = ev.dataOutputs;
+            for (int i = 0; i < outputPorts.Count; i++)//逐个端口操作
+            {
+                var outputLinks = tree.FindOutputLinks(e, i);
+                outputLinks.ForEach(ol => //逐条线连接
+                {
+                    BTElementView target = FindElementView(ol.end);
+                    var edge = outputPorts[i].ConnectTo(target.dataInputs[ol.endIndex]);
+                    AddElement(edge);
+                });
+            }
+        });
     }
 
     BTNodeView FindNodeView(BTNode node)
@@ -144,9 +154,9 @@ public class BTTreeView : GraphView
         return GetNodeByGuid(node.guid) as BTNodeView;
     }
 
-    BTDataView FindDataView(BTData data)
+    BTElementView FindElementView(BTElement element)
     {
-        return GetNodeByGuid(data.guid) as BTDataView;
+        return GetNodeByGuid(element.guid) as BTElementView;
     }
 
     //获取可连接的节点
@@ -188,7 +198,11 @@ public class BTTreeView : GraphView
                     }
                     else if(edge.input.portType == edge.output.portType && edge.input.portName == " ")
                     {
-                        //数据节点删除链接行为
+                        BTElementView startView = edge.output.node as BTElementView;
+                        BTElementView endView = edge.input.node as BTElementView;
+                        int inIndex = endView.dataInputs.IndexOf(edge.input);
+                        int outIndex = startView.dataOutputs.IndexOf(edge.output);
+                        tree.UnlinkDatas(startView.Element, outIndex, endView.Element, inIndex);
                     }
                 }
             });
@@ -210,8 +224,11 @@ public class BTTreeView : GraphView
                 {
                     BTElementView startView = edge.output.node as BTElementView;
                     BTElementView endView = edge.input.node as BTElementView;
-                    //求取端口的序号
-                    //tree.LinkDatas(startView.Element, , endView.Element, );
+                    int inIndex = endView.dataInputs.IndexOf(edge.input);
+                    int outIndex = startView.dataOutputs.IndexOf(edge.output);
+                    Type outType = edge.output.portType;
+                    Type inType = edge.input.portType;
+                    tree.LinkDatas(startView.Element, outIndex, outType, endView.Element, inIndex, inType);
                 }
             });
         }

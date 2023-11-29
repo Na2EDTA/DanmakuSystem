@@ -10,6 +10,7 @@ public class BTEditorWindow : EditorWindow
     BTTreeView treeView;
     BTInspectorView inspectorView;
     BTBlackboardView blackboardView;
+    ToolbarMenu menu;
 
     [MenuItem("Behaviour Tree/Editor")]
     public static void OpenWindow()
@@ -77,8 +78,13 @@ public class BTEditorWindow : EditorWindow
         treeView = root.Q<BTTreeView>();
         inspectorView = root.Q<BTInspectorView>();
         blackboardView = root.Q<BTBlackboardView>();
+        menu = root.Q<ToolbarMenu>();
+
         treeView.OnNodeSelected = OnNodeSelectionChanged;
         treeView.OnDataSelected = OnDataSelectionChanged;
+
+        menu.menu.AppendAction("Debug", MenuDebug);
+
         OnSelectionChange();
     }
 
@@ -128,5 +134,11 @@ public class BTEditorWindow : EditorWindow
     private void OnInspectorUpdate()
     {
         treeView?.UpdateNodeStates();
+    }
+
+    void MenuDebug(DropdownMenuAction dropdownMenuAction)
+    {
+        Debug.Log(treeView.tree.dataLinks.Count);
+        treeView.tree.dataLinks.ForEach(dl => Debug.Log(dl));
     }
 }

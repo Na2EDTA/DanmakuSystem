@@ -42,7 +42,7 @@ public class BTNodeView : BTElementView
             if (fields[i].IsDefined(typeof(CreateInputPortAttribute)))
             {
                 Port dataPort = InstantiatePort(Orientation.Horizontal, 
-                Direction.Input, Port.Capacity.Single, fields[i].FieldType);
+                Direction.Input, Port.Capacity.Multi, fields[i].FieldType);
                 dataPort.style.flexDirection = FlexDirection.Row;
                 dataPort.portName = " ";
                 dataPort.portColor = new(0.5f, 0.75f, 0.5f, 1);

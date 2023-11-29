@@ -32,29 +32,19 @@ public class BTDataView : BTElementView
 
     private void CreateDataPorts(BTData data)
     {
-        data.inputs.Clear();
-        data.outputs.Clear();
-
         FieldInfo[] fields = data.GetType().GetFields();
         for (int i = 0; i < fields.Length; i++)
         {
             if (fields[i].IsDefined(typeof(CreateInputPortAttribute)))
             {
                 Port dataPort = InstantiatePort(Orientation.Horizontal,
-                Direction.Input, Port.Capacity.Single, fields[i].FieldType);
+                Direction.Input, Port.Capacity.Multi, fields[i].FieldType);
                 dataPort.style.flexDirection = FlexDirection.Row;
                 dataPort.portName = " ";
                 dataPort.portColor = new(0.5f, 0.75f, 0.5f, 1);
                 inputContainer.Add(dataPort);
                 dataInputs.Add(dataPort);
 
-                var inputData = new BTInputDataPort()
-                {
-                    fieldName = fields[i].Name,
-                    valueType = fields[i].FieldType,
-                    element = data
-                };
-                data.inputs.Add(inputData);
             }
             if (fields[i].IsDefined(typeof(CreateOutputPortAttribute)))
             {
@@ -66,12 +56,7 @@ public class BTDataView : BTElementView
                 outputContainer.Add(dataPort);
                 dataOutputs.Add(dataPort);
 
-                var outputData = new BTOutputDataPort()
-                {
-                    fieldName = fields[i].Name,
-                    valueType = fields[i].FieldType,
-                    element = data
-                };
+                
             }
         }
     }
