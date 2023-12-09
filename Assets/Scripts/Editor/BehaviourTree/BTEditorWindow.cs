@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEditor.UIElements;
 using UnityEditor.Callbacks;
-using System;
+using System.Linq;
 
 public class BTEditorWindow : EditorWindow
 {
@@ -138,7 +138,18 @@ public class BTEditorWindow : EditorWindow
 
     void MenuDebug(DropdownMenuAction dropdownMenuAction)
     {
-        Debug.Log(treeView.tree.dataLinks.Count);
-        treeView.tree.dataLinks.ForEach(dl => Debug.Log(dl));
+        Debug02();
+    }
+
+    void Debug01()
+    {
+        var tree = treeView.tree;
+        tree.elements.Find(e => e.outputFieldCaches != null).outputFieldCaches.Values.ToList().ForEach(v=>Debug.Log(v));
+    }
+
+    void Debug02()
+    {
+        Debug.Log(treeView.tree.linkCache.outCache.Count);
+        treeView.tree.linkCache.outCache.ToList().ForEach(ic => Debug.Log(ic.Key.GetHashCode()));
     }
 }

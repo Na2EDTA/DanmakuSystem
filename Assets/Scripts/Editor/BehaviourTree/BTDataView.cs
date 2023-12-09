@@ -8,6 +8,7 @@ using UnityEditor.UIElements;
 using System.Linq;
 using System.Reflection;
 using Danmaku.BehaviourTree;
+using Unity.Collections.LowLevel.Unsafe;
 
 public class BTDataView : BTElementView
 {
@@ -24,39 +25,48 @@ public class BTDataView : BTElementView
 
         style.left = data.position.x;
         style.top = data.position.y;
-
+       
         CreateDataPorts(data);
-        //CreateOutputPorts();
-        //CreateInputPorts();
     }
 
     private void CreateDataPorts(BTData data)
     {
+        data.inputFieldCaches.Clear();
+        data.outputFieldCaches.Clear();
+
         FieldInfo[] fields = data.GetType().GetFields();
+        int inputCount = 0, outputCount = 0;
         for (int i = 0; i < fields.Length; i++)
         {
+            data.inputFieldCaches.Clear();
+            data.outputFieldCaches.Clear();
             if (fields[i].IsDefined(typeof(CreateInputPortAttribute)))
             {
-                Port dataPort = InstantiatePort(Orientation.Horizontal,
-                Direction.Input, Port.Capacity.Multi, fields[i].FieldType);
+                Port dataPort = InstantiatePort(Orientation.Horizontal, Direction.Input, Port.Capacity.Multi, fields[i].FieldType);
                 dataPort.style.flexDirection = FlexDirection.Row;
                 dataPort.portName = " ";
                 dataPort.portColor = new(0.5f, 0.75f, 0.5f, 1);
+                //dataPort.valueOffset = UnsafeUtility.GetFieldOffset(fields[i]);
+
                 inputContainer.Add(dataPort);
                 dataInputs.Add(dataPort);
 
+                data.inputFieldCaches.Add(inputCount, fields[i].GetValue(data));
+                inputCount++;
             }
             if (fields[i].IsDefined(typeof(CreateOutputPortAttribute)))
             {
-                Port dataPort = InstantiatePort(Orientation.Horizontal,
-                    Direction.Output, Port.Capacity.Multi, fields[i].FieldType);
+                Port dataPort = InstantiatePort(Orientation.Horizontal, Direction.Output, Port.Capacity.Multi, fields[i].FieldType);
                 dataPort.style.flexDirection = FlexDirection.Row;
                 dataPort.portName = " ";
                 dataPort.portColor = new(0.5f, 0.75f, 0.5f, 1);
+                //dataPort.valueOffset = UnsafeUtility.GetFieldOffset(fields[i]);
+
                 outputContainer.Add(dataPort);
                 dataOutputs.Add(dataPort);
 
-                
+                data.outputFieldCaches.Add(outputCount, fields[i].GetValue(data));
+                outputCount++;
             }
         }
     }

@@ -9,6 +9,7 @@ using UnityEditor.Experimental.GraphView;
 [CreateAssetMenu]
 public class BTTree : ScriptableObject
 {
+    public List<IntPtr> outputReferences = new();
     public BTRootNode rootNode;
     public BTNode.State state = BTNode.State.Running;
     public List<BTNode> nodes = new();
@@ -30,6 +31,11 @@ public class BTTree : ScriptableObject
         elements.Clear();
         elements.AddRange(nodes);
         elements.AddRange(datas);
+    }
+
+    public void UpdateLinkCache()
+    {
+        linkCache = new(dataLinks);
     }
 
 #if UNITY_EDITOR
@@ -58,6 +64,7 @@ public class BTTree : ScriptableObject
         }
         Undo.RegisterCreatedObjectUndo(node, "Behaviour Tree (Create Node)");
         AssetDatabase.SaveAssets();
+        MergeDatasAndNodes();
         return node;
     }
 
@@ -76,6 +83,7 @@ public class BTTree : ScriptableObject
             AssetDatabase.AddObjectToAsset(data, this);
         Undo.RegisterCreatedObjectUndo(data, "Behaviour Tree (Create Data)");
         AssetDatabase.SaveAssets();
+        MergeDatasAndNodes();
         return data;
     }
 
@@ -86,6 +94,8 @@ public class BTTree : ScriptableObject
         //AssetDatabase.RemoveObjectFromAsset(node);
         Undo.DestroyObjectImmediate(node);
         AssetDatabase.SaveAssets();
+        MergeDatasAndNodes();
+        UpdateLinkCache();
     }
 
     public void RemoveData(BTData data)
@@ -95,6 +105,8 @@ public class BTTree : ScriptableObject
         //AssetDatabase.RemoveObjectFromAsset(data);
         Undo.DestroyObjectImmediate(data);
         AssetDatabase.SaveAssets();
+        MergeDatasAndNodes();
+        UpdateLinkCache();
     }
 
     public void LinkDatas(BTElement start, int startPortIndex, Type outType, BTElement end, int endPortIndex, Type inType)
@@ -104,7 +116,7 @@ public class BTTree : ScriptableObject
         var tarLink = ScriptableObject.CreateInstance<BTDataLink>();
         tarLink.Init(start, startPortIndex, outType, end, endPortIndex, inType);
         dataLinks.Add(tarLink);
-
+        UpdateLinkCache();
         if (!Application.isPlaying)
         {
             AssetDatabase.AddObjectToAsset(tarLink, this);
@@ -131,7 +143,7 @@ public class BTTree : ScriptableObject
             Undo.DestroyObjectImmediate(linksToRemove[i]);
         }
         linksToRemove.Clear();
-       
+        UpdateLinkCache();
         AssetDatabase.SaveAssets();
     }
 
@@ -201,6 +213,8 @@ public class BTTree : ScriptableObject
             root.child = null;
             EditorUtility.SetDirty(root);
         }
+
+        UpdateLinkCache();
         /*switch (parent)
         {
             case BTDecoratorNode:
@@ -260,12 +274,30 @@ public class BTTree : ScriptableObject
 
     public List<BTDataLink> FindOutputLinks(BTElement element, int outputIndex)
     {
-        return dataLinks.FindAll(l => l.start == element && l.startIndex == outputIndex);
+        if (linkCache == null)
+            return dataLinks.FindAll(l => l.start == element && l.startIndex == outputIndex);
+        else
+        {
+            //return linkCache[element, Direction.Output, outputIndex];
+            var res = new List<BTDataLink>();
+            linkCache.outCache.TryGetValue(element, out var elementLinks);
+            elementLinks?.TryGetValue(outputIndex, out res);
+            return res;
+        }
     }
 
     public List<BTDataLink> FindInputLinks(BTElement element, int inputIndex)
     {
-        return dataLinks.FindAll(l => l.end == element && l.endIndex == inputIndex);
+        if (linkCache == null)
+            return dataLinks.FindAll(l => l.end == element && l.endIndex == inputIndex);
+        else
+        {
+            //return linkCache[element, Direction.Input, inputIndex];
+            var res = new List<BTDataLink>();
+            linkCache.inCache.TryGetValue(element, out var elementLinks);
+            elementLinks?.TryGetValue(inputIndex, out res);
+            return res;
+        }
     }
 
     public BTTree Clone()

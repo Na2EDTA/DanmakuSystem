@@ -8,6 +8,7 @@ using UnityEditor.UIElements;
 using System.Linq;
 using System.Reflection;
 using Danmaku.BehaviourTree;
+using Unity.Collections.LowLevel.Unsafe;
 
 public class BTNodeView : BTElementView
 {
@@ -36,7 +37,12 @@ public class BTNodeView : BTElementView
 
     private void CreateDataPorts(BTNode node)
     {
+        node.inputFieldCaches.Clear();
+        node.outputFieldCaches.Clear();
+
         FieldInfo[] fields = node.GetType().GetFields();
+        int inputCount = 0, outputCount = 0;
+
         for (int i = 0; i < fields.Length; i++)
         {
             if (fields[i].IsDefined(typeof(CreateInputPortAttribute)))
@@ -46,8 +52,13 @@ public class BTNodeView : BTElementView
                 dataPort.style.flexDirection = FlexDirection.Row;
                 dataPort.portName = " ";
                 dataPort.portColor = new(0.5f, 0.75f, 0.5f, 1);
+                //dataPort.valueOffset = UnsafeUtility.GetFieldOffset(fields[i]);
+
                 inputContainer.Add(dataPort);
                 dataInputs.Add(dataPort);
+                
+                node.inputFieldCaches.Add(inputCount, fields[i].GetValue(node));
+                inputCount++;
             }
             else if (fields[i].IsDefined(typeof(CreateOutputPortAttribute)))
             {
@@ -56,8 +67,13 @@ public class BTNodeView : BTElementView
                 dataPort.style.flexDirection = FlexDirection.Row;
                 dataPort.portName = " ";
                 dataPort.portColor = new(0.5f, 0.75f, 0.5f, 1);
+                //dataPort.valueOffset = UnsafeUtility.GetFieldOffset(fields[i]);
+
                 outputContainer.Add(dataPort);
                 dataOutputs.Add(dataPort);
+
+                node.outputFieldCaches.Add(outputCount, fields[i].GetValue(node));
+                outputCount++;
             }
         }
     }

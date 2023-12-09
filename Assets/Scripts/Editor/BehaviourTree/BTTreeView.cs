@@ -110,6 +110,8 @@ public class BTTreeView : GraphView
             EditorUtility.SetDirty(tree);
             AssetDatabase.SaveAssets();
         }
+        tree.MergeDatasAndNodes();
+        tree.UpdateLinkCache();
 
 
         //create nodes in view
@@ -131,7 +133,7 @@ public class BTTreeView : GraphView
         //create datas in view
         tree.datas.ForEach(n => CreateDataView(n));
         //create edges in view
-        tree.MergeDatasAndNodes();
+
         tree.elements.ForEach(e =>//逐个节点操作
         {
             BTElementView ev = FindElementView(e);
@@ -139,7 +141,7 @@ public class BTTreeView : GraphView
             for (int i = 0; i < outputPorts.Count; i++)//逐个端口操作
             {
                 var outputLinks = tree.FindOutputLinks(e, i);
-                outputLinks.ForEach(ol => //逐条线连接
+                outputLinks?.ForEach(ol => //逐条线连接
                 {
                     BTElementView target = FindElementView(ol.end);
                     var edge = outputPorts[i].ConnectTo(target.dataInputs[ol.endIndex]);
@@ -147,6 +149,7 @@ public class BTTreeView : GraphView
                 });
             }
         });
+
     }
 
     BTNodeView FindNodeView(BTNode node)

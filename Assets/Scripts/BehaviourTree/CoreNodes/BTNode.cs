@@ -30,6 +30,7 @@ public abstract class BTNode: BTElement
         {
             if (!started)
             {
+                InputDatas();
                 OnStart();
                 started = true;
             }
@@ -39,12 +40,14 @@ public abstract class BTNode: BTElement
             if (state != State.Running)
             {
                 OnStop();
+                OutputDatas();
                 started = false;
             }
         }
         catch (System.Exception)
         {
             OnStop();
+            OutputDatas();
             state = State.Failed;
             started = false;
         }
@@ -60,4 +63,14 @@ public abstract class BTNode: BTElement
     protected abstract void OnStart();
     protected abstract State OnUpdate();
     protected abstract void OnStop();
+
+    void InputDatas()
+    {
+        
+    }
+
+    void OutputDatas()
+    {
+        
+    }
 }
