@@ -1,9 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Danmaku.BehaviourTree;
 
 public abstract class BTNode: BTElement
 {
+    public List<ReflexiveAccessor> accessors = new();
     /*[HideInInspector]*/ public bool started = false;
     /*[HideInInspector]*/ public State state = State.Running;
 

@@ -59,4 +59,10 @@ public class BTDataLink : ScriptableObject
     {
         return !(link1 == link2);
     }
+
+    public void Transmit()
+    {
+
+
+    }
 }

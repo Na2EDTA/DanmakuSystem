@@ -124,6 +124,7 @@
     <Compile Include="Assets\Scripts\BulletStyleManager.cs" />
     <Compile Include="Assets\Scripts\GameEnum.cs" />
     <Compile Include="Assets\LeanTween\Framework\LeanAudio.cs" />
+    <Compile Include="Assets\Scripts\BehaviourTree\Utilities\ExpressionUtility.cs" />
     <Compile Include="Assets\Scripts\Pool.cs" />
     <Compile Include="Assets\Scripts\Dynamic\Acceleration.cs" />
     <Compile Include="Assets\Scripts\BehaviourTree\CoreNodes\CreateOutputPortAttribute.cs" />
@@ -160,6 +161,7 @@
   <ItemGroup>
     <None Include="Assets\LeanTween\ReadMe.txt" />
     <None Include="Assets\LeanTween\License.txt" />
+    <None Include="Assets\smcs.rsp" />
     <None Include="Assets\ScriptTemplates\84-BT Node__ActionNode-NewBTActionNode.cs.txt" />
     <None Include="Assets\Shaders\NewSurfaceShader.shader" />
     <None Include="Assets\ScriptTemplates\84-BT Node__DecoratorNode-NewBTDecoratorNode.cs.txt" />

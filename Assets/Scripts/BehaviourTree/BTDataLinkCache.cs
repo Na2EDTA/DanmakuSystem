@@ -9,7 +9,7 @@ public class BTDataLinkCache:ISerializationCallbackReceiver
 {
     public Dictionary<BTElement, Dictionary<int, List<BTDataLink>>> outCache = new();
     public Dictionary<BTElement, Dictionary<int, List<BTDataLink>>> inCache = new();
-    public List<BTLinkInfo> tempLinks = new();
+    List<BTLinkInfo> tempLinks = new();
 
     public Dictionary<int, List<BTDataLink>> this[BTElement element, Direction direction]
     {

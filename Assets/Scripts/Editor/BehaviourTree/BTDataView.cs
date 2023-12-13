@@ -9,6 +9,7 @@ using System.Linq;
 using System.Reflection;
 using Danmaku.BehaviourTree;
 using Unity.Collections.LowLevel.Unsafe;
+using System.Runtime.InteropServices;
 
 public class BTDataView : BTElementView
 {
@@ -64,7 +65,7 @@ public class BTDataView : BTElementView
 
                 outputContainer.Add(dataPort);
                 dataOutputs.Add(dataPort);
-
+                
                 data.outputFieldCaches.Add(outputCount, fields[i].GetValue(data));
                 outputCount++;
             }

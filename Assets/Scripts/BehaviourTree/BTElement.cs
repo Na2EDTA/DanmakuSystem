@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Collections.LowLevel.Unsafe;
 using UnityEngine;
 
 public abstract class BTElement : ScriptableObject
@@ -13,5 +14,4 @@ public abstract class BTElement : ScriptableObject
 #if UNITY_EDITOR
     public Vector2 position;
 #endif
-
 }

@@ -10,7 +10,7 @@ public class BTCalculateNode : BTActionNode
     BTBlackboard b;
     public string targetVariable;
     float newFloat = 0;
-    int newInt = 0;
+    //int newInt = 0;
     ScriptOptions opt;
     Script<float> script;
 
