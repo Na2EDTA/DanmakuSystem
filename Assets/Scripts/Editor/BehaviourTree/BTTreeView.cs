@@ -136,6 +136,7 @@ public class BTTreeView : GraphView
 
         tree.elements.ForEach(e =>//逐个节点操作
         {
+
             BTElementView ev = FindElementView(e);
             List<Port> outputPorts = ev.dataOutputs;
             for (int i = 0; i < outputPorts.Count; i++)//逐个端口操作
@@ -231,7 +232,8 @@ public class BTTreeView : GraphView
                     int outIndex = startView.dataOutputs.IndexOf(edge.output);
                     Type outType = edge.output.portType;
                     Type inType = edge.input.portType;
-                    tree.LinkDatas(startView.Element, outIndex, outType, endView.Element, inIndex, inType);
+                    tree.LinkDatas(startView.Element, outIndex, startView.Element.outputFieldCaches[outIndex]
+                        , endView.Element, inIndex, endView.Element.inputFieldCaches[inIndex]);
                 }
             });
         }

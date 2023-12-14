@@ -52,15 +52,15 @@ public class BTNodeView : BTElementView
                 dataPort.style.flexDirection = FlexDirection.Row;
                 dataPort.portName = " ";
                 dataPort.portColor = new(0.5f, 0.75f, 0.5f, 1);
-                //dataPort.valueOffset = UnsafeUtility.GetFieldOffset(fields[i]);
 
                 inputContainer.Add(dataPort);
                 dataInputs.Add(dataPort);
                 
-                node.inputFieldCaches.Add(inputCount, fields[i].GetValue(node));
+                node.inputFieldCaches.Add(inputCount, fields[i].Name);
+                
                 inputCount++;
             }
-            else if (fields[i].IsDefined(typeof(CreateOutputPortAttribute)))
+            if (fields[i].IsDefined(typeof(CreateOutputPortAttribute)))
             {
                 Port dataPort = InstantiatePort(Orientation.Horizontal,
                     Direction.Output, Port.Capacity.Multi, fields[i].FieldType);
@@ -72,7 +72,7 @@ public class BTNodeView : BTElementView
                 outputContainer.Add(dataPort);
                 dataOutputs.Add(dataPort);
 
-                node.outputFieldCaches.Add(outputCount, fields[i].GetValue(node));
+                node.outputFieldCaches.Add(outputCount, fields[i].Name);
                 outputCount++;
             }
         }

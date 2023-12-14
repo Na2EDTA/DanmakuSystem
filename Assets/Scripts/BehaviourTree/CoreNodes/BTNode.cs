@@ -69,11 +69,12 @@ public abstract class BTNode: BTElement
 
     void InputDatas()
     {
-        
+        Debug.Log(tree.FindInputLinks(this).Count);//0
+        tree.FindInputLinks(this).ForEach(il => il.Transmit());
     }
 
     void OutputDatas()
     {
-        
+        tree.FindOutputLinks(this).FindAll(l => l.end is BTData).ForEach(ol => ol.Transmit());
     }
 }

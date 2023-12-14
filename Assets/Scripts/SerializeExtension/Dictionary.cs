@@ -79,7 +79,7 @@ namespace Danmaku.SerializeExtension
         public void Add(TKey key, TValue value)
         {
             if (KeyPositions.ContainsKey(key))
-                throw new ArgumentException("An element with the same key already exists in the dictionary.");
+                Debug.LogWarning("An element with the same key already exists in the dictionary.");
             else
             {
                 KeyPositions[key] = list.Count;

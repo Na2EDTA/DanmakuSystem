@@ -109,12 +109,12 @@ public class BTTree : ScriptableObject
         UpdateLinkCache();
     }
 
-    public void LinkDatas(BTElement start, int startPortIndex, Type outType, BTElement end, int endPortIndex, Type inType)
+    public void LinkDatas(BTElement start, int startPortIndex, string outName, BTElement end, int endPortIndex, string inName)
     {
         Undo.RecordObject(this, "Behaviour Tree (Link Data)");
 
         var tarLink = ScriptableObject.CreateInstance<BTDataLink>();
-        tarLink.Init(start, startPortIndex, outType, end, endPortIndex, inType);
+        tarLink.Init(start, startPortIndex, outName, end, endPortIndex, inName);
         dataLinks.Add(tarLink);
         UpdateLinkCache();
         if (!Application.isPlaying)

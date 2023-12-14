@@ -39,20 +39,17 @@ public class BTDataView : BTElementView
         int inputCount = 0, outputCount = 0;
         for (int i = 0; i < fields.Length; i++)
         {
-            data.inputFieldCaches.Clear();
-            data.outputFieldCaches.Clear();
             if (fields[i].IsDefined(typeof(CreateInputPortAttribute)))
             {
                 Port dataPort = InstantiatePort(Orientation.Horizontal, Direction.Input, Port.Capacity.Multi, fields[i].FieldType);
                 dataPort.style.flexDirection = FlexDirection.Row;
                 dataPort.portName = " ";
                 dataPort.portColor = new(0.5f, 0.75f, 0.5f, 1);
-                //dataPort.valueOffset = UnsafeUtility.GetFieldOffset(fields[i]);
 
                 inputContainer.Add(dataPort);
                 dataInputs.Add(dataPort);
 
-                data.inputFieldCaches.Add(inputCount, fields[i].GetValue(data));
+                data.AddInputCache(inputCount, fields[i].Name);
                 inputCount++;
             }
             if (fields[i].IsDefined(typeof(CreateOutputPortAttribute)))
@@ -61,13 +58,14 @@ public class BTDataView : BTElementView
                 dataPort.style.flexDirection = FlexDirection.Row;
                 dataPort.portName = " ";
                 dataPort.portColor = new(0.5f, 0.75f, 0.5f, 1);
-                //dataPort.valueOffset = UnsafeUtility.GetFieldOffset(fields[i]);
 
                 outputContainer.Add(dataPort);
                 dataOutputs.Add(dataPort);
                 
-                data.outputFieldCaches.Add(outputCount, fields[i].GetValue(data));
+                data.AddOutputCache(outputCount, fields[i].Name);
+
                 outputCount++;
+
             }
         }
     }

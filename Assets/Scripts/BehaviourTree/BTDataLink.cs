@@ -3,13 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using Danmaku.BehaviourTree;
 
 public class BTDataLink : ScriptableObject
 {
     public BTElement start, end;
     public string guid;
-    public Type startType, endType;
+    public string startName, endName;
     public int startIndex, endIndex;
+    Func<object, object> getter;
+    Action<object, object> setter;
 
     public BTDataLink(BTElement start, int startPortIndex, BTElement end, int endPortIndex)
     {
@@ -19,14 +22,16 @@ public class BTDataLink : ScriptableObject
         this.endIndex = endPortIndex;
     }
 
-    public void Init(BTElement start, int startPortIndex, Type startType, BTElement end, int endPortIndex, Type endType)
+    public void Init(BTElement start, int startPortIndex, string startName, BTElement end, int endPortIndex, string endName)
     {
         this.start = start;
         this.startIndex = startPortIndex;
-        this.startType = startType;
+        this.startName = startName;
         this.end = end;
         this.endIndex = endPortIndex;
-        this.endType = endType;
+        this.endName = endName;
+        this.getter = ExpressionUtility.CreateGetter(startName, start.GetType());
+        this.setter = ExpressionUtility.CreateSetter(endName, end.GetType());
         this.guid = GUID.Generate().ToString();
     }
 
@@ -62,7 +67,6 @@ public class BTDataLink : ScriptableObject
 
     public void Transmit()
     {
-
-
+        setter.Invoke(end, getter.Invoke(start));
     }
 }
