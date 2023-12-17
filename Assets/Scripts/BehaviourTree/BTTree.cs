@@ -9,7 +9,6 @@ using UnityEditor.Experimental.GraphView;
 [CreateAssetMenu]
 public class BTTree : ScriptableObject
 {
-    public List<IntPtr> outputReferences = new();
     public BTRootNode rootNode;
     public BTNode.State state = BTNode.State.Running;
     public List<BTNode> nodes = new();
@@ -38,6 +37,7 @@ public class BTTree : ScriptableObject
         linkCache = new(dataLinks);
     }
 
+    #region 树的编辑
 #if UNITY_EDITOR
     public BTBlackboard CreateBlackboard()
     {
@@ -231,6 +231,8 @@ public class BTTree : ScriptableObject
         }*/
     }
 #endif
+    #endregion
+
     public List<BTNode> GetChildren(BTNode parent)
     {
         List<BTNode> list = new();
@@ -264,18 +266,18 @@ public class BTTree : ScriptableObject
 
     public List<BTDataLink> FindOutputLinks(BTElement element)
     {
-        return dataLinks.FindAll(l => l.start == element);
+        return dataLinks.FindAll(l => l.start.guid == element.guid);
     }
 
     public List<BTDataLink> FindInputLinks(BTElement element)
     {
-        return dataLinks.FindAll(l => l.end == element);
+        return dataLinks.FindAll(l => l.end.guid == element.guid);
     }
 
     public List<BTDataLink> FindOutputLinks(BTElement element, int outputIndex)
     {
         if (linkCache == null)
-            return dataLinks.FindAll(l => l.start == element && l.startIndex == outputIndex);
+            return dataLinks.FindAll(l => l.start.guid == element.guid && l.startIndex == outputIndex);
         else
         {
             //return linkCache[element, Direction.Output, outputIndex];
@@ -289,7 +291,7 @@ public class BTTree : ScriptableObject
     public List<BTDataLink> FindInputLinks(BTElement element, int inputIndex)
     {
         if (linkCache == null)
-            return dataLinks.FindAll(l => l.end == element && l.endIndex == inputIndex);
+            return dataLinks.FindAll(l => l.end.guid == element.guid && l.endIndex == inputIndex);
         else
         {
             //return linkCache[element, Direction.Input, inputIndex];
@@ -305,8 +307,20 @@ public class BTTree : ScriptableObject
         BTTree tree = Instantiate(this);
         tree.rootNode = tree.rootNode.Clone() as BTRootNode;
         tree.nodes = new List<BTNode>();
+        tree.datas = new List<BTData>();
         tree.blackboard = blackboard.Clone();
-        Traverse(tree.rootNode, (n) => { tree.nodes.Add(n); n.tree = tree; });    
+        Traverse(tree.rootNode, (n) => { tree.nodes.Add(n); n.tree = tree; });
+        for (int i = 0; i < datas.Count; i++)
+        {
+            tree.datas.Add(datas[i].Clone());
+        }
+        tree.MergeDatasAndNodes();
+        //links是有问题的，没有完全生成独立的实例，仍然和prefab有粘连。
+        for (int i = 0; i < tree.dataLinks.Count; i++)
+        {
+            tree.dataLinks[i] = tree.dataLinks[i].Clone(tree);
+        }
+        tree.linkCache = new(tree.dataLinks);
         return tree;
     }
 }

@@ -5,5 +5,8 @@ using System;
 
 public abstract class BTData : BTElement
 {
-    
+    public virtual BTData Clone()
+    {
+        return Instantiate(this);
+    }
 }

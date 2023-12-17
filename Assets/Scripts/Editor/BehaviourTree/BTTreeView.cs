@@ -144,6 +144,7 @@ public class BTTreeView : GraphView
                 var outputLinks = tree.FindOutputLinks(e, i);
                 outputLinks?.ForEach(ol => //逐条线连接
                 {
+                    ol.RefreshUnserializableFields(ol.start, ol.startName, ol.end, ol.endName);
                     BTElementView target = FindElementView(ol.end);
                     var edge = outputPorts[i].ConnectTo(target.dataInputs[ol.endIndex]);
                     AddElement(edge);

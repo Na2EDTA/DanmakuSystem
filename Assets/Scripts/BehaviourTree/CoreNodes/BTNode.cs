@@ -47,12 +47,13 @@ public abstract class BTNode: BTElement
                 started = false;
             }
         }
-        catch (System.Exception)
+        catch (System.Exception e)
         {
             OnStop();
             OutputDatas();
             state = State.Failed;
             started = false;
+            Debug.LogException(e);
         }
 
         return state;
@@ -69,7 +70,6 @@ public abstract class BTNode: BTElement
 
     void InputDatas()
     {
-        Debug.Log(tree.FindInputLinks(this).Count);//0
         tree.FindInputLinks(this).ForEach(il => il.Transmit());
     }
 

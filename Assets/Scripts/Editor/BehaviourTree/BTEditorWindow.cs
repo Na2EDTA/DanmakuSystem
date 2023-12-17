@@ -83,7 +83,7 @@ public class BTEditorWindow : EditorWindow
         treeView.OnNodeSelected = OnNodeSelectionChanged;
         treeView.OnDataSelected = OnDataSelectionChanged;
 
-        menu.menu.AppendAction("Debug", MenuDebug);
+        menu.menu.AppendAction("Debug Links", LinkDebug);
         menu.menu.AppendAction("Debug Element", ElementDebug);
 
         OnSelectionChange();
@@ -137,6 +137,15 @@ public class BTEditorWindow : EditorWindow
         treeView?.UpdateNodeStates();
     }
 
+    void LinkDebug(DropdownMenuAction dropdownMenuAction)
+    {
+        var tree = treeView.tree;
+        Debug.Log("LinkCache: Input:" + tree.linkCache.inCache.Count + ", Output:" + tree.linkCache.outCache.Count);
+
+        tree.dataLinks.ForEach(l => Debug.Log(l.guid));
+        
+    }
+
     void ElementDebug(DropdownMenuAction dropdownMenuAction)
     {
         var elements = treeView.selection;
@@ -145,17 +154,19 @@ public class BTEditorWindow : EditorWindow
             if ((ev as BTElementView) != null)
                 element = (ev as BTElementView).Element;
             if (element != null)
-                Debug.Log(element.guid + ", " + element.name + "\n" +
-                    "OutputCaches:" + element.outputFieldCaches.Count + "\t" +
-                    "InputCaches:" + element.inputFieldCaches.Count);
-            
+            {
+                Debug.Log(element.guid + "/ " + element.GetHashCode() + ", " + element.name + "\n" +
+                    "OutputFieldCaches:" + element.outputFieldCaches.Count + "\t" +
+                    "InputFieldCaches:" + element.inputFieldCaches.Count);
+                element.tree.FindInputLinks(element).ForEach(l => Debug.Log("getter:" + l.getter + ", setter:"+ l.setter));
+            }
         });
         
     }
 
     void MenuDebug(DropdownMenuAction dropdownMenuAction)
     {
-        Debug01();
+        
     }
 
     void Debug01()

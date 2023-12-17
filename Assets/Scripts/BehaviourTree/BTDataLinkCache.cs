@@ -117,6 +117,30 @@ public class BTDataLinkCache:ISerializationCallbackReceiver
         }
     }
 
+    public void ForAll(System.Action<BTDataLink> action)
+    {
+        foreach (var inputs in inCache)
+        {
+            foreach (var ins in inputs.Value)
+            {
+                foreach (var i in ins.Value)
+                {
+                    action.Invoke(i);
+                }
+            }
+        }
+        foreach (var outputs in outCache)
+        {
+            foreach (var outs in outputs.Value)
+            {
+                foreach (var o in outs.Value)
+                {
+                    action.Invoke(o);
+                }
+            }
+        }
+    }
+
     public void OnBeforeSerialize()
     {
         tempLinks?.Clear();

@@ -8,7 +8,6 @@ using UnityEditor.UIElements;
 using System.Linq;
 using System.Reflection;
 using Danmaku.BehaviourTree;
-using Unity.Collections.LowLevel.Unsafe;
 
 public class BTNodeView : BTElementView
 {
