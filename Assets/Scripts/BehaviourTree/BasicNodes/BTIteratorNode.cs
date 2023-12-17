@@ -18,7 +18,6 @@ public class BTIteratorNode : BTDecoratorNode
         if (count == "inf") return;
 
         b.Parse(count, out _count);
-        Debug.Log(c);
     }
 
     protected override void OnStop()

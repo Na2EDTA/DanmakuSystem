@@ -14,7 +14,7 @@
                 </ui:VisualElement>
                 <ui:VisualElement name="divider" class="vertical" />
                 <ui:VisualElement name="input" />
-                <ui:VisualElement name="output" />
+                <ui:VisualElement name="output" style="left: 50%;" />
                 <ui:VisualElement name="node-state" style="width: 40px; height: 40px; position: absolute; left: 150px; top: 5px; bottom: -29px;" />
             </ui:VisualElement>
         </ui:VisualElement>

@@ -88,6 +88,5 @@ public class BTDataLink : ScriptableObject
     public void Transmit()
     { 
         setter.Invoke(end, getter.Invoke(start));
-        Debug.Log(getter.Invoke(start) + ", " +this.GetHashCode());
     }
 }

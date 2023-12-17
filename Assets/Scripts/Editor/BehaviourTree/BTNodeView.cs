@@ -49,7 +49,7 @@ public class BTNodeView : BTElementView
                 Port dataPort = InstantiatePort(Orientation.Horizontal, 
                 Direction.Input, Port.Capacity.Multi, fields[i].FieldType);
                 dataPort.style.flexDirection = FlexDirection.Row;
-                dataPort.portName = " ";
+                dataPort.portName = fields[i].Name.Length > 4 ? fields[i].Name.Substring(0, 4) : fields[i].Name;
                 dataPort.portColor = new(0.5f, 0.75f, 0.5f, 1);
 
                 inputContainer.Add(dataPort);
@@ -64,7 +64,7 @@ public class BTNodeView : BTElementView
                 Port dataPort = InstantiatePort(Orientation.Horizontal,
                     Direction.Output, Port.Capacity.Multi, fields[i].FieldType);
                 dataPort.style.flexDirection = FlexDirection.Row;
-                dataPort.portName = " ";
+                dataPort.portName = fields[i].Name.Length > 4 ? fields[i].Name.Substring(0, 4) : fields[i].Name;
                 dataPort.portColor = new(0.5f, 0.75f, 0.5f, 1);
                 //dataPort.valueOffset = UnsafeUtility.GetFieldOffset(fields[i]);
 

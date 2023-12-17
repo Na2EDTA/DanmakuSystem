@@ -315,11 +315,13 @@ public class BTTree : ScriptableObject
             tree.datas.Add(datas[i].Clone());
         }
         tree.MergeDatasAndNodes();
-        //links是有问题的，没有完全生成独立的实例，仍然和prefab有粘连。
-        for (int i = 0; i < tree.dataLinks.Count; i++)
+        var links = tree.dataLinks.FindAll(l => l.start is BTNode || l.end is BTNode);
+        tree.dataLinks.Clear();
+        for (int i = 0; i < links.Count; i++)
         {
-            tree.dataLinks[i] = tree.dataLinks[i].Clone(tree);
+            links[i] = links[i].Clone(tree);
         }
+        tree.dataLinks = links;
         tree.linkCache = new(tree.dataLinks);
         return tree;
     }

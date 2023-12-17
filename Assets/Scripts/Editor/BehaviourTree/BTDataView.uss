@@ -83,7 +83,7 @@
     max-width: 50%;
     min-width: 50%;
     padding-left: 0;
-    left: 80%;
+    left: 50%;
     bottom: 0;
 }
 

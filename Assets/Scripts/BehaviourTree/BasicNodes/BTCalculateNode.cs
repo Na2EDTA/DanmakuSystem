@@ -8,24 +8,20 @@ using System.Linq;
 public class BTCalculateNode : BTActionNode
 {
     BTBlackboard b;
-    public string targetVariable;
-    float newFloat = 0;
+    [Danmaku.BehaviourTree.CreateInputPort]
+    [Danmaku.BehaviourTree.CreateOutputPort]
+    [HideInInspector]
+    public float targetVariable;
     //int newInt = 0;
-    ScriptOptions opt;
-    Script<float> script;
+    /*ScriptOptions opt;
+    Script<float> script;*/
 
     [TextArea]
     public string expression;
 
-    
-
     protected override void OnStart()
     {
         b = tree.blackboard;
-        opt = ScriptOptions.Default.WithImports("System.Math");
-        opt.AddReferences(typeof(ScriptableObject).Assembly);
-        opt.AddReferences("UnityEngine");
-        script = CSharpScript.Create<float>("using UnityEngine;" + expression, opt, typeof(BTCalculateNode));
     }
 
     protected override void OnStop()
@@ -35,25 +31,7 @@ public class BTCalculateNode : BTActionNode
 
     protected override State OnUpdate()
     {
-        /*if (b.FindVariable(targetVariable, out newFloat))
-        {
-            newFloat = ParseExpression(expression);
-            b.SetVariable(targetVariable, newFloat);
-        }
-        else if(b.FindVariable(targetVariable, out newInt))
-        {
-            newInt = (int)MathF.Round(ParseExpression(expression));
-            b.SetVariable(targetVariable, newInt);
-        }*/
-        try
-        {
-            if (b.FindVariable(targetVariable, out newFloat))
-                newFloat = script.RunAsync(globals: this).Result.ReturnValue;
-        }
-        catch(Exception e)
-        {
-            Debug.Log(e.Message);
-        }
+        targetVariable = ParseExpression(expression);
         return State.Succeeded;
     }
 
@@ -67,7 +45,7 @@ public class BTCalculateNode : BTActionNode
 
         foreach (var variable in variables)
         {
-            if (!b.floatVariables.ContainsKey(variable) && !b.intVariables.ContainsKey(variable))
+            if (!b.floatVariables.ContainsKey(variable) && !b.intVariables.ContainsKey(variable) && variable != "_value")
             {
                 Debug.LogError($"Variable '{variable}' not found in the dictionary.");
             }
@@ -76,6 +54,7 @@ public class BTCalculateNode : BTActionNode
         // 替换变量名为对应的值
         for (int i = 0; i < variables.Count; i++)
         {
+            expr = expr.Replace("_value", targetVariable.ToString());
             if (b.floatVariables.ContainsKey(variables[i]))
             {
                 expr = expr.Replace(variables[i], b.floatVariables[variables[i]].ToString());
@@ -86,16 +65,14 @@ public class BTCalculateNode : BTActionNode
             }
         }
 
-
         // 计算表达式的结果
         try
         {
-            var runner = CSharpScript.EvaluateAsync<float>(expr, opt, globals:this);
-            var result = Convert.ToSingle(new System.Data.DataTable().Compute(expr, null));
+/*            var runner = CSharpScript.EvaluateAsync<float>(expr, opt, globals:this);
+*/            var result = Convert.ToSingle(new System.Data.DataTable().Compute(expr, null));
             
-            
-            return runner.Result;
-            //return result;
+            //return runner.Result;
+            return result;
         }
         catch (Exception ex)
         {
@@ -112,7 +89,7 @@ public class BTCalculateNode : BTActionNode
         for (int i = 0; i < expressionChars.Length; i++)
         {
             var c = expressionChars[i];
-            if (char.IsLetter(c))
+            if (char.IsLetter(c) || c == '_')
             {
                 variable += c;
                 if (i == expressionChars.Length - 1)

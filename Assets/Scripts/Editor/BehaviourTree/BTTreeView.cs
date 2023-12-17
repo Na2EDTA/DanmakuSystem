@@ -169,7 +169,7 @@ public class BTTreeView : GraphView
     {
         return ports.ToList().Where(endPort =>
         endPort.direction != startPort.direction &&
-        endPort.node != startPort.node && endPort.portName == startPort.portName 
+        endPort.node != startPort.node /*&& endPort.portName == startPort.portName*/ 
         && endPort.portType == startPort.portType).ToList();
     }
 
@@ -201,7 +201,7 @@ public class BTTreeView : GraphView
                         BTNodeView childView = edge.input.node as BTNodeView;
                         tree.RemoveChild(parentView.node, childView.node); 
                     }
-                    else if(edge.input.portType == edge.output.portType && edge.input.portName == " ")
+                    else if(edge.input.portType == edge.output.portType /*&& edge.input.portName == " "*/)
                     {
                         BTElementView startView = edge.output.node as BTElementView;
                         BTElementView endView = edge.input.node as BTElementView;
@@ -225,7 +225,7 @@ public class BTTreeView : GraphView
                     BTNodeView childView = edge.input.node as BTNodeView;
                     tree.AddChild(parentView.node, childView.node); 
                 }
-                else if (edge.input.portType == edge.output.portType && edge.input.portName  == " ")
+                else if (edge.input.portType == edge.output.portType/* && edge.input.portName  == " "*/)
                 {
                     BTElementView startView = edge.output.node as BTElementView;
                     BTElementView endView = edge.input.node as BTElementView;
@@ -309,6 +309,4 @@ public class BTTreeView : GraphView
             }
         });
     }
-
-
 }
