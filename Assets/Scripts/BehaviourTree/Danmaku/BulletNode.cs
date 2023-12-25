@@ -11,6 +11,7 @@ public class BulletNode: BTActionNode
     public List<string> arguments;
     List<float> args;
     [SerializeField] GameObject bullet;
+    string type;
 
     protected override void OnStart()
     {
@@ -25,6 +26,8 @@ public class BulletNode: BTActionNode
             b.Parse(arguments[i], out temp);
             args[i] = temp;
         }
+
+        type = bullet.GetComponent<DanmakuObject>().GetType().Name;
     }
 
     protected override void OnStop()
@@ -34,7 +37,7 @@ public class BulletNode: BTActionNode
 
     protected override State OnUpdate()
     {
-        bullet = Pool.instance.Create(bulletName, bulletPosition, args.ToArray());
+        bullet = Pool.instance.Create(bulletPosition, type, default, default, args.ToArray());
         return State.Succeeded;
     }
 

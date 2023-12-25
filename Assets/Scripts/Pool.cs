@@ -8,16 +8,8 @@ using System.IO;
 public class Pool : MonoBehaviour
 {
     public static Pool instance;
-    [HideInInspector] public static int order = 0;//叠放次序，每个子弹唯一
+    [HideInInspector] public static int order = 0;//最高叠放次序，每个子弹唯一
     [HideInInspector] public static int objectCountOnStage = 0;//场上活跃的物体总数
-
-    /*------------------老体系，准备拆除-----------------*/
-    Dictionary<string, Queue<GameObject>> mainPool = new();
-    Dictionary<string, GameObject> dict = new();
-    [SerializeField] GameObject[] prefabList;
-    [SerializeField] int defaultFillCount;
-    [SerializeField] int defaultLeastCount;
-    /*-------------------------------------------------*/
 
     private void Awake()
     {
@@ -30,80 +22,9 @@ public class Pool : MonoBehaviour
         else
             Destroy(gameObject);
 
-        //也是老体系的一部分，把原型往池子填，原型表是手拖的，效率低下
-        for (int i = 0; i < prefabList.Length; i++)
-        {
-            GameObject obj = prefabList[i];
-            string name = obj.name;
-            dict.Add(name, obj);
-            
-            mainPool.Add(name, new Queue<GameObject>());
-        }
-
         //新体系的初始化过程，从Asset/Prefabs/里边自动装载符合要求的原型，省心省力
         Init();
     }
-
-    /*-----------------------老体系的对象池基本操作部分-------------------------*/
-    void Fill(string objType)//装填
-    {
-        for (int i = 0; i < defaultFillCount; i++)
-        {
-            objectCountOnStage++;
-            GameObject obj = Instantiate(dict[objType], transform);
-            Dispose(obj);
-        }
-    }
-    void Fill(string objType, int fillCount)//指定了装填量的装填
-    {
-        for (int i = 0; i < fillCount; i++)
-        {
-            objectCountOnStage++;
-            GameObject obj = Instantiate(dict[objType], transform);
-            Dispose(obj);
-        }
-    }
-
-    public GameObject Create(string objType, Vector2 pos, params float[] ps)//从池子里摇出来物体
-    {
-        if (mainPool[objType].Count < defaultLeastCount) Fill(objType);
-        GameObject obj = mainPool[objType].Dequeue();
-        if (obj)
-        {
-            obj.transform.position = pos;
-            obj.GetComponent<DanmakuObject>().OnInit(ps);
-            obj.SetActive(true);
-            obj.GetComponent<SpriteRenderer>().sortingOrder = order;
-            order++;
-            objectCountOnStage++;
-        }
-        return obj;
-    }
-
-    public GameObject Create(string objType, Vector2 pos, int fillCount, int leastCount, params float[] ps)
-    //也是从池子里摇出来物体，指定了存货紧缺的阈值与装填量
-    {
-        if (mainPool[objType].Count < leastCount) Fill(objType, fillCount);
-        GameObject obj = mainPool[objType].Dequeue();
-        obj.transform.position = pos;
-        obj.GetComponent<DanmakuObject>().OnInit(ps);
-        obj.SetActive(true);
-        obj.GetComponent<SpriteRenderer>().sortingOrder = order;
-        order++;
-        objectCountOnStage++;
-        return obj;
-    }
-
-    public void Dispose(GameObject obj)//从外边回收物体到池子里
-    {
-        obj.SetActive(false);
-        string cname = obj.name;
-        mainPool[cname.Remove(cname.Length - 7)].Enqueue(obj);
-        objectCountOnStage--;
-        return;
-    }
-
-    /*-----------------------------------新体系--------------------------------------------*/
 
     public Dictionary<System.Type, SubPool> objectPool = new();//主池
     [SerializeField] List<GameObject> prefabs;//这个原型表是自动完成填入的
