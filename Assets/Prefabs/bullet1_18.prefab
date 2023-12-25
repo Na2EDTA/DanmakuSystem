@@ -129,6 +129,4 @@ MonoBehaviour:
   fallBackSprite: {fileID: -1380570328, guid: c1e2c23fc9f7e5e4bb3a6cc1d56fb061, type: 3}
   velocity: {fileID: 0}
   r: {fileID: 0}
-  variables:
-    list: []
-  curves: []
+  a: 0

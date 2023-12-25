@@ -10,7 +10,7 @@ public class BTWaitFrameNode: BTActionNode
 
     protected override void OnStart()
     {
-        t = UniTask.Create(() => UniTask.DelayFrame(duriation));
+        t = UniTask.Create(DelayFrame);
     }
 
     protected override void OnStop()
@@ -26,5 +26,10 @@ public class BTWaitFrameNode: BTActionNode
             return State.Failed;
         else
             return State.Running;
+    }
+
+    UniTask DelayFrame()
+    {
+         return UniTask.DelayFrame(duriation);
     }
 }

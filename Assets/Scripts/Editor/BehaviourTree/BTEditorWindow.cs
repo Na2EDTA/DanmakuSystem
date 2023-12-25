@@ -155,7 +155,7 @@ public class BTEditorWindow : EditorWindow
                 element = (ev as BTElementView).Element;
             if (element != null)
             {
-                Debug.Log(element.guid + "/ " + element.GetHashCode() + ", " + element.name + "\n" +
+                Debug.Log(element.guid + "/ " + element.GetInstanceID() + ", " + element.name + "\n" +
                     "OutputFieldCaches:" + element.outputFieldCaches.Count + "\t" +
                     "InputFieldCaches:" + element.inputFieldCaches.Count);
                 element.tree.FindInputLinks(element).ForEach(l => Debug.Log("getter:" + l.getter + ", setter:"+ l.setter));

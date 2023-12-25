@@ -136,7 +136,6 @@ MonoBehaviour:
   children:
   - {fileID: -3878076803339813008}
   - {fileID: -5568990368243956528}
-  - {fileID: -6710197382767729905}
 --- !u!114 &-7701956564937930759
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -226,7 +225,7 @@ MonoBehaviour:
   position: {x: 589.1428, y: -274.85715}
   started: 0
   state: 0
-  duriation: 3
+  duriation: 1
 --- !u!114 &-5568990368243956528
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -242,11 +241,11 @@ MonoBehaviour:
   comment: 
   guid: c63b62d7f349c614c88d143775f0ff07
   tree: {fileID: 11400000}
-  position: {x: 581.14294, y: -387.42856}
+  position: {x: 597.143, y: -431.47144}
   started: 0
   state: 0
   targetVariable: 0
-  expression: _value+5
+  expression: _value+a
 --- !u!114 &-5518346849228301782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -359,7 +358,7 @@ MonoBehaviour:
   acceleration: 0
   rotation: 0
   _angle: 0
-  _speed: 0.5
+  _speed: 0.1
   _aim: 0
   _maxSpeed: 0
   _acceleration: 0
@@ -408,7 +407,7 @@ MonoBehaviour:
   floatVariables:
     list:
     - Key: a
-      Value: 0
+      Value: 5
   booleanVariables:
     list: []
   triggerVariables:
@@ -614,7 +613,7 @@ MonoBehaviour:
   comment: 
   guid: 99fdddba526c97843beb8a14c0fa6327
   tree: {fileID: 11400000}
-  position: {x: 602.2857, y: -468.14285}
+  position: {x: 597.143, y: -495.65002}
   value: 0
 --- !u!114 &11400000
 MonoBehaviour:
@@ -693,6 +692,7 @@ MonoBehaviour:
   - {fileID: -1949744994324461942}
   - {fileID: 8766591146406126864}
   - {fileID: -5309237712992853444}
+  - {fileID: 0}
   - {fileID: -7178785563747433079}
   - {fileID: 3942776498076482645}
   - {fileID: -3035457574074728292}
@@ -863,7 +863,6 @@ MonoBehaviour:
   started: 0
   state: 0
   children:
-  - {fileID: 1042319157723746887}
   - {fileID: 6907180866080670687}
   - {fileID: -8280871065426057134}
 --- !u!114 &8766591146406126864

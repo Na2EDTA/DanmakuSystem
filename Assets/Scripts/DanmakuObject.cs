@@ -38,8 +38,6 @@ public abstract class DanmakuObject : MonoBehaviour
     /// <param name="ps"></param>
     public abstract void OnInit(params float[] ps);
 
-    public abstract void Dispose();
-
     void Analyze(string expression, out string paraName, out float paraValue)
     {
         expression = expression.Replace(" ", string.Empty);

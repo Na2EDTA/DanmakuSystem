@@ -18,7 +18,7 @@ public class ClearBox : MonoBehaviour
         if (transform.position.x < range.x || transform.position.x > range.y || transform.position.y < range.z
             || transform.position.y > range.w)
         {
-            danmaku.Dispose();
+            Pool.instance.Dispose(gameObject,0.1f);
         }
     }
 }
